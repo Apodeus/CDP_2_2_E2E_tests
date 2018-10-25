@@ -2,7 +2,7 @@
 # Clément Fontenay, Antonin Rebufat, Romain Ordonez
 
 ### Légende :
-- * => Champ obligatoire
+- \* => Champ obligatoire
 
 | Id | Issue | Difficulté | Priorité  | Statut |
 |----|-------|------------|----------|--------| 
