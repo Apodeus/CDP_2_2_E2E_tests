@@ -2,8 +2,8 @@
 # Clément Fontenay, Antonin Rebufat, Romain Ordonez
 
 
-| Id | Issue | Difficulté | Priorité | Dépendances | Statut |
-|----|-------|------------|----------|-------------|--------| 
+| Id | Issue | Difficulté | Priorité  | Statut |
+|----|-------|------------|----------|--------| 
 | 1  | En tant que visiteur, je souhaite pouvoir m'inscrire via un bouton "S'enregistrer", à côté de celui de connexion,  qui me renvoi vers une page avec un formulaire (création de compte à l'aide d'un e-mail et d'un mot de passe et d'un pseudo) avec un bouton "Valider l'enregistrement" permettant la validation de l'enregistrement qui renvoit le visiteur vers la page d'accueil maintenant en tant qu'Utilisateur; dans l'objectif de pouvoir créer ou rejoindre un projet.               | 1          |          | TODO   |  | 
 | 2  | En tant que visiteur, je souhaite pouvoir m'authentifier via un bouton "connexion" renvoyant vers une page où se trouve un formulaire (e-mail et mot de passe) à remplir puis valider en cliquant sur le bouton "OK", me renvoyant vers la page d'accueil en mode "utilisateur"; dans l'objectif d'utiliser mon compte                                                                                                                                                                          | 1          |          | TODO   |  | 
 | 3  | En tant que Chef de projet/développeur, je souhaite pouvoir lister tout les projets, auxquels je participe, sur la page des projets accessible via un bouton "Mes Projets" présent sur la page d'acceuil; dans l'objectif de gérer mes projets                                                                                                                                                                                                                                                  | 1          |          | TODO   |  | 
