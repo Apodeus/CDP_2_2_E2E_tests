@@ -22,5 +22,5 @@ Tc4d | Spécifier les méthodes fournies par le DAO ProjetDAO.js dans le fichier
 Tc4i | Implémenter la classe ProjetDAO.js en suivant le fichier SpecApp.md | 8, 11 | Tc4d | 0.5 | TODO
 Tc5d | Spécifier les méthodes fournies par le DAO IssueDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | TODO
 Tc5i | (Design Tc5d) Implémenter la classe IssueDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc5d | 0.5 | TODO
-Tc5d | Spécifier les méthodes fournies par le DAO UtilisateurDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | TODO
-Tc5i | (Design Tc5d) Implémenter la classe UtilisateurDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc5d | 0.5 | TODO
+Tc6d | Spécifier les méthodes fournies par le DAO UtilisateurDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | TODO
+Tc6i | (Design Tc5d) Implémenter la classe UtilisateurDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc6d | 0.5 | TODO
