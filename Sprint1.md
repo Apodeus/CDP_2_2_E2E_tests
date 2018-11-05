@@ -19,8 +19,8 @@ Tc3d | Spécifier les champs de la table Utilisateur en base de donnée dans le 
 Tc3i | Créer un fichier table_utilisateur.sql créant une nouvelle table Utilisateur à la base de donnée CP.  | 8,11 | Tc3d | 0.5 | TODO 
 -- | -- Application (Middle) --
 Tc4d | Spécifier les méthodes fournies par le DAO ProjetDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | TODO
-Tc4i | Implémenter la classe ProjetDAO.js en suivant le fichier SpecApp.md | 8, 11 | Tc4d | 0.5 | TODO
-Tc5d | Spécifier les méthodes fournies par le DAO IssueDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | TODO
-Tc5i | (Design Tc5d) Implémenter la classe IssueDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc5d | 0.5 | TODO
+Tc4i | Implémenter la classe ProjetDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc4d | 0.5 | TODO
+Tc5d | Spécifier les méthodes fournies par le DAO IssueDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | TODO
+Tc5i | (Design Tc5d) Implémenter la classe IssueDAO.js en suivant le fichier SpecApp.md | 8, 11 | Tc5d | 0.5 | TODO
 Tc6d | Spécifier les méthodes fournies par le DAO UtilisateurDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | TODO
 Tc6i | (Design Tc5d) Implémenter la classe UtilisateurDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc6d | 0.5 | TODO
