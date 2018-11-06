@@ -46,3 +46,12 @@
 |Tc16i | (Design Tc16d) Implémenter la classe ServletAjouterUS.js en suivant le fichier SpecApp.md | 8 | | 0.5 | TODO |
 |Tc17d | Spécifier les méthodes fournies par OngletBuilder.js, permettant de construire la barre d'onglet en html, dans le fichier SpecApp.md | 8, 11 | | 0.5 | TODO
 |Tc17i | Implémenter la classe OngletBuilder.js en suivant le fichier SpecApp.md | 8,11 | | 0.5 | TODO |
+|--|-- FRONT --|--|--|--|--|
+|Tc18d|Spécifier le contenu de la page ConnectedHome.html dans le fichier SpecFront.md, qui correspond à l'affichage de l'acceuil d'un utilisateur connecté | 3 || 0.5 | TODO |
+|Tc18i|(Design Tc18d) Implémenter le fichier ConnectedHome.html conformément au fichier SpecFront.md | 3 |Tc18d| 0.5 | TODO |
+|Tc19d|Spécifier le contenu de la page Projets.html dans le fichier SpecFront.md, qui correspond à l'affichage de l'ensemble des projets d'un utilisateur | 3 || 0.5 | TODO |
+|Tc19i|(Design Tc19d) Implémenter le fichier Projets.html conformément au fichier SpecFront.md | 3 |Tc19d| 0.5 | TODO |
+|Tc20d|Spécifier le contenu de la page CreerProjet.html dans le fichier SpecFront.md, qui corrrespond à la page de création d'un nouveau projet | 4 || 0.5 | TODO |
+|Tc20i|(Design Tc20d) Implémenter le fichier CreerProjet.html conformément au fichier SpecFront.md | 4 |Tc20d| 0.5 | TODO |
+|Tc21d|Spécifier le contenu de la page Projet.html dans le fichier SpecFront.md, qui correspond à l'affichage d'un projet | 5 || 0.5 | TODO |
+|Tc21i|(Design Tc21d) Implémenter le fichier Projet.html conformément au fichier SpecFront.md | 5 |Tc21d| 0.5 | TODO |
