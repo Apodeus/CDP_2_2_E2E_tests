@@ -55,3 +55,10 @@
 |Tc20i|(Design Tc20d) Implémenter le fichier CreateProject.html conformément au fichier SpecFront.md | 4 |Tc20d| 0.5 | | TODO |
 |Tc21d|Spécifier le contenu de la page Project.html dans le fichier SpecFront.md, qui correspond à l'affichage d'un Project | 5 || 0.5 | | TODO |
 |Tc21i|(Design Tc21d) Implémenter le fichier Project.html conformément au fichier SpecFront.md | 5 |Tc21d| 0.5 | | TODO |
+|--|-- ENVIRONNEMENT --|--|--|--|--|
+|Te1i| Mettre en place un linter pour contrôler le code HTML et JavaScript | | | 0.5 | | TODO |
+|Te2i| Mettre en place des tests qui seront lancé automatiquement et qui garde un historique des résultats | | | 0.5 | | TODO |
+|Te3i| Mettre en place un docker-compose permettant de lancer l'application, en vu de sortir des releases | | | 0.5 | | TODO |
+|Te4i| Créer une page regroupant les différentes releases | | | 0.5 | | TODO |
+|Te5i| Mettre en place un outil pour générer la documentation | | | 0.5 | | TODO |
+
