@@ -23,4 +23,26 @@ Tc4i | Implémenter la classe ProjetDAO.js en suivant le fichier SpecApp.md | 3,
 Tc5d | Spécifier les méthodes fournies par le DAO IssueDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | TODO
 Tc5i | (Design Tc5d) Implémenter la classe IssueDAO.js en suivant le fichier SpecApp.md | 8, 11 | Tc5d | 0.5 | TODO
 Tc6d | Spécifier les méthodes fournies par le DAO UtilisateurDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | TODO
-Tc6i | (Design Tc5d) Implémenter la classe UtilisateurDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc6d | 0.5 | TODO
+Tc6i | (Design Tc6d) Implémenter la classe UtilisateurDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc6d | 0.5 | TODO
+Tc7d | Spécifier l'objet Projet qui permet d'utiliser le DAO ProjetDAO.js dans le fichier SpecApp.md  | 3,4,5 | (Tc4d) | 0.5 | TODO
+Tc7i | (Design Tc7d) Implémenter la classe Projet.js en suivant le ficiher SpecApp.md | 3,4,5 | | 0.5 | TODO
+Tc8d | Spécifier l'objet Issue qui permet d'utiliser le DAO IssueDAO.js dans le fichier SpecApp.md  | 8,11 | (Tc5d) | 0.5 | TODO
+Tc8i | (Design Tc8d) Implémenter la classe Issue.js en suivant le fichier SpecAdd.md | 8,11 | | 0.5 | TODO
+Tc9d | Spécifier l'objet Utilisateur qui permet d'utiliseur le DAO UtilisateurDAO.js dans le ficiher SpecApp.md | 3,4,5 | (Tc6d) | 0.5 | TODO
+Tc9i | (Design Tc9d) Implémenter la classe Utilisateur.js en suivant le fichier SpecAdd.md | 3,4,5 | | 0.5 | TODO
+Tc10d | Spécifier le comportement du servlet ServletAccueilConnecter.js, qui est le servlet derrière la page ConnectedHome.html, dans le fichier SpecAdd.md | 3 | | 0.5 | TODO
+Tc10i | (Design Tc10d) Implémenter la classe ServletAccueilConnecter.js en suivant le fichier SpecAdd.md | 3 | | 0.5 | TODO
+Tc11d | Spécifier le comportement du servlet ServletProjets.js, qui est le servlet derrière la page Projets.html, dans le fichier SpecApp.md | 3 | | 0.5 | TODO
+Tc11i | (Design Tc11d) Implémenter la classe ServletProjets.js en suivant le fichier SpecApp.md | 3 | | 0.5 | TODO
+Tc12d | Spécifier le comportement du servlet ServletCreerProjet.js, qui est le servlet derrière la page CreerProjet.html, dans le fichier SpecApp.md | 4 | | 0.5 | TODO
+Tc12i | (Design Tc12d) Implémenter la classe ServletCreerProjet.js en suivant le fichier SpecApp.md | 4 | | 0.5 | TODO  
+Tc13d | Spécifier le comportement du servlet ServletVuProjet.js, qui est le servlet derrière la page Projet.html, dans le fichier SpecApp.md | 5 | | 0.5 | TODO
+Tc13i | (Design Tc13d) Implémenter la classe ServletVuProjet.js en suivant le fichier SpecApp.md | 5, 6 | | 0.5 | TODO
+Tc14d | Spécifier le comportement du servlet ServletModifierProjet.js, qui est le servlet derrière la page ModifierProjet.html, dans le fichier SpecApp.md | 5,6 | | 0.5 | TODO
+Tc14i | (Design Tc14d) Implémenter la classe ServletModifierProjet.js en suivant le fichier SpecApp.md | 5 | | 0.5 | TODO
+Tc15d | Spécifier le comportement du servlet ServletBacklog.js, qui est le servlet derrière la page Backlog.html, dans le fichier SpecApp.md | 11 | | 0.5 | TODO
+Tc15i | (Design Tc15d) Implémenter la classe ServletBacklog.js en suivant le fichier SpecApp.md | 11 | | 0.5 | TODO
+Tc16d | Spécifier le comportement du servlet ServletAjouterUS.js, qui est le servlet derrière la page AjouterUS.html, dans le fichier SpecApp.md | 8 | | 0.5 | TODO
+Tc16i | (Design Tc16d) Implémenter la classe ServletAjouterUS.js en suivant le fichier SpecApp.md | 8 | | 0.5 | TODO
+Tc17d | Spécifier les méthodes fournies par OngletBuilder.js, permettant de construire la barre d'onglet en html, dans le fichier SpecApp.md | 8, 11 | | 0.5 | TODO
+Tc17i | Implémenter la classe OngletBuilder.js en suivant le fichier SpecApp.md | 8,11 | | 0.5 | TODO
