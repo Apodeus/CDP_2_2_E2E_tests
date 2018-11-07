@@ -11,7 +11,7 @@
 |Tt4i | Créer le(s) test(s) du fichier Test4Issue8.md concernant la création d'issue | 8 | Tt4d | 0.5 | | TODO  |  
 |Tt5i | Créer le(s) test(s) du fichier Test5Issue11.md concernant le listage des issues d'un projet | 11 | Tt5d | 0.5 | | TODO  |
 |-- | -- BDD --|--|--|--|--|--|
-|Tc1d | Spécifier les champs de la table projects en base de donnée dans le fichier SpecDB.md | 3, 4, 5 |  | 0.5 | | TODO |
+|Tc1d | Spécifier les champs de la table projects en base de donnée dans le fichier SpecDB.md | 3, 4, 5 | | 0.5 | Antonin Rebufat | DONE |
 |Tc1i | Créer un fichier table_projects.sql, créant une nouvelle table Projet à la base de donnée CP. | 3, 4, 5 | Tc1d | 0.5 | Antonin Rebufat | DOING |
 |Tc2d | Spécifier les champs de la table issues en base de donnée dans le fichier SpecDB.md | 8,11 |  | 0.5 | | TODO
 |Tc2i | Créer un fichier table_issues.sql créant une nouvelle table Issue à la base de donnée CP.  | 8,11 | Tc2d | 0.5 | | TODO |
