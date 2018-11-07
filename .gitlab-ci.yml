@@ -3,4 +3,4 @@ stages:
 
 sonar:
   stage: analyse
-  script: sonar-scanner -s settings.xml
+  script: /usr/sonar-runner/bin/sonar-scanner -s settings.xml
