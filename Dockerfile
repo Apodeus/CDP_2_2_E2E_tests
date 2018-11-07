@@ -3,6 +3,6 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY package.json /usr/src/app/
 RUN npm install
-COPY src/ /usr/src/app
+COPY src/ /usr/src/app/
 EXPOSE 3000
-CMD ["node","nodeJs/index.js"]
+CMD ["node","app/index.js"]
