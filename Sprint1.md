@@ -1,6 +1,6 @@
 | id | description | Issue affiliée | Dépendances | Chiffrage en J/H | Affectation | Statut
 |-|-|-|-|-|-|-|
-|Tt1d | Spécifier le(s) scénario(s) de test de l'issue 3 dans le fichier Test1Issue3.md concernant le listage des projets | 3 |  | 0.5 | | DOING  |
+|Tt1d | Spécifier le(s) scénario(s) de test de l'issue 3 dans le fichier Test1Issue3.md concernant le listage des projets | 3 |  | 0.5 | Clément Fontenay | DOING  |
 |Tt2d | Spécifier le(s) scénario(s) de test de l'issue 4 dans le fichier Test2Issue4.md concernant la création de projet| 4 |  | 0.5 | | TODO  |
 |Tt3d | Spécifier le(s) scénario(s) de test de l'issue 5 dans le fichier Test3Issue5.md concernant la modification d'un projet| 5 |  |  0.5 | | TODO |
 |Tt4d | Spécifier le(s) scénario(s) de test de l'issue 8 dans le fichier Test4Issue8.md concernant la création d'issue | 8 |  | 0.5 | | TODO  |  
@@ -15,8 +15,8 @@
 |Tc1i | Créer un fichier table_projet.sql, créant une nouvelle table Projet à la base de donnée CP. | 3, 4, 5 | Tc1d | 0.5 | | TODO |
 |Tc2d | Spécifier les champs de la table Issue en base de donnée dans le fichier SpecDB.md | 8,11 |  | 0.5 | | TODO
 |Tc2i | Créer un fichier table_issue.sql créant une nouvelle table Issue à la base de donnée CP.  | 8,11 | Tc2d | 0.5 | | TODO |
-|Tc3d | Spécifier les champs de la table User en base de donnée dans le fichier SpecDB.md | 3, 4 |  | 0.5 | | DONE |
-|Tc3i | Créer un fichier table_User.sql créant une nouvelle table User à la base de donnée CP.  | 8,11 | Tc3d | 0.5 | | DOING |
+|Tc3d | Spécifier les champs de la table User en base de donnée dans le fichier SpecDB.md | 3, 4 |  | 0.5 | Antonin Rebufat | DONE |
+|Tc3i | Créer un fichier table_User.sql créant une nouvelle table User à la base de donnée CP.  | 8,11 | Tc3d | 0.5 | Antonin Rebufat | DOING |
 |-- | -- Application (Middle) -- |--|--|--|--|--|
 |Tc4d | Spécifier les méthodes fournies par le DAO ProjetDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | | TODO |
 |Tc4i | Implémenter la classe ProjectDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc4d | 0.5 | | TODO |
