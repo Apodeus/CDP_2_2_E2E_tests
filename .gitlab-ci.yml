@@ -2,12 +2,10 @@ stages:
   - analyse
 
 image:
-   node:latest
+  digitalgenius/alpine-node-java:latest
 
 sonar:
   stage: analyse
-  services:
-    - java:latest
   before_script:
     - npm install sonar-scanner@3.1.0
   script:
