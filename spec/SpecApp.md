@@ -1,0 +1,2 @@
+- ServletConnectedHome.js
+  - Méthode get(..) répondant à une requete GET renvoyant la page bien formée en complétant le bouton d'id=MesProjets.
