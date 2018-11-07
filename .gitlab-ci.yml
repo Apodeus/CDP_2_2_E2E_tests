@@ -3,4 +3,4 @@ stages:
 
 sonar:
   stage: analyse
-  script: /usr/sonar-runner/bin/sonar-scanner -s settings.xml
+  script: sonar-scanner -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.host.url=https://sonarcloud.io -Dsonar.login={env.SONAR_TOKEN}
