@@ -10,14 +10,14 @@
 |Tt3i | Créer le(s) test(s) du fichier Test3Issue5.md concernant la modification d'un projet| 5 | Tt3d | 0.5 | |  TODO |
 |Tt4i | Créer le(s) test(s) du fichier Test4Issue8.md concernant la création d'issue | 8 | Tt4d | 0.5 | | TODO  |  
 |Tt5i | Créer le(s) test(s) du fichier Test5Issue11.md concernant le listage des issues d'un projet | 11 | Tt5d | 0.5 | | TODO  |
-|-- | -- BDD --|--|--|--|--|
+|-- | -- BDD --|--|--|--|--|--|
 |Tc1d | Spécifier les champs de la table Projet en base de donnée dans le fichier SpecDB.md | 3, 4, 5 |  | 0.5 | | TODO |
 |Tc1i | Créer un fichier table_projet.sql, créant une nouvelle table Projet à la base de donnée CP. | 3, 4, 5 | Tc1d | 0.5 | | TODO |
 |Tc2d | Spécifier les champs de la table Issue en base de donnée dans le fichier SpecDB.md | 8,11 |  | 0.5 | | TODO
 |Tc2i | Créer un fichier table_issue.sql créant une nouvelle table Issue à la base de donnée CP.  | 8,11 | Tc2d | 0.5 | | TODO |
-|Tc3d | Spécifier les champs de la table User en base de donnée dans le fichier SpecDB.md | 3, 4 |  | 0.5 | | TODO |
+|Tc3d | Spécifier les champs de la table User en base de donnée dans le fichier SpecDB.md | 3, 4 |  | 0.5 | | DOING |
 |Tc3i | Créer un fichier table_User.sql créant une nouvelle table User à la base de donnée CP.  | 8,11 | Tc3d | 0.5 | |TODO |
-|-- | -- Application (Middle) -- |--|--|--|--|
+|-- | -- Application (Middle) -- |--|--|--|--|--|
 |Tc4d | Spécifier les méthodes fournies par le DAO ProjetDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | | TODO |
 |Tc4i | Implémenter la classe ProjectDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc4d | 0.5 | | TODO |
 |Tc5d | Spécifier les méthodes fournies par le DAO IssueDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | | TODO |
@@ -46,7 +46,7 @@
 |Tc16i | (Design Tc16d) Implémenter la classe ServletAddUS.js en suivant le fichier SpecApp.md | 8 | | 0.5 | | TODO |
 |Tc17d | Spécifier les méthodes fournies par TabBuilder.js, permettant de construire la barre d'onglet en html, dans le fichier SpecApp.md. Cette classe doit permettre de générer une barre d'onglet en html permettant de redirigé l'utilsateur vers les pages "Project.html", "Backlog.html" | 8, 11 | | 0.5 | | TODO
 |Tc17i | Implémenter la classe TabBuilder.js en suivant le fichier SpecApp.md | 8,11 | | 0.5 | | TODO |
-|--|-- FRONT --|--|--|--|--|
+|--|-- FRONT --|--|--|--|--|--|
 |Tc18d|Spécifier le contenu de la page ConnectedHome.html dans le fichier SpecFront.md, qui correspond à l'affichage de l'accueil d'un utilisateur connecté | 3 || 0.5 | | TODO |
 |Tc18i|(Design Tc18d) Implémenter le fichier ConnectedHome.html conformément au fichier SpecFront.md | 3 |Tc18d| 0.5 | | TODO |
 |Tc19d|Spécifier le contenu de la page Projects.html dans le fichier SpecFront.md, qui correspond à l'affichage de l'ensemble des Projects d'un utilisateur | 3 || 0.5 | | TODO |
@@ -63,7 +63,7 @@
 |Tc24i  | (Design Tc24d :) En se basant sur le fichier SpecFront.md : Créer un fichier addIssue.html. Ajouter un formulaire avec les champs définis dans le fichier SpecFront.md. Ajouter un bouton "Valider & Ajouter" qui permet de vérifier/valider la saisie de l'utilisateur et ainsi d'ajouter l'issue en base de donnée puis renvoie l'utilisateur vers la page listBacklog.html . Ajouter un bouton "Annuler" qui ne prend pas en compte la saisie de l'utilisateur et le renvoie vers la page listBacklog.html de son projet. | 11 | Tc24d | 0.5 | | TODO |
 |Tc25d | Spécifier la structure du template tabsBar.html dans le fichier SpecFront.md. Ce template permettra de représenter une barre d'onglet facilitant l'intéraction avec l'application ainsi que sa composation par l'application en fonction de la page actuelle.| All |  | 0.5 | | TODO |
 |Tc25i | (Design Tc25d :) En se basant sur le fichier SpecFront.md : Créer un fichier tabsBar.html. Implémenter la structure en fonction de ce qui a été définit dans le fichier SpecFront.md | All | Tc25d  | 0.5 | | TODO |
-|--|-- ENVIRONNEMENT --|--|--|--|--|
+|--|-- ENVIRONNEMENT --|--|--|--|--|--|
 |Te1i| Mettre en place un linter pour contrôler le code HTML et JavaScript | | | 0.5 | Romain Ordonez | TODO |
 |Te2i| Mettre en place des tests qui seront lancé automatiquement et qui garde un historique des résultats | | | 0.5 | Romain Ordonez | Doing |
 |Te3i| Mettre en place un docker-compose permettant de lancer l'application, en vu de sortir des releases | | | 0.5 | Clément Fontenay | DONE |
