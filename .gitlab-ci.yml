@@ -6,8 +6,10 @@ image:
 
 sonar:
   stage: analyse
-  image: java:latest
-  script:
+  services:
+    - java:latest
+  before_script:
     - npm install sonar-scanner@3.1.0
+  script:
     - ls
     - npm run sonar-scanner -s settings.xml
