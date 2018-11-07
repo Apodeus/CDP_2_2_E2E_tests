@@ -1,0 +1,6 @@
+stages:
+  - analyse
+
+sonar:
+  stage: analyse
+  script: sonar-scanner -s sonar_settings.xml
