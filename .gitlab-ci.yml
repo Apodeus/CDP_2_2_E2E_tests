@@ -2,7 +2,7 @@ stages:
   - analyse
 
 image:
-  digitalgenius/alpine-node-java:latest
+  finanzcheck/docker-node-java:latest
 
 sonar:
   stage: analyse
