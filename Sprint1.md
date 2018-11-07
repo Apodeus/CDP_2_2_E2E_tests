@@ -15,8 +15,8 @@
 |Tc1i | Créer un fichier table_projet.sql, créant une nouvelle table Projet à la base de donnée CP. | 3, 4, 5 | Tc1d | 0.5 | | TODO |
 |Tc2d | Spécifier les champs de la table Issue en base de donnée dans le fichier SpecDB.md | 8,11 |  | 0.5 | | TODO
 |Tc2i | Créer un fichier table_issue.sql créant une nouvelle table Issue à la base de donnée CP.  | 8,11 | Tc2d | 0.5 | | TODO |
-|Tc3d | Spécifier les champs de la table User en base de donnée dans le fichier SpecDB.md | 3, 4 |  | 0.5 | | DOING |
-|Tc3i | Créer un fichier table_User.sql créant une nouvelle table User à la base de donnée CP.  | 8,11 | Tc3d | 0.5 | |TODO |
+|Tc3d | Spécifier les champs de la table User en base de donnée dans le fichier SpecDB.md | 3, 4 |  | 0.5 | | DONE |
+|Tc3i | Créer un fichier table_User.sql créant une nouvelle table User à la base de donnée CP.  | 8,11 | Tc3d | 0.5 | | DOING |
 |-- | -- Application (Middle) -- |--|--|--|--|--|
 |Tc4d | Spécifier les méthodes fournies par le DAO ProjetDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | | TODO |
 |Tc4i | Implémenter la classe ProjectDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc4d | 0.5 | | TODO |
