@@ -9,8 +9,11 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies" : { 
-		"express": "expressjs/express",
-		"mysql2": "<=1.6.1"
-	}
+  "dependencies": {
+    "express": "expressjs/express",
+    "mysql2": "<=1.6.1"
+  },
+  "devDependencies": {
+    "sonar-scanner": "^3.1.0"
+  }
 }
