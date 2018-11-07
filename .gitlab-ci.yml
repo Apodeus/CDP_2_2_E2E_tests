@@ -1,6 +1,8 @@
 stages:
   - analyse
 
+image: node:latest
+
 sonar:
   stage: analyse
   script: npm run sonar-scanner -s settings.xml
