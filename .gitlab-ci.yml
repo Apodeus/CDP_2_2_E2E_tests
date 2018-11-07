@@ -5,4 +5,6 @@ image: node:latest
 
 sonar:
   stage: analyse
-  script: npm run sonar-scanner -s settings.xml
+  script:
+    - npm install sonar-scanner@3.1.0
+    - sonar-scanner -s settings.xml
