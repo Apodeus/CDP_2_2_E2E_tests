@@ -7,4 +7,5 @@ sonar:
   stage: analyse
   script:
     - npm install sonar-scanner@3.1.0
-    - sonar-scanner -s settings.xml
+    - ls
+    - npm run sonar-scanner -s settings.xml
