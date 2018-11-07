@@ -1,7 +1,9 @@
 stages:
   - analyse
 
-image: node:latest
+image:
+   node:latest
+   java:latest
 
 sonar:
   stage: analyse
