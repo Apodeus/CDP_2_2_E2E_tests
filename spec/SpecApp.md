@@ -13,11 +13,11 @@
 
 -User.js
   - Liste des champs :
-    - pseudo
     - id
+    - pseudo
     - email
     - password
   - Liste des méthodes :
-    - constructeur (pseudo, email, password)
+    - constructeur (id, pseudo, email, password)
     - getteurs
     - setteurs
