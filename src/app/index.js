@@ -21,8 +21,6 @@ con.connect(function(err) {
     console.log("Connected to the database!");
 });
 
-
-
 const http = require('http');
 
 var server = http.createServer();
