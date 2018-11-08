@@ -1,5 +1,6 @@
 stages:
   - analyse
+  - deploy
 
 image:
   finanzcheck/docker-node-java:latest
@@ -11,6 +12,6 @@ sonar:
   script:
     - npm run -s sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.plsql.version=5.6 -Dsonar.login=$SONAR_TOKEN
 
-docker:
+docker-img:
     stage: deploy
     script: docker-compose up
