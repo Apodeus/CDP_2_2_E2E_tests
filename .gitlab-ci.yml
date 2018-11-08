@@ -1,6 +1,6 @@
 stages:
-  - analyse
   - deploy
+  - analyse
 
 image:
   finanzcheck/docker-node-java:latest
