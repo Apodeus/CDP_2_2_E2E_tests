@@ -25,4 +25,4 @@ docker-img:
 
     image: docker:latest
     stage: deploy
-    script: docker-compose up
+    script: docker-compose build
