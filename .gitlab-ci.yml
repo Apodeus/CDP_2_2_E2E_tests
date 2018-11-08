@@ -26,5 +26,6 @@ docker-img:
     image: docker:latest
     stage: deploy
     script: 
-    - docker-compose up
+    - docker-compose up --no-start
+    after_script:
     - docker-compose down
