@@ -5,4 +5,4 @@ COPY package.json /usr/src/app/
 RUN npm install
 COPY src/ /usr/src/app/
 EXPOSE 3000
-CMD ["node","app/index.js"]
+CMD ["node","app/ServletConnectedHome.js"]
