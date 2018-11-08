@@ -10,3 +10,13 @@
   - Liste des méthodes :
     - ```User getUserByName(String username) throws Exception;```
     - ```User save(User user) throws Exception;```
+
+-User.js
+  - Liste des champs :
+    - pseudo
+    - id
+    - email
+    - password
+  - Liste des méthodes :
+    - getteurs
+    - setteurs

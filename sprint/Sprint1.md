@@ -40,7 +40,7 @@
 |Tc7i | (Design Tc7d) Implémenter la classe Project.js en suivant le ficiher SpecApp.md | 3,4,5 | | 0.5 | | TODO |
 |Tc8d | Spécifier l'objet Issue qui permet d'utiliser le DAO IssueDAO.js dans le fichier SpecApp.md  | 8,11 | (Tc5d) | 0.5 | | TODO |
 |Tc8i | (Design Tc8d) Implémenter la classe Issue.js en suivant le fichier SpecAdd.md | 8,11 | | 0.5 | | TODO |
-|Tc9d | Spécifier l'objet User qui permet d'utiliseur le DAO UserDAO.js dans le ficiher SpecApp.md | 3,4,5 | (Tc6d) | 0.5 | Antonin Rebufat | TODO |
+|Tc9d | Spécifier l'objet User qui permet d'utiliseur le DAO UserDAO.js dans le ficiher SpecApp.md | 3,4,5 | (Tc6d) | 0.5 | Antonin Rebufat | DOING |
 |Tc9i | (Design Tc9d) Implémenter la classe User.js en suivant le fichier SpecAdd.md | 3,4,5 | | 0.5 | Antonin Rebufat | TODO |
 |Tc10d | Spécifier le fonctionnement du servlet ServletConnectedHome.js, qui est le servlet derrière la page ConnectedHome.html, dans le fichier SpecApp.md. Ce servlet doit permettre de donner un comportement au bouton "Mes Projects" et de redirigé l'utilisateur vers la page "Projects.html" | 3 | | 0.5 | Romain Ordonez | DONE |
 |Tc10i | (Design Tc10d) Implémenter la classe ServletConnectedHome.js en suivant le fichier SpecApp.md | 3 | | 0.5 | Romain Ordonez| TODO |
