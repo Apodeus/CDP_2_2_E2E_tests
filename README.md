@@ -1,3 +1,5 @@
+[![pipeline status](https://gitlab.com/Apodeus/cdp2_2/badges/master/pipeline.svg)](https://gitlab.com/Apodeus/cdp2_2/commits/master)
+
 # Conduite de Projet - M2 GL
 # Clément Fontenay, Antonin Rebufat, Romain Ordonez
 
