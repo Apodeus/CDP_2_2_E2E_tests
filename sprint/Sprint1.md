@@ -1,3 +1,15 @@
+# Liste des issues
+
+| Id | Issue | Difficulté | Priorité  | Sprint prévu |
+|----|-------|------------|----------|--------|
+| 3  | En tant que développeur, je souhaite pouvoir lister tout les projets, auxquels je participe, sur la page des projets accessibles via un bouton "Mes Projets" présent sur la page d'accueil; dans l'objectif de gérer mes projets  | 1 | Haute | 1 |
+| 4  | En tant que développeur, je souhaite créer un projet en cliquant sur un bouton "créer un nouveau projet", renvoyant vers une page où se trouve un formulaire demandant toutes les informations nécessaires à la création d'un projet :nom*, description, date de début*, durée d'un sprint*; et valider la création du projet en cliquant sur le bouton "Valider & Créer"; dans l'objectif de le gérer  | 2 | Haute | 1 |
+| 5  | En tant que développeur, je souhaite modifier un projet via la page du projet en cliquant sur le bouton "modifier projet", en remplissant un formulaire pré-rempli avec les informations de création (celui de l'issue 4) et valider les modifications en cliquant sur le bouton "Enregistrer les modifications"; dans l'objectif de corriger/réviser une/des information(s) du projet|2|Haute| 1 |
+| 8  | En tant que développeur, je souhaite ajouter une Issue (id*, titre*, description(user story)* , difficulté*, priorité*, planification (appartenance au Sprint)) au backlog via l'onglet "Backlog" du projet en cliquant sur le bouton "Ajouter Issue" qui me renvoie sur une page contenant un formulaire avec les informations décrites plus haut; dans l'objectif d'ajouter une nouvelle US au projet | 3 | Haute | 1 |
+| 11 | En tant que développeur, je souhaite lister les Issues via l'onglet "Backlog" du projet, ce qui me renvoie vers une page avec la liste des Issues me permettant de voir les informations relatives aux Issues dans l'objectif de planifier le projet | 1 | Haute | 1 |
+
+# Liste des tâches
+
 | id | description | Issue affiliée | Dépendances | Chiffrage en J/H | Affectation | Statut
 |-|-|-|-|-|-|-|
 |Tt1d | Spécifier le(s) scénario(s) de test de l'issue 3 dans le fichier Test1Issue3.md concernant le listage des projets | 3 |  | 0.5 | Clément Fontenay | DONE  |
