@@ -17,7 +17,6 @@ con.connect(function(err) {
   if (err){
       throw err;
   }
-  for (var i = 0; i < 10; i++)
   console.log("Connected to the database!");
 });
 
