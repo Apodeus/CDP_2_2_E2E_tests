@@ -11,13 +11,26 @@
     - ```User getUserByName(String username) throws Exception;```
     - ```User save(User user) throws Exception;```
 
--User.js
+- User.js
   - Liste des champs :
     - id
     - pseudo
     - email
     - password
   - Liste des méthodes :
-    - constructeur (id, pseudo, email, password)
+    - constructeur (pseudo, email, password)
+    - getteurs
+    - setteurs
+
+- Project.js
+  - Liste des champs :
+    - name
+    - description
+    - startDate
+    - sprintLength
+    - owner
+    - participants
+  - Liste des méthodes :
+    - constructeur (name, description, startDate, sprintLength, owner)
     - getteurs
     - setteurs
