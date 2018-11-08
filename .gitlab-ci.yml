@@ -13,6 +13,16 @@ sonar:
     - npm run -s sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.plsql.version=5.6 -Dsonar.login=$SONAR_TOKEN
 
 docker-img:
+    services:
+    - docker:dind
+    
+    before_script:
+    - docker info
+    - apk update
+    - apk upgrade
+    - apk add python python-dev py-pip build-base
+    - pip install docker-compose
+
     image: docker:latest
     stage: deploy
     script: docker-compose up
