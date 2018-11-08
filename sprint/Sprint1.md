@@ -1,3 +1,15 @@
+# Liste des issues
+
+| Id | Issue | Difficulté | Priorité  | Sprint prévu |
+|----|-------|------------|----------|--------|
+| 3  | En tant que développeur, je souhaite pouvoir lister tout les projets, auxquels je participe, sur la page des projets accessibles via un bouton "Mes Projets" présent sur la page d'accueil; dans l'objectif de gérer mes projets  | 1 | Haute | 1 |
+| 4  | En tant que développeur, je souhaite créer un projet en cliquant sur un bouton "créer un nouveau projet", renvoyant vers une page où se trouve un formulaire demandant toutes les informations nécessaires à la création d'un projet :nom*, description, date de début*, durée d'un sprint*; et valider la création du projet en cliquant sur le bouton "Valider & Créer"; dans l'objectif de le gérer  | 2 | Haute | 1 |
+| 5  | En tant que développeur, je souhaite modifier un projet via la page du projet en cliquant sur le bouton "modifier projet", en remplissant un formulaire pré-rempli avec les informations de création (celui de l'issue 4) et valider les modifications en cliquant sur le bouton "Enregistrer les modifications"; dans l'objectif de corriger/réviser une/des information(s) du projet|2|Haute| 1 |
+| 8  | En tant que développeur, je souhaite ajouter une Issue (id*, titre*, description(user story)* , difficulté*, priorité*, planification (appartenance au Sprint)) au backlog via l'onglet "Backlog" du projet en cliquant sur le bouton "Ajouter Issue" qui me renvoie sur une page contenant un formulaire avec les informations décrites plus haut; dans l'objectif d'ajouter une nouvelle US au projet | 3 | Haute | 1 |
+| 11 | En tant que développeur, je souhaite lister les Issues via l'onglet "Backlog" du projet, ce qui me renvoie vers une page avec la liste des Issues me permettant de voir les informations relatives aux Issues dans l'objectif de planifier le projet | 1 | Haute | 1 |
+
+# Liste des tâches
+
 | id | description | Issue affiliée | Dépendances | Chiffrage en J/H | Affectation | Statut
 |-|-|-|-|-|-|-|
 |Tt1d | Spécifier le(s) scénario(s) de test de l'issue 3 dans le fichier Test1Issue3.md concernant le listage des projets | 3 |  | 0.5 | Clément Fontenay | DONE  |
@@ -12,7 +24,7 @@
 |Tt5i | Créer le(s) test(s) du fichier Test5Issue11.md concernant le listage des issues d'un projet | 11 | Tt5d | 0.5 | | TODO  |
 |-- | -- BDD --|--|--|--|--|--|
 |Tc1d | Spécifier les champs de la table projects en base de donnée dans le fichier SpecDB.md | 3, 4, 5 | | 0.5 | Antonin Rebufat | DONE |
-|Tc1i | Créer un fichier table_projects.sql, créant une nouvelle table Projet à la base de donnée CP. | 3, 4, 5 | Tc1d | 0.5 | Antonin Rebufat | DOING |
+|Tc1i | Créer un fichier table_projects.sql, créant une nouvelle table Projet à la base de donnée CP. | 3, 4, 5 | Tc1d | 0.5 | Antonin Rebufat | DONE |
 |Tc2d | Spécifier les champs de la table issues en base de donnée dans le fichier SpecDB.md | 8,11 |  | 0.5 | | TODO
 |Tc2i | Créer un fichier table_issues.sql créant une nouvelle table Issue à la base de donnée CP.  | 8,11 | Tc2d | 0.5 | | TODO |
 |Tc3d | Spécifier les champs de la table users en base de donnée dans le fichier SpecDB.md | 3, 4 |  | 0.5 | Antonin Rebufat | DONE |
@@ -64,7 +76,7 @@
 |Tc25d | Spécifier la structure du template tabsBar.html dans le fichier SpecFront.md. Ce template permettra de représenter une barre d'onglet facilitant l'intéraction avec l'application ainsi que sa composation par l'application en fonction de la page actuelle.| All |  | 0.5 | | TODO |
 |Tc25i | (Design Tc25d :) En se basant sur le fichier SpecFront.md : Créer un fichier tabsBar.html. Implémenter la structure en fonction de ce qui a été définit dans le fichier SpecFront.md | All | Tc25d  | 0.5 | | TODO |
 |--|-- ENVIRONNEMENT --|--|--|--|--|--|
-|Te1i| Mettre en place un linter pour contrôler le code HTML et JavaScript | | | 0.5 | Romain Ordonez | TODO |
+|Te1i| Mettre en place un linter pour contrôler le code HTML et JavaScript | | | 0.5 | Romain Ordonez | DONE |
 |Te2i| Mettre en place des tests qui seront lancé automatiquement et qui garde un historique des résultats | | | 0.5 | Romain Ordonez | Doing |
 |Te3i| Mettre en place un docker-compose permettant de lancer l'application, en vu de sortir des releases | | | 0.5 | Clément Fontenay | DONE |
 |Te4i| Créer une page regroupant les différentes releases | | | 0.5 | Clément Fontenay | TODO |

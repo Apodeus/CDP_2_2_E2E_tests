@@ -1,4 +1,5 @@
 stages:
+  - deploy
   - analyse
 
 image:
@@ -9,5 +10,22 @@ sonar:
   before_script:
     - npm install sonar-scanner@3.1.0
   script:
-    - ls
-    - npm run sonar-scanner -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=4cd26046108dc8f90fdb2ea79bd015cdc1d98182
+    - npm run -s sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.plsql.version=5.6 -Dsonar.login=$SONAR_TOKEN
+
+docker-img:
+    services:
+    - docker:dind
+    
+    before_script:
+    - docker info
+    - apk update
+    - apk upgrade
+    - apk add python python-dev py-pip build-base
+    - pip install docker-compose
+
+    image: docker:latest
+    stage: deploy
+    script: 
+    - docker-compose up --no-start
+    after_script:
+    - docker-compose down

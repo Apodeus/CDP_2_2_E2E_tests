@@ -5,7 +5,4 @@ CREATE TABLE users(
   pseudo VARCHAR(20) NOT NULL,
   email VARCHAR(60) NOT NULL,
   password VARCHAR(20) NOT NULL
-);
-
-INSERT INTO users (id, pseudo, email, password) values (0, "admin", "admin", "admin");
-SELECT * FROM users;
+)ENGINE=InnoDB;
