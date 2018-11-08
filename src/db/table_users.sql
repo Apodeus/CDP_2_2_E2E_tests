@@ -6,5 +6,3 @@ CREATE TABLE users(
   email VARCHAR(60) NOT NULL,
   password VARCHAR(20) NOT NULL
 ) ENGINE=InnoDB;
-
---INSERT INTO users (id, pseudo, email, password) values (0, "admin", "admin@admin.com", "admin");

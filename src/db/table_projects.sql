@@ -18,10 +18,3 @@ CREATE TABLE projects_participants(
   FOREIGN KEY (user) REFERENCES users (id),
   FOREIGN KEY (project) REFERENCES projects (id)
 ) ENGINE=InnoDB;
-
-INSERT INTO projects(id, name, description, start_date, sprint_length, owner) VALUES (0, "test", "test", DATE '2012-12-12', 2, 0);
-
-SELECT projects.*, users.pseudo FROM projects INNER JOIN users ON owner=users.id;
-
-INSERT INTO projects_participants(user, project) VALUES (0,0);
-SELECT * FROM projects_participants;
