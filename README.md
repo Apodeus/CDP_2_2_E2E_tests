@@ -1,6 +1,7 @@
 [![pipeline status](https://gitlab.com/Apodeus/cdp2_2/badges/master/pipeline.svg)](https://gitlab.com/Apodeus/cdp2_2/commits/master)
 [![quality gate](https://sonarcloud.io/api/project_badges/measure?project=cdp%3Acdp&metric=alert_status)](https://sonarcloud.io/dashboard?id=cdp%3Acdp)
 [![coverage](https://sonarcloud.io/api/project_badges/measure?project=cdp%3Acdp&metric=coverage)](https://sonarcloud.io/dashboard?id=cdp%3Acdp)
+[![code smells](https://sonarcloud.io/api/project_badges/measure?project=cdp%3Acdp&metric=code_smells)](https://sonarcloud.io/dashboard?id=cdp%3Acdp)
 
 # Conduite de Projet - M2 GL
 # Clément Fontenay, Antonin Rebufat, Romain Ordonez
