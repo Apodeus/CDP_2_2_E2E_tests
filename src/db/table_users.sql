@@ -5,4 +5,4 @@ CREATE TABLE users(
   pseudo VARCHAR(20) NOT NULL,
   email VARCHAR(60) NOT NULL,
   password VARCHAR(20) NOT NULL
-) ENGINE=InnoDB;
+)ENGINE=InnoDB;

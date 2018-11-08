@@ -5,7 +5,7 @@ let con = mysql.createConnection({
   port:3306,
   database: "cdp",
   pool: {
-    max: 5,
+    max: 50,
     min: 0,
     acquire: 30000,
     idle: 10000
@@ -13,13 +13,15 @@ let con = mysql.createConnection({
   user: "user",
   password: "root"
 });
-
 con.connect(function(err) {
   if (err){
       throw err;
   }
+  for (var i = 0; i < 10; i++)
   console.log("Connected to the database!");
 });
+
+
 
 const http = require('http');
 
@@ -29,10 +31,7 @@ server.on('request', function(req, res) {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.end('Salut tout le monde !');
+  
 });
-
-server.on('listen', function() {
-  console.log('Server started!');
-})
 
 server.listen(3000);
