@@ -18,5 +18,6 @@
     - email
     - password
   - Liste des méthodes :
+    - constructeur (pseudo, email, password)
     - getteurs
     - setteurs
