@@ -60,7 +60,7 @@
 |Tc17i | Implémenter la classe TabBuilder.js en suivant le fichier SpecApp.md | 8,11 | | 0.5 | | TODO |
 |--|-- FRONT --|--|--|--|--|--|
 |Tc18d|Spécifier le contenu de la page ConnectedHome.html dans le fichier SpecFront.md, qui correspond à l'affichage de l'accueil d'un utilisateur connecté | 3 || 0.5 | Clément Fontenay | DONE |
-|Tc18i|(Design Tc18d) Implémenter le fichier ConnectedHome.html conformément au fichier SpecFront.md | 3 |Tc18d| 0.5 | Clément Fontenay | DOING |
+|Tc18i|(Design Tc18d) Implémenter le fichier ConnectedHome.html conformément au fichier SpecFront.md | 3 |Tc18d| 0.5 | Clément Fontenay | DONE |
 |Tc19d|Spécifier le contenu de la page Projects.html dans le fichier SpecFront.md, qui correspond à l'affichage de l'ensemble des Projects d'un utilisateur | 3 || 0.5 | | TODO |
 |Tc19i|(Design Tc19d) Implémenter le fichier Projects.html conformément au fichier SpecFront.md | 3 |Tc19d| 0.5 | | TODO |
 |Tc20d|Spécifier le contenu de la page CreateProject.html dans le fichier SpecFront.md, qui corrrespond à la page de création d'un nouveau Project | 4 || 0.5 | | TODO |
