@@ -79,5 +79,5 @@
 |Te1i| Mettre en place un linter pour contrôler le code HTML et JavaScript | | | 0.5 | Romain Ordonez | DONE |
 |Te2i| Mettre en place des tests qui seront lancé automatiquement et qui garde un historique des résultats | | | 0.5 | Romain Ordonez | Doing |
 |Te3i| Mettre en place un docker-compose permettant de lancer l'application, en vu de sortir des releases | | | 0.5 | Clément Fontenay | DONE |
-|Te4i| Créer une page regroupant les différentes releases | | | 0.5 | Clément Fontenay | TODO |
+|Te4i| Créer une page regroupant les différentes releases | | | 0.5 | Clément Fontenay | DOING |
 |Te5i| Mettre en place un outil pour générer la documentation | | | 0.5 | | TODO |
