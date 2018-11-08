@@ -76,7 +76,7 @@
 |Tc25d | Spécifier la structure du template tabsBar.html dans le fichier SpecFront.md. Ce template permettra de représenter une barre d'onglet facilitant l'intéraction avec l'application ainsi que sa composation par l'application en fonction de la page actuelle.| All |  | 0.5 | | TODO |
 |Tc25i | (Design Tc25d :) En se basant sur le fichier SpecFront.md : Créer un fichier tabsBar.html. Implémenter la structure en fonction de ce qui a été définit dans le fichier SpecFront.md | All | Tc25d  | 0.5 | | TODO |
 |--|-- ENVIRONNEMENT --|--|--|--|--|--|
-|Te1i| Mettre en place un linter pour contrôler le code HTML et JavaScript | | | 0.5 | Romain Ordonez | TODO |
+|Te1i| Mettre en place un linter pour contrôler le code HTML et JavaScript | | | 0.5 | Romain Ordonez | DONE |
 |Te2i| Mettre en place des tests qui seront lancé automatiquement et qui garde un historique des résultats | | | 0.5 | Romain Ordonez | Doing |
 |Te3i| Mettre en place un docker-compose permettant de lancer l'application, en vu de sortir des releases | | | 0.5 | Clément Fontenay | DONE |
 |Te4i| Créer une page regroupant les différentes releases | | | 0.5 | Clément Fontenay | TODO |
