@@ -10,7 +10,7 @@ sonar:
   before_script:
     - npm install sonar-scanner@3.1.0
   script:
-    - npm run -s sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.plsql.version=5.6 -Dsonar.login=$SONAR_TOKEN
+    - npm run -s sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.plsql.version=5.6 -Dbranch.name=$CI_COMMIT_REF_NAME -Dsonar.login=$SONAR_TOKEN
 
 docker-img:
     services:
