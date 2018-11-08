@@ -8,3 +8,4 @@ CREATE TABLE users(
 );
 
 INSERT INTO users (id, pseudo, email, password) values (0, "admin", "admin", "admin");
+SELECT * FROM users;

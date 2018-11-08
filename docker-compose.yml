@@ -6,13 +6,18 @@ services:
     build: .
     ports:
       - "3000:3000"
+    depends_on:
+      database:
+        condition: service_started
     links:
       - "database"
   database:
     container_name: database
-    image: mysql:5.6
-    expose:
-    - "3306"
+    build: 
+      context: . 
+      dockerfile: dockerDB/Dockerfile
+    ports:
+      - "3306:3306"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: cdp
@@ -22,8 +27,6 @@ services:
       MYSQL_PASSWORD: root
     volumes:
       - ./data:/data/db
-    ports:
-      - "3306:3306"
   adminer:
     container_name: adminer
     image: adminer
