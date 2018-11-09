@@ -22,7 +22,11 @@ let connectionDB = mysql.createConnection({
 
 /*Temporaire: pour montrer que l'on a bien un début de gestion d'utilisateur*/ 
 let userDAO = new UserDAO(connectionDB);
-userDAO.save(new User("user", "user@gmail.com", "user"), (x) => console.log(x));
+let connectedUser;
+userDAO.save(new User("user", "user@gmail.com", "user"), function(x){ 
+    connectedUser = x;
+    module.exports.connectedUser = connectedUser;
+}  );
 
 let app = express();
 const pathNameFiles = "/../html/ConnectedHome";
@@ -55,3 +59,6 @@ function addScriptToHTML(res){
     let script = fs.readFileSync(__dirname+pathNameFiles+".js", "utf8");
     res.write("<script>"+script+"</script>");
 }
+
+
+module.exports.connectionDB = connectionDB;
