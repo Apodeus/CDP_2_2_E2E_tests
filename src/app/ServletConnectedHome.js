@@ -1,6 +1,12 @@
 const mysql = require('mysql2');
+const express = require('express');
+const path = require("path");
+const jsdom = require("jsdom").JSDOM;
+const fs = require('fs');
+let UserDAO = require("./UserDAO");
+let User = require('./User');
 
-let con = mysql.createConnection({
+let connectionDB = mysql.createConnection({
   host: "database",
   port:3306,
   database: "cdp",
@@ -13,19 +19,10 @@ let con = mysql.createConnection({
   user: "user",
   password: "root"
 });
-con.connect(function(err) {
-  if (err){
-      throw err;
-  }
-  console.log("Connected to the database!");
-});
 
-
-
-const express = require('express');
-const path = require("path");
-const jsdom = require("jsdom").JSDOM;
-const fs = require('fs');
+/*Temporaire: pour montrer que l'on a bien un début de gestion d'utilisateur*/ 
+let userDAO = new UserDAO(connectionDB);
+userDAO.save(new User("user", "user@gmail.com", "user"), (x) => console.log(x));
 
 let app = express();
 const pathNameFiles = "/../html/ConnectedHome";
