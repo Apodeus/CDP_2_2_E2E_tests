@@ -64,7 +64,7 @@ class Project{
 
   addParticipant(user){
     let index=-1;
-    for(var i=0; i<this._participants.length-1; i++){
+    for(var i=0; i < this._participants.length; i++){
       if(user.id===this._participants[i].id){
         index=i;
       }
@@ -76,7 +76,7 @@ class Project{
 
   removeParticipant(user){
     let index=-1;
-    for(var i=0; i<this._participants.length-1; i++){
+    for(var i=0; i<this._participants.length; i++){
       if(user.id===this._participants[i].id){
         index=i;
       }
