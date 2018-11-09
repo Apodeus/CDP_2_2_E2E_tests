@@ -41,4 +41,10 @@ module.exports = class User{
   toString(){
     return (this._id === undefined ? "undefined" : this._id) + " "+this._pseudo+" "+this._email+" "+this._password;
   }
+<<<<<<< HEAD
 };
+=======
+}
+
+module.exports = User;
+>>>>>>> e4546d4... Ajout de Project.js
