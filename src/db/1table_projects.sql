@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS projects;
 DROP TABLE IF EXISTS projects_participants;
 
 CREATE TABLE projects(
-  id INTEGER PRIMARY KEY NOT NULL,
+  id INTEGER NOT NULL auto_increment PRIMARY KEY ,
   name VARCHAR(20) NOT NULL,
   description VARCHAR(280) NOT NULL,
   start_date DATE NOT NULL,

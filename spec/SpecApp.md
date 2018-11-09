@@ -3,13 +3,13 @@
 
 - ProjetDAO.js :
   - Liste des méthodes :
-    - ```List<Project> getAllByUser(User user);```
-    - ```Project save(Project Project) throws Exception;```
+    - ```List<Project> getAllByUser(User user, function(resultProjects));```
+    - ```Project save(Project Project, function(resultProject)) throws Exception;```
 
 - UserDAO.js :
   - Liste des méthodes :
-    - ```User getUserByName(String username) throws Exception;```
-    - ```User save(User user) throws Exception;```
+    - ```User getUserByName(String username, function(resultUser)) throws Exception;```
+    - ```User save(User user, function(resultUser)) throws Exception;```
 
 - User.js
   - Liste des champs :
