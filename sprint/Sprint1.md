@@ -43,7 +43,7 @@
 |Tc9d | Spécifier l'objet User qui permet d'utiliseur le DAO UserDAO.js dans le ficiher SpecApp.md | 3,4,5 | (Tc6d) | 0.5 | Antonin Rebufat | DONE |
 |Tc9i | (Design Tc9d) Implémenter la classe User.js en suivant le fichier SpecAdd.md | 3,4,5 | | 0.5 | Antonin Rebufat | DONE |
 |Tc10d | Spécifier le fonctionnement du servlet ServletConnectedHome.js, qui est le servlet derrière la page ConnectedHome.html, dans le fichier SpecApp.md. Ce servlet doit permettre de donner un comportement au bouton "Mes Projects" et de redirigé l'utilisateur vers la page "Projects.html" | 3 | | 0.5 | Romain Ordonez | DONE |
-|Tc10i | (Design Tc10d) Implémenter la classe ServletConnectedHome.js en suivant le fichier SpecApp.md | 3 | | 0.5 | Clément Fontenay| DOING |
+|Tc10i | (Design Tc10d) Implémenter la classe ServletConnectedHome.js en suivant le fichier SpecApp.md | 3 | | 0.5 | Clément Fontenay| DONE |
 |Tc11d | Spécifier le fonctionnement du servlet ServletProjects.js, qui est le servlet derrière la page Projects.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer une liste html contenant les Projects et également de donner un comportemant au bouton "Créer un nouveau Project" en redirigant vers la page "CreerProject.html".  | 3,4 | | 0.5 | | TODO |
 |Tc11i | (Design Tc11d) Implémenter la classe ServletProjects.js en suivant le fichier SpecApp.md | 3 | | 0.5 | | TODO |
 |Tc12d | Spécifier le fonctionnement du servlet ServletCreateProject.js, qui est le servlet derrière la page CreerProject.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer un formulaire html et de donner un comportement au bouton "Valider et Créer"  | 4 | | 0.5 | | TODO |
