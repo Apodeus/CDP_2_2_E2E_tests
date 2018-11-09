@@ -24,7 +24,7 @@ sonar:
     - npm install sonar-scanner@3.1.0
   script:
     - ls
-    - npm run sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.test=src/test -Dsonar.plsql.version=5.6 -Dsonar.branch.name=$CI_COMMIT_REF_NAME -Dsonar.login=$SONAR_TOKEN -Dsonar.javascript.lcov.reportPaths=coverage/lcov-report/lcov.info -Dsonar.testExecutionReportPaths=coverage/clover.xml
+    - npm run sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.test=src/test -Dsonar.plsql.version=5.6 -Dsonar.branch.name=$CI_COMMIT_REF_NAME -Dsonar.login=$SONAR_TOKEN -Dsonar.javascript.lcov.reportPaths=coverage/ -Dsonar.testExecutionReportPath=coverage/
 
 docker-img:
     stage: deploy_analyse
