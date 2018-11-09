@@ -31,7 +31,7 @@
 |Tc3i | Créer un fichier table_users.sql créant une nouvelle table User à la base de donnée CP.  | 8,11 | Tc3d | 0.5 | Antonin Rebufat | DONE |
 |-- | -- Application (Middle) -- |--|--|--|--|--|
 |Tc4d | Spécifier les méthodes fournies par le DAO ProjetDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | Clément Fontenay | DONE |
-|Tc4i | Implémenter la classe ProjectDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc4d | 0.5 | | TODO |
+|Tc4i | Implémenter la classe ProjectDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc4d | 0.5 | Clément Fontenay | DONE |
 |Tc5d | Spécifier les méthodes fournies par le DAO IssueDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | | TODO |
 |Tc5i | (Design Tc5d) Implémenter la classe IssueDAO.js en suivant le fichier SpecApp.md | 8, 11 | Tc5d | 0.5 | | TODO |
 |Tc6d | Spécifier les méthodes fournies par le DAO UserDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | Antonin Rebufat | DONE |
