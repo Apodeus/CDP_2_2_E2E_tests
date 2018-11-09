@@ -4,6 +4,11 @@ stages:
 image:
   finanzcheck/docker-node-java:latest
 
+unit-test:
+  stage: tests
+  before_script: npm install jest
+  script: npm test
+
 sonar:
   stage: deploy_analyse
   before_script:
