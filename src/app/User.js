@@ -42,5 +42,4 @@ module.exports = class User{
     return (this._id === undefined ? "undefined" : this._id) + " "+this._pseudo+" "+this._email+" "+this._password;
   }
 };
-
 module.exports = User;
