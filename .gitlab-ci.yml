@@ -2,10 +2,6 @@ stages:
   - tests
   - deploy_analyse
 
-cache:
-  paths:
-    - coverage/
-
 image:
   finanzcheck/docker-node-java:latest
 
@@ -15,6 +11,9 @@ unit-test:
   - npm install jest
   script:
   - npm test
+  cache:
+    paths:
+      - coverage/
 
 sonar:
   stage: deploy_analyse
