@@ -17,7 +17,7 @@
 |Tt3d | Spécifier le(s) scénario(s) de test de l'issue 5 dans le fichier Test3Issue5.md concernant la modification d'un projet| 5 |  |  0.5 | | TODO |
 |Tt4d | Spécifier le(s) scénario(s) de test de l'issue 8 dans le fichier Test4Issue8.md concernant la création d'issue | 8 |  | 0.5 | | TODO  |  
 |Tt5d | Spécifier le(s) scénario(s) de test de l'issue 11 dans le fichier Test5Issue11.md concernant le listage des issues d'un projet | 11 |  | 0.5 | | TODO  |
-|Tt1i | Créer le(s) test(s) du fichier Test1Issue3.md concernant le listage des projets | 3 | Tt1d | 0.5 | | TODO  |
+|Tt1i | Créer le(s) test(s) du fichier Test1Issue3.md concernant le listage des projets | 3 | Tt1d | 0.5 | Clément Fontenay | DONE  |
 |Tt2i | Créer le(s) test(s) du fichier Test2Issue4.md concernant l'ajout de projets | 4 | Tt2d | 0.5 | | TODO  |
 |Tt3i | Créer le(s) test(s) du fichier Test3Issue5.md concernant la modification d'un projet| 5 | Tt3d | 0.5 | |  TODO |
 |Tt4i | Créer le(s) test(s) du fichier Test4Issue8.md concernant la création d'issue | 8 | Tt4d | 0.5 | | TODO  |  
@@ -31,19 +31,19 @@
 |Tc3i | Créer un fichier table_users.sql créant une nouvelle table User à la base de donnée CP.  | 8,11 | Tc3d | 0.5 | Antonin Rebufat | DONE |
 |-- | -- Application (Middle) -- |--|--|--|--|--|
 |Tc4d | Spécifier les méthodes fournies par le DAO ProjetDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | Clément Fontenay | DONE |
-|Tc4i | Implémenter la classe ProjectDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc4d | 0.5 | | TODO |
+|Tc4i | Implémenter la classe ProjectDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc4d | 0.5 | Clément Fontenay | DONE |
 |Tc5d | Spécifier les méthodes fournies par le DAO IssueDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | | TODO |
 |Tc5i | (Design Tc5d) Implémenter la classe IssueDAO.js en suivant le fichier SpecApp.md | 8, 11 | Tc5d | 0.5 | | TODO |
 |Tc6d | Spécifier les méthodes fournies par le DAO UserDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | Antonin Rebufat | DONE |
-|Tc6i | (Design Tc6d) Implémenter la classe UserDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc6d | 0.5 | | TODO |
-|Tc7d | Spécifier l'objet Projet qui permet d'utiliser le DAO ProjectDAO.js dans le fichier SpecApp.md  | 3,4,5 | (Tc4d) | 0.5 | | TODO |
-|Tc7i | (Design Tc7d) Implémenter la classe Project.js en suivant le ficiher SpecApp.md | 3,4,5 | | 0.5 | | TODO |
+|Tc6i | (Design Tc6d) Implémenter la classe UserDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc6d | 0.5 | Romain Ordonez | DONE |
+|Tc7d | Spécifier l'objet Projet qui permet d'utiliser le DAO ProjectDAO.js dans le fichier SpecApp.md  | 3,4,5 | (Tc4d) | 0.5 | Antonin Rebufat | DONE |
+|Tc7i | (Design Tc7d) Implémenter la classe Project.js en suivant le ficiher SpecApp.md | 3,4,5 | | 0.5 | Antonin Rebufat | DONE |
 |Tc8d | Spécifier l'objet Issue qui permet d'utiliser le DAO IssueDAO.js dans le fichier SpecApp.md  | 8,11 | (Tc5d) | 0.5 | | TODO |
 |Tc8i | (Design Tc8d) Implémenter la classe Issue.js en suivant le fichier SpecAdd.md | 8,11 | | 0.5 | | TODO |
 |Tc9d | Spécifier l'objet User qui permet d'utiliseur le DAO UserDAO.js dans le ficiher SpecApp.md | 3,4,5 | (Tc6d) | 0.5 | Antonin Rebufat | DONE |
-|Tc9i | (Design Tc9d) Implémenter la classe User.js en suivant le fichier SpecAdd.md | 3,4,5 | | 0.5 | Antonin Rebufat | DOING |
+|Tc9i | (Design Tc9d) Implémenter la classe User.js en suivant le fichier SpecAdd.md | 3,4,5 | | 0.5 | Antonin Rebufat | DONE |
 |Tc10d | Spécifier le fonctionnement du servlet ServletConnectedHome.js, qui est le servlet derrière la page ConnectedHome.html, dans le fichier SpecApp.md. Ce servlet doit permettre de donner un comportement au bouton "Mes Projects" et de redirigé l'utilisateur vers la page "Projects.html" | 3 | | 0.5 | Romain Ordonez | DONE |
-|Tc10i | (Design Tc10d) Implémenter la classe ServletConnectedHome.js en suivant le fichier SpecApp.md | 3 | | 0.5 | Romain Ordonez| TODO |
+|Tc10i | (Design Tc10d) Implémenter la classe ServletConnectedHome.js en suivant le fichier SpecApp.md | 3 | | 0.5 | Clément Fontenay| DONE |
 |Tc11d | Spécifier le fonctionnement du servlet ServletProjects.js, qui est le servlet derrière la page Projects.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer une liste html contenant les Projects et également de donner un comportemant au bouton "Créer un nouveau Project" en redirigant vers la page "CreerProject.html".  | 3,4 | | 0.5 | | TODO |
 |Tc11i | (Design Tc11d) Implémenter la classe ServletProjects.js en suivant le fichier SpecApp.md | 3 | | 0.5 | | TODO |
 |Tc12d | Spécifier le fonctionnement du servlet ServletCreateProject.js, qui est le servlet derrière la page CreerProject.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer un formulaire html et de donner un comportement au bouton "Valider et Créer"  | 4 | | 0.5 | | TODO |
@@ -60,9 +60,9 @@
 |Tc17i | Implémenter la classe TabBuilder.js en suivant le fichier SpecApp.md | 8,11 | | 0.5 | | TODO |
 |--|-- FRONT --|--|--|--|--|--|
 |Tc18d|Spécifier le contenu de la page ConnectedHome.html dans le fichier SpecFront.md, qui correspond à l'affichage de l'accueil d'un utilisateur connecté | 3 || 0.5 | Clément Fontenay | DONE |
-|Tc18i|(Design Tc18d) Implémenter le fichier ConnectedHome.html conformément au fichier SpecFront.md | 3 |Tc18d| 0.5 | Clément Fontenay | DOING |
-|Tc19d|Spécifier le contenu de la page Projects.html dans le fichier SpecFront.md, qui correspond à l'affichage de l'ensemble des Projects d'un utilisateur | 3 || 0.5 | | TODO |
-|Tc19i|(Design Tc19d) Implémenter le fichier Projects.html conformément au fichier SpecFront.md | 3 |Tc19d| 0.5 | | TODO |
+|Tc18i|(Design Tc18d) Implémenter le fichier ConnectedHome.html conformément au fichier SpecFront.md | 3 |Tc18d| 0.5 | Clément Fontenay | DONE |
+|Tc19d|Spécifier le contenu de la page Projects.html dans le fichier SpecFront.md, qui correspond à l'affichage de l'ensemble des Projects d'un utilisateur | 3 || 0.5 | Clément Fontenay | DONE |
+|Tc19i|(Design Tc19d) Implémenter le fichier Projects.html conformément au fichier SpecFront.md | 3 |Tc19d| 0.5 | Clément Fontenay | DONE |
 |Tc20d|Spécifier le contenu de la page CreateProject.html dans le fichier SpecFront.md, qui corrrespond à la page de création d'un nouveau Project | 4 || 0.5 | | TODO |
 |Tc20i|(Design Tc20d) Implémenter le fichier CreateProject.html conformément au fichier SpecFront.md | 4 |Tc20d| 0.5 | | TODO |
 |Tc21d|Spécifier le contenu de la page Project.html dans le fichier SpecFront.md, qui correspond à l'affichage d'un Project | 5 || 0.5 | | TODO |

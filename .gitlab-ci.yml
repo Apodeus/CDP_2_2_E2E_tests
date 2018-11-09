@@ -1,8 +1,16 @@
 stages:
+  - tests
   - deploy_analyse
 
 image:
   finanzcheck/docker-node-java:latest
+
+unit-test:
+  stage: tests
+  before_script:
+  - npm install jest
+  script:
+  - npm test
 
 sonar:
   stage: deploy_analyse
@@ -15,7 +23,7 @@ docker-img:
     stage: deploy_analyse
     services:
     - docker:dind
-    
+
     before_script:
     - docker info
     - apk update
@@ -24,7 +32,7 @@ docker-img:
     - pip install docker-compose
 
     image: docker:latest
-    script: 
+    script:
     - docker-compose up --no-start
     after_script:
     - docker-compose down
