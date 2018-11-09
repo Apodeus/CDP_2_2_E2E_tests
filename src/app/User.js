@@ -43,3 +43,5 @@ class User{
     return this._id+" "+this._pseudo+" "+this._email+" "+this._password;
   }
 }
+
+module.exports = User;
