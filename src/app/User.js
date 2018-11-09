@@ -1,4 +1,4 @@
-module.exports = class User{
+class User{
 
   constructor(pseudo, email, password){
     this._pseudo=pseudo;
@@ -41,4 +41,6 @@ module.exports = class User{
   toString(){
     return (this._id === undefined ? "undefined" : this._id) + " "+this._pseudo+" "+this._email+" "+this._password;
   }
-};
+}
+
+module.exports = User;

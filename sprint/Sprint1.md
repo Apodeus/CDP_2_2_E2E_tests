@@ -36,8 +36,8 @@
 |Tc5i | (Design Tc5d) Implémenter la classe IssueDAO.js en suivant le fichier SpecApp.md | 8, 11 | Tc5d | 0.5 | | TODO |
 |Tc6d | Spécifier les méthodes fournies par le DAO UserDAO.js dans le fichier SpecApp.md | 3, 4, 5 | | 0.5 | Antonin Rebufat | DONE |
 |Tc6i | (Design Tc6d) Implémenter la classe UserDAO.js en suivant le fichier SpecApp.md | 3, 4, 5 | Tc6d | 0.5 | Romain Ordonez | DONE |
-|Tc7d | Spécifier l'objet Projet qui permet d'utiliser le DAO ProjectDAO.js dans le fichier SpecApp.md  | 3,4,5 | (Tc4d) | 0.5 | | TODO |
-|Tc7i | (Design Tc7d) Implémenter la classe Project.js en suivant le ficiher SpecApp.md | 3,4,5 | | 0.5 | Antonin Rebufat | DOING |
+|Tc7d | Spécifier l'objet Projet qui permet d'utiliser le DAO ProjectDAO.js dans le fichier SpecApp.md  | 3,4,5 | (Tc4d) | 0.5 | Antonin Rebufat | DONE |
+|Tc7i | (Design Tc7d) Implémenter la classe Project.js en suivant le ficiher SpecApp.md | 3,4,5 | | 0.5 | Antonin Rebufat | DONE |
 |Tc8d | Spécifier l'objet Issue qui permet d'utiliser le DAO IssueDAO.js dans le fichier SpecApp.md  | 8,11 | (Tc5d) | 0.5 | | TODO |
 |Tc8i | (Design Tc8d) Implémenter la classe Issue.js en suivant le fichier SpecAdd.md | 8,11 | | 0.5 | | TODO |
 |Tc9d | Spécifier l'objet User qui permet d'utiliseur le DAO UserDAO.js dans le ficiher SpecApp.md | 3,4,5 | (Tc6d) | 0.5 | Antonin Rebufat | DONE |
