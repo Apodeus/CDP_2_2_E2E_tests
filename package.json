@@ -13,11 +13,20 @@
     "express": "expressjs/express",
     "fs": "<=11.1.0",
     "jest": "^23.6.0",
+    "jest-sonar-reporter": "^2.0.0",
     "jsdom": "<=13.0.0",
     "mysql2": "<=1.6.1",
     "path": "0.12.7"
   },
   "devDependencies": {
     "sonar-scanner": "^3.1.0"
+  },
+  "jest": {
+    "testResultsProcessor": "jest-sonar-reporter"
+  },
+  "jestSonar": {
+    "reportPath": "reports_sonar",
+    "reportFile": "test-info.xml",
+    "indent": 4
   }
 }
