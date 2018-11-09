@@ -17,7 +17,7 @@
 |Tt3d | Spécifier le(s) scénario(s) de test de l'issue 5 dans le fichier Test3Issue5.md concernant la modification d'un projet| 5 |  |  0.5 | | TODO |
 |Tt4d | Spécifier le(s) scénario(s) de test de l'issue 8 dans le fichier Test4Issue8.md concernant la création d'issue | 8 |  | 0.5 | | TODO  |  
 |Tt5d | Spécifier le(s) scénario(s) de test de l'issue 11 dans le fichier Test5Issue11.md concernant le listage des issues d'un projet | 11 |  | 0.5 | | TODO  |
-|Tt1i | Créer le(s) test(s) du fichier Test1Issue3.md concernant le listage des projets | 3 | Tt1d | 0.5 | Clément Fontenay | DOING  |
+|Tt1i | Créer le(s) test(s) du fichier Test1Issue3.md concernant le listage des projets | 3 | Tt1d | 0.5 | Clément Fontenay | DONE  |
 |Tt2i | Créer le(s) test(s) du fichier Test2Issue4.md concernant l'ajout de projets | 4 | Tt2d | 0.5 | | TODO  |
 |Tt3i | Créer le(s) test(s) du fichier Test3Issue5.md concernant la modification d'un projet| 5 | Tt3d | 0.5 | |  TODO |
 |Tt4i | Créer le(s) test(s) du fichier Test4Issue8.md concernant la création d'issue | 8 | Tt4d | 0.5 | | TODO  |  
