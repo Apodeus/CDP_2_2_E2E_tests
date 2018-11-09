@@ -7,8 +7,10 @@ image:
 
 unit-test:
   stage: tests
-  before_script: npm install jest
-  script: npm test
+  before_script:
+  - npm install jest
+  script:
+  - npm test
 
 sonar:
   stage: deploy_analyse
