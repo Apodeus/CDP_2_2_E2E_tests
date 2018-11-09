@@ -1,7 +1,7 @@
 - ServletConnectedHome.js
   - Méthode get(..) répondant à une requete GET renvoyant la page bien formée en complétant le bouton d'id=MesProjets.
 
-- ProjetDAO.js :
+- ProjectDAO.js :
   - Liste des méthodes :
     - ```List<Project> getAllByUser(User user, function(resultProjects));```
     - ```Project save(Project Project, function(resultProject)) throws Exception;```
