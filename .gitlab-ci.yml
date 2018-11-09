@@ -17,9 +17,13 @@ unit-test:
 
 sonar:
   stage: deploy_analyse
+  cache:
+    paths:
+      - coverage/
   before_script:
     - npm install sonar-scanner@3.1.0
   script:
+    - ls
     - npm run sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.plsql.version=5.6 -Dsonar.branch.name=$CI_COMMIT_REF_NAME -Dsonar.login=$SONAR_TOKEN -Dsonar.javascript.lcov.reportPaths=coverage/jest/lcov.info -Dsonar.testExecutionReportPaths=coverage/jest/testlog.xml
 
 docker-img:
