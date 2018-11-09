@@ -1,5 +1,5 @@
-const jest = require('../app/User');
-const jest = require('../app/Project');
+const User = require('../app/User');
+const Project = require('../app/Project');
 
 
 let antonin;
@@ -16,18 +16,19 @@ beforeEach(()=>{
 
 test('project add romain as dev', () => {
   expect(project.participants.length).toBe(1);
-  p.addParticipant(romain);
+  project.addParticipant(romain);
   expect(project.participants.length).toBe(2);
 });
 
 test('project not add antonin as dev for a second time', () => {
   expect(project.participants.length).toBe(1);
-  p.addParticipant(antonin);
+  project.addParticipant(antonin);
   expect(project.participants.length).toBe(1);
 });
 
 test('project remove antonin', ()=>{
+  project.addParticipant(romain);
   expect(project.participants.length).toBe(2);
-  p.removeParticipant(antonin);
+  project.removeParticipant(antonin);
   expect(project.participants.length).toBe(1);
 });
