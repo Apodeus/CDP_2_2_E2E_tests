@@ -18,10 +18,12 @@
 |Tt3d | Spécifier le(s) scénario(s) de test de l'issue 5 dans le fichier Test3Issue5.md concernant la modification d'un projet| 5 |  |  0.5 | | TODO |
 |Tt4d | Spécifier le(s) scénario(s) de test de l'issue 8 dans le fichier Test4Issue8.md concernant la création d'issue | 8 |  | 0.5 | | TODO  |  
 |Tt5d | Spécifier le(s) scénario(s) de test de l'issue 11 dans le fichier Test5Issue11.md concernant le listage des issues d'un projet | 11 |  | 0.5 | | TODO  |
+|Tt6d | Spécifier le(s) scénario(s) de test de l'issue 7 dans le fichier Test6Issue7.md | 7 | | 0.5 | | TODO |
 |Tt2i | Créer le(s) test(s) du fichier Test2Issue4.md concernant l'ajout de projets | 4 | Tt2d | 0.5 | | TODO  |
 |Tt3i | Créer le(s) test(s) du fichier Test3Issue5.md concernant la modification d'un projet| 5 | Tt3d | 0.5 | |  TODO |
 |Tt4i | Créer le(s) test(s) du fichier Test4Issue8.md concernant la création d'issue | 8 | Tt4d | 0.5 | | TODO  |  
 |Tt5i | Créer le(s) test(s) du fichier Test5Issue11.md concernant le listage des issues d'un projet | 11 | Tt5d | 0.5 | | TODO  |
+|Tt6i | (Design Tt6d) Créer le(s) test(s) du fichier Test6Issue7.md concernant l'ajout de membre dans un projet. | 7 | | 0.5 | | TODO |
 |-- | -- BDD --|--|--|--|--|--|
 |Tc2d | Spécifier les champs de la table issues en base de donnée dans le fichier SpecDB.md | 8,11 |  | 0.5 | | TODO
 |Tc2i | Créer un fichier table_issues.sql créant une nouvelle table Issue à la base de donnée CP.  | 8,11 | Tc2d | 0.5 | | TODO |
@@ -31,6 +33,7 @@
 |Tc8d | Spécifier l'objet Issue qui permet d'utiliser le DAO IssueDAO.js dans le fichier SpecApp.md  | 8,11 | (Tc5d) | 0.5 | | TODO |
 |Tc8i | (Design Tc8d) Implémenter la classe Issue.js en suivant le fichier SpecAdd.md | 8,11 | | 0.5 | | TODO |
 |Tc11d | Spécifier le fonctionnement du servlet ServletProjects.js, qui est le servlet derrière la page Projects.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer une liste html contenant les Projects et également de donner un comportemant au bouton "Créer un nouveau Project" en redirigant vers la page "CreerProject.html".  | 3,4 | | 0.5 | | TODO |
+|Tc11i | (Design Tc11d) Implémenter la classe ServletProjects.js en suivant le fichier SpecApp.md | 3,4 | | 0.5 | | TODO |
 |Tc12d | Spécifier le fonctionnement du servlet ServletCreateProject.js, qui est le servlet derrière la page CreerProject.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer un formulaire html et de donner un comportement au bouton "Valider et Créer"  | 4 | | 0.5 | | TODO |
 |Tc12i | (Design Tc12d) Implémenter la classe ServletCreateProject.js en suivant le fichier SpecApp.md | 4 | | 0.5 | | TODO  |
 |Tc13d | Spécifier le fonctionnement du servlet ServletProject.js, qui est le servlet derrière la page Project.html, dans le fichier SpecApp.md, Ce servlet doit permettre de générer une vue du Project en html, de donner un comportement au bouton "Modifier Project" et de redirigé l'utilisateur vers la page "ModifierProject.html"  | 5 | | 0.5 | | TODO |
@@ -41,8 +44,14 @@
 |Tc15i | (Design Tc15d) Implémenter la classe ServletBacklog.js en suivant le fichier SpecApp.md | 11 | | 0.5 | | TODO |
 |Tc16d | Spécifier le fonctionnement du servlet ServletAddUS.js, qui est le servlet derrière la page AddUS.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer un formulaire en html, de donner un comportement au bouton "Valider" et de redirigé l'utilisateur vers la page "Backlog.html" | 8 | | 0.5 | | TODO |
 |Tc16i | (Design Tc16d) Implémenter la classe ServletAddUS.js en suivant le fichier SpecApp.md | 8 | | 0.5 | | TODO |
-|Tc17d | Spécifier les méthodes fournies par TabBuilder.js, permettant de construire la barre d'onglet en html, dans le fichier SpecApp.md. Cette classe doit permettre de générer une barre d'onglet en html permettant de redirigé l'utilsateur vers les pages "Project.html", "Backlog.html" | 8, 11 | | 0.5 | | TODO
+|Tc17d | Spécifier les méthodes fournies par TabBuilder.js, permettant de construire la barre d'onglet en html, dans le fichier SpecApp.md. Cette classe doit permettre de générer une barre d'onglet en html permettant de redirigé l'utilsateur vers les pages "Project.html", "Backlog.html" | 8, 11 | | 0.5 | | TODO |
 |Tc17i | Implémenter la classe TabBuilder.js en suivant le fichier SpecApp.md | 8,11 | | 0.5 | | TODO |
+|Tc26i | Ajouter l'onglet "Equip" dans la barre d'onglet, qui permet de redirigé vers ServletEquip.js | 7 | Tc17i | 0.5 | | TODO |
+|Tc27d | Spécifier le fonctionnement du servlet ServletEquip.js, qui est le servlet derrière la page Equip.html, dans le SpecApp.md. Ce servlet doit permettre de donner un comportement au bouton "Ajouter membre" et de redirigé l'utilisateur vers ServletAddEquipMember.js (me formulaire pour ajouter un utilisateur au projet). | 7 | | 0.5 | | TODO |
+|Tc27i | (Design Tc27d) Implémenter le servlet ServletEquip.js en suivant le fichier SpecApp.md. | 7 | | 0.5 | | TODO |
+|Tc28d | Spécifier le fonctionement du servlet ServletAddEquipMember.js, qui renvoie le formulaire AddEquipMember.html pour ajouter un membre sur le projet ouvert, dans SpecApp.md. Ce servlet doit être capable de donner un comportement au bouton "ajouter" de la page html, il doit donc ajouter à l'aide de ProjectDAO.js un membre au projet ouvert. | 7 | | 0.5 | | TODO |
+|Tc28i | Implémenter le servlet Servlet ServletAddEquipMember.js en suivant le fichier SpecApp.md
+| 7 | | 0.5 | |TODO |
 |--|-- FRONT --|--|--|--|--|--|
 |Tc20d|Spécifier le contenu de la page CreateProject.html dans le fichier SpecFront.md, qui corrrespond à la page de création d'un nouveau Project | 4 || 0.5 | | TODO |
 |Tc20i|(Design Tc20d) Implémenter le fichier CreateProject.html conformément au fichier SpecFront.md | 4 |Tc20d| 0.5 | | TODO |
@@ -56,7 +65,10 @@
 |Tc24i  | (Design Tc24d :) En se basant sur le fichier SpecFront.md : Créer un fichier addIssue.html. Ajouter un formulaire avec les champs définis dans le fichier SpecFront.md. Ajouter un bouton "Valider & Ajouter" qui permet de vérifier/valider la saisie de l'utilisateur et ainsi d'ajouter l'issue en base de donnée puis renvoie l'utilisateur vers la page listBacklog.html . Ajouter un bouton "Annuler" qui ne prend pas en compte la saisie de l'utilisateur et le renvoie vers la page listBacklog.html de son projet. | 11 | Tc24d | 0.5 | | TODO |
 |Tc25d | Spécifier la structure du template tabsBar.html dans le fichier SpecFront.md. Ce template permettra de représenter une barre d'onglet facilitant l'intéraction avec l'application ainsi que sa composation par l'application en fonction de la page actuelle.| All |  | 0.5 | | TODO |
 |Tc25i | (Design Tc25d :) En se basant sur le fichier SpecFront.md : Créer un fichier tabsBar.html. Implémenter la structure en fonction de ce qui a été définit dans le fichier SpecFront.md | All | Tc25d  | 0.5 | | TODO |
-|Faire | les tâches pour les issues 10,9,7 | | | | | |
+|Tc29d | Spécifier le contenu de la page Equip.html, qui est la page qui permet d'être redirigé vers l'ajout de membre au projet ouvert, dans SpecFront.md. | 7 | | 0.5 | | TODO |
+|Tc29i | (Design Tc29d) Implémenter Equip.html en suivant le fichier SpecFront.md. | 7 | | 0.5 | | TODO |
+|Tc30d | Spécifier le contenu de la page AddEquipMember.html, qui est un formulaire permettant d'ajouter un membre à l'équipe de projet, dans le SpecFront.md. | 7 | | 0.5 | | TODO |
+|Tc30i | Implémenter AddEquipMember.html en suivant le SpecFront.md | 7 | | 0.5 | | TODO|
 |--|-- ENVIRONNEMENT --|--|--|--|--|--|
 |Te2i| Mettre en place des tests qui seront lancé automatiquement et qui garde un historique des résultats | | | 0.5 | Romain Ordonez | TODO |
 |Te5i| Mettre en place un outil pour générer la documentation | | | 0.5 | | TODO |
