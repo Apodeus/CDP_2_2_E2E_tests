@@ -69,6 +69,8 @@
 |Tc29i | (Design Tc29d) Implémenter Equip.html en suivant le fichier SpecFront.md. | 7 | | 0.5 | | TODO |
 |Tc30d | Spécifier le contenu de la page AddEquipMember.html, qui est un formulaire permettant d'ajouter un membre à l'équipe de projet, dans le SpecFront.md. | 7 | | 0.5 | | TODO |
 |Tc30i | Implémenter AddEquipMember.html en suivant le SpecFront.md | 7 | | 0.5 | | TODO|
+|Tc31d | Spécifier le comportement et l'apparence du bouton "Supprimer" , permettant la suppression de l'US en lien avec ce celui-ci, dans le fichier SpecApp.md | 10 |  | 0.5 | | TODO |
+|Tc31i | (Design Tc31d) En se basant sur le fichier SpecApp.md, implémenter le bouton "Supprimer" se trouvant sur la page listUS.html. Chaque US aura son bouton aligné avec sa description sur la partie droite de la page. Ce bouton permet la suppression de l'US en BDD et rafraichit la page afin d'avoir la nouvelle liste des US. | 10 | Tc31d | 0.5 | | TODO |
 |--|-- ENVIRONNEMENT --|--|--|--|--|--|
 |Te2i| Mettre en place des tests qui seront lancé automatiquement et qui garde un historique des résultats | | | 0.5 | Romain Ordonez | TODO |
 |Te5i| Mettre en place un outil pour générer la documentation | | | 0.5 | | TODO |
