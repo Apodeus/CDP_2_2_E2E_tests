@@ -19,11 +19,15 @@
 |Tt4d | Spécifier le(s) scénario(s) de test de l'US 8 dans le fichier Test4US8.md concernant la création d'US | 8 |  | 0.5 | | TODO  |  
 |Tt5d | Spécifier le(s) scénario(s) de test de l'US 11 dans le fichier Test5US11.md concernant le listage des US d'un projet | 11 |  | 0.5 | | TODO  |
 |Tt6d | Spécifier le(s) scénario(s) de test de l'US 7 dans le fichier Test6US7.md | 7 | | 0.5 | | TODO |
+|Tt7d | Spécifier le(s) scénario(s) de test de l'US 9 dans le fichier Test7US9.md concernant la modification d'une US | 9 |  | 0.5 | | TODO  |
+|Tt8d | Spécifier le(s) scénario(s) de test de l'US 10 dans le fichier Test8US10.md concernant la suppression d'une US | 10 |  | 0.5 | | TODO  |
 |Tt2i | Créer le(s) test(s) du fichier Test2US4.md concernant l'ajout de projets | 4 | Tt2d | 0.5 | | TODO  |
 |Tt3i | Créer le(s) test(s) du fichier Test3US5.md concernant la modification d'un projet| 5 | Tt3d | 0.5 | |  TODO |
 |Tt4i | Créer le(s) test(s) du fichier Test4US8.md concernant la création d'US | 8 | Tt4d | 0.5 | | TODO  |  
 |Tt5i | Créer le(s) test(s) du fichier Test5US11.md concernant le listage des US d'un projet | 11 | Tt5d | 0.5 | | TODO  |
 |Tt6i | (Design Tt6d) Créer le(s) test(s) du fichier Test6US7.md concernant l'ajout de membre dans un projet. | 7 | | 0.5 | | TODO |
+|Tt7i | (Design Tt7d) Créer le(s) test(s) du fichier Test7US9.md concernant la modification d'une US | 9 | | 0.5 | | TODO |
+|Tt8i | (Design Tt8d) Créer le(s) test(s) du fichier Test8US10.md concernant la suppression d'une US | 10 | | 0.5 | | TODO |
 |-- | -- BDD --|--|--|--|--|--|
 |Tc2d | Spécifier les champs de la table US en base de donnée dans le fichier SpecDB.md | 8,11 |  | 0.5 | | TODO
 |Tc2i | Créer un fichier table_US.sql créant une nouvelle table US à la base de donnée CP.  | 8,11 | Tc2d | 0.5 | | TODO |
@@ -34,7 +38,7 @@
 |Tc8i | (Design Tc8d) Implémenter la classe (POJO) US.js en suivant le fichier SpecAdd.md | 8,11 | Tc8d, Tc2d | 0.5 | | TODO |
 |Tc11d | Spécifier le fonctionnement du servlet ServletProjects.js, qui est le servlet derrière la page Projects.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer une liste html contenant les Projects et également de donner un comportemant au bouton "Créer un nouveau Project" en redirigant vers la page "CreerProject.html".  | 3,4 | | 0.5 | | TODO |
 |Tc11i | (Design Tc11d) Implémenter la classe ServletProjects.js en suivant le fichier SpecApp.md.| 3,4 | Tc11d | 0.5 | | TODO |
-|Tc12d | Spécifier le fonctionnement du servlet ServletCreateProject.js, qui est le servlet derrière la page CreerProject.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer un formulaire html et de donner un comportement au bouton "Valider et Créer"  | 4 | | 0.5 | | TODO |
+|Tc12d | Spécifier le fonctionnement du servlet ServletCreateProject.js, qui est le servlet derrière la page CreerProject.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer un formulaire html et de donner un comportement au bouton "Valider et Créer"  | 4 | | 0.5 | Antonin Rebufat |  DONE |
 |Tc12i | (Design Tc12d) Implémenter la classe ServletCreateProject.js en suivant le fichier SpecApp.md | 4 | Tc12d | 0.5 | | TODO  |
 |Tc13d | Spécifier le fonctionnement du servlet ServletProject.js, qui est le servlet derrière la page Project.html, dans le fichier SpecApp.md, Ce servlet doit permettre de générer une vue du Project en html, de donner un comportement au bouton "Modifier Project" et de rediriger l'utilisateur vers la page "ModifierProject.html" | 5 | | 0.5 | | TODO |
 |Tc13i | (Design Tc13d) Implémenter la classe ServletProject.js en suivant le fichier SpecApp.md | 5, 6 | Tc13d | 0.5 | | TODO |
@@ -56,15 +60,15 @@
 |Tc32i| (Design Tc32d) Implémenter le servlet ServletEditUs.js en suivant SpecApp.md | 9 | Tc32d | 0.5 | | TODO |
 |Tc33i | Ajouter l'onglet "Backlog" dans la barre d'onglet, qui permet de rediriger vers ServletBacklog.js et donc Backlog.html | 8,9,10,11 | Tc17i | 0.5 | | TODO |
 |--|-- FRONT --|--|--|--|--|--|
-|Tc20d|Spécifier le contenu de la page CreateProject.html dans le fichier SpecFront.md, qui correspond à la page de création d'un nouveau Project | 4 || 0.5 | | TODO |
+|Tc20d|Spécifier le contenu de la page CreateProject.html dans le fichier SpecFront.md, qui correspond à la page de création d'un nouveau Project | 4 || 0.5 | Romain Ordonez | DONE |
 |Tc20i|(Design Tc20d) Implémenter le fichier CreateProject.html conformément au fichier SpecFront.md. Cette page devra contenir un formulaire respectant le fichier de spécification, ainsi qu'un bouton en bas de page permettant de traiter la saisie de l'utilisateur afin de le sauvegarder en BDD. | 4 |Tc20d| 0.5 | | TODO |
 |Tc21d|Spécifier le contenu de la page Project.html dans le fichier SpecFront.md, qui correspond à l'affichage d'un Project | 5 || 0.5 | | TODO |
 |Tc21i|(Design Tc21d) Implémenter le fichier Project.html conformément au fichier SpecFront.md | 5 |Tc21d| 0.5 | | TODO |
 |Tc22d | Spécifier le contenu et les actions de la page EditProject.html permettant de modifier un projet dans le fichier SpecFront.md | 5 | |  0.5  | | TODO |
 |Tc22i | (Design Tc22d)  En se basant sur le fichier SpecFront.md : Créer un fichier EditProject.html qui affichera un formulaire, ce formulaire sera pré-rempli avec les informations inscrites en base correspondant au projet ciblé. Ajouter un nouveau bouton "Enregistrer" qui permet de venir vérifier/valider la saisie de l'utilisateur et ainsi la mise à jour des informations en base de ce projet et renvoi l'utilisateur vers la page Project.html . Ajouter un nouveau bouton "Annuler" qui permet de revenir sur la page Project.html .| 5 | Tc22d | 0.5 | | TODO |
-|Tc23d | Spécifier le contenu et les actions de la page Backlog.html permettant d'afficher le contenu du backlog (US) du projet dans le fichier SpecFront.md | 8 |  | 0.5 |  | TODO |
+|Tc23d | Spécifier le contenu et les actions de la page Backlog.html permettant d'afficher le contenu du backlog (US) du projet dans le fichier SpecFront.md | 8 |  | 0.5 | Antonin Rebufat | DONE |
 |Tc23i | (Design Tc23d :) En se basant sur le fichier SpecFront.md : Créer un fichier Backlog.html. Ce fichier listera les informations des US présentes en base de donnée liées à ce projet. Ces informations seront affichées dans des rectangles les un en dessous des autres. | 8 | Tc23d  | 0.5 | | TODO |
-|Tc24d |Spécifier le contenu de la page AddUS.html qui doit être un formulaire permettant l'ajout d'une nouvelle US au backlog du projet dans le fichier SpecFront.md | 11 | Tc23d  | 0.5 | | TODO |
+|Tc24d |Spécifier le contenu de la page AddUS.html qui doit être un formulaire permettant l'ajout d'une nouvelle US au backlog du projet dans le fichier SpecFront.md | 11 | Tc23d  | 0.5 | Romain Ordonez | DONE |
 |Tc24i  | (Design Tc24d :) En se basant sur le fichier SpecFront.md : Créer un fichier AddUS.html. Ajouter un formulaire avec les champs définis dans le fichier SpecFront.md. Ajouter un bouton "Valider & Ajouter" qui permet de vérifier/valider la saisie de l'utilisateur et ainsi d'ajouter l'US en base de donnée puis renvoie l'utilisateur vers la page Backlog.html . Ajouter un bouton "Annuler" qui ne prend pas en compte la saisie de l'utilisateur et le renvoie vers la page Backlog.html de son projet. | 11 | Tc24d | 0.5 | | TODO |
 |Tc25d | Spécifier la structure du template tabsBar.html dans le fichier SpecFront.md. Ce template permettra de représenter une barre d'onglet facilitant l'intéraction avec l'application ainsi que sa composation par l'application en fonction de la page actuelle.| All |  | 0.5 | | TODO |
 |Tc25i | (Design Tc25d :) En se basant sur le fichier SpecFront.md : Créer un fichier tabsBar.html. Implémenter la structure en fonction de ce qui a été définit dans le fichier SpecFront.md | All | Tc25d  | 0.5 | | TODO |
@@ -72,7 +76,7 @@
 |Tc29i | (Design Tc29d) Implémenter Equip.html en suivant le fichier SpecFront.md. | 7 | Tc29d | 0.5 | | TODO |
 |Tc30d | Spécifier le contenu de la page AddEquipMember.html, qui est un formulaire permettant d'ajouter un membre à l'équipe de projet, dans le SpecFront.md. | 7 | | 0.5 | | TODO |
 |Tc30i | Implémenter AddEquipMember.html en suivant le SpecFront.md | 7 | Tc30d | 0.5 | | TODO|
-|Tc34i | Implémenter EditUS.html en suivant la spécification du formulaire AddUS.html dans SpecFront.md | 9 | Tc24d | 0.5 | | TODO | 
+|Tc34i | Implémenter EditUS.html en suivant la spécification du formulaire AddUS.html dans SpecFront.md | 9 | Tc24d | 0.5 | | TODO |
 |Tc35d | Spécifier le comportement et l'apparence du bouton "Supprimer" , permettant la suppression de l'US en lien avec ce celui-ci, dans le fichier SpecApp.md | 10 |  | 0.5 | | TODO |
 |Tc35i | (Design Tc31d) En se basant sur le fichier SpecApp.md, implémenter le bouton "Supprimer" se trouvant sur la page listUS.html. Chaque US aura son bouton aligné avec sa description sur la partie droite de la page. Ce bouton permet la suppression de l'US en BDD et rafraichit la page afin d'avoir la nouvelle liste des US. | 10 | Tc35d | 0.5 | | TODO |
 |--|-- ENVIRONNEMENT --|--|--|--|--|--|

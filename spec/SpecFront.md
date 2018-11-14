@@ -6,3 +6,12 @@
 
 - ConnectedHome.js
   - Contient uniquement la fonction clickButtonMesProjets, celle ci a pour but de lancer une requête GET sur avec en paramètre "?MesProjets=" pour ensuite être redirigé.
+
+- CreateProject.html
+  - Formulaire de création d'un projet donné par le servlet ServletCreateProject.js contenant un bouton avec l'id=Validate en bas de la balise div du formulaire (id=Formulaire).
+
+- Backlog.html
+  - Liste des US en base de donné, le fichier contiendra une balise div avec l'id=IssueList.
+
+- AddUS.html
+  - Formulaire de création d'une US donné par le servlet ServletCreateUS.js contenant un bouton avec l'id=Validate en bas de la balise div du formulaire (id=Formulaire).
