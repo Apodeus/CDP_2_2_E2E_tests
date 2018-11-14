@@ -14,10 +14,10 @@
 
 | id | description | US affiliée | Dépendances | Chiffrage en J/H | Affectation | Statut |
 |----|-------------|-------------|-------------|------------------|-------------|--------|
-|Tt2d | Spécifier le(s) scénario(s) de test de l'US 4 dans le fichier Test2US4.md concernant la création de projet| 4 |  | 0.5 | | TODO  |
+|Tt2d | Spécifier le(s) scénario(s) de test de l'US 4 dans le fichier Test2US4.md concernant la création de projet| 4 |  | 0.5 | Romain Ordonez | DOING  |
 |Tt3d | Spécifier le(s) scénario(s) de test de l'US 5 dans le fichier Test3US5.md concernant la modification d'un projet| 5 |  |  0.5 | | TODO |
-|Tt4d | Spécifier le(s) scénario(s) de test de l'US 8 dans le fichier Test4US8.md concernant la création d'US | 8 |  | 0.5 | | TODO  |  
-|Tt5d | Spécifier le(s) scénario(s) de test de l'US 11 dans le fichier Test5US11.md concernant le listage des US d'un projet | 11 |  | 0.5 | | TODO  |
+|Tt4d | Spécifier le(s) scénario(s) de test de l'US 8 dans le fichier Test4US8.md concernant la création d'US | 8 |  | 0.5 | Antonin Rebufat | DOING  |  
+|Tt5d | Spécifier le(s) scénario(s) de test de l'US 11 dans le fichier Test5US11.md concernant le listage des US d'un projet | 11 |  | 0.5 | Clément Fontenay | DOING |
 |Tt6d | Spécifier le(s) scénario(s) de test de l'US 7 dans le fichier Test6US7.md | 7 | | 0.5 | | TODO |
 |Tt7d | Spécifier le(s) scénario(s) de test de l'US 9 dans le fichier Test7US9.md concernant la modification d'une US | 9 |  | 0.5 | | TODO  |
 |Tt8d | Spécifier le(s) scénario(s) de test de l'US 10 dans le fichier Test8US10.md concernant la suppression d'une US | 10 |  | 0.5 | | TODO  |
@@ -46,9 +46,9 @@
 |Tc14i | (Design Tc14d) Implémenter la classe ServletEditProject.js en suivant le fichier SpecApp.md | 5 | Tc14d | 0.5 | | TODO |
 |Tc15d | Spécifier le fonctionnement du servlet ServletBacklog.js, qui est le servlet derrière la page Backlog.html, dans le fichier SpecApp.md. Ce servlet doit permetrre de générer la liste des us en html, de donner un comportement au bouton "Ajouter une US" et de rediriger l'utilisateur sur la page "AddUS.html". Il doit permettre également de donner un comportement aux boutons "modifier" et "supprimer" à côté des US et de rediriger l'utilisateur vers la page "EditUS.html" | 9,10,11 | | 0.5 | | TODO |
 |Tc15i | (Design Tc15d) Implémenter la classe ServletBacklog.js en suivant le fichier SpecApp.md | 11 | Tc15d | 0.5 | | TODO |
-|Tc16d | Spécifier le fonctionnement du servlet ServletAddUS.js, qui est le servlet derrière la page AddUS.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer un formulaire en html, de donner un comportement au bouton "Valider" et de rediriger l'utilisateur vers la page "Backlog.html" | 8 | | 0.5 | | TODO |
+|Tc16d | Spécifier le fonctionnement du servlet ServletAddUS.js, qui est le servlet derrière la page AddUS.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer un formulaire en html, de donner un comportement au bouton "Valider" et de rediriger l'utilisateur vers la page "Backlog.html" | 8 | | 0.5 | Antonin Rebufat | DOING |
 |Tc16i | (Design Tc16d) Implémenter la classe ServletAddUS.js en suivant le fichier SpecApp.md | 8 | Tc16d | 0.5 | | TODO |
-|Tc17d | Spécifier les méthodes fournies par TabBuilder.js, permettant de construire la barre d'onglet en html, dans le fichier SpecApp.md. Cette classe doit permettre de générer une barre d'onglet en html permettant de rediriger l'utilsateur vers les pages "Project.html", "Backlog.html" | 8, 11 | | 0.5 | | TODO |
+|Tc17d | Spécifier les méthodes fournies par TabBuilder.js, permettant de construire la barre d'onglet en html, dans le fichier SpecApp.md. Cette classe doit permettre de générer une barre d'onglet en html permettant de rediriger l'utilsateur vers les pages "Project.html", "Backlog.html" | 8, 11 | | 0.5 | Romain Ordonez | DOING |
 |Tc17i | Implémenter la classe TabBuilder.js en suivant le fichier SpecApp.md | 8,11 | Tc17d | 0.5 | | TODO |
 |Tc26i | Ajouter l'onglet "Equip" dans la barre d'onglet, qui permet de rediriger vers ServletEquip.js | 7 | Tc17i | 0.5 | | TODO |
 |Tc27d | Spécifier le fonctionnement du servlet ServletEquip.js, qui est le servlet derrière la page Equip.html, dans le SpecApp.md. Ce servlet doit permettre de donner un comportement au bouton "Ajouter membre" et de rediriger l'utilisateur vers ServletAddEquipMember.js (le formulaire pour ajouter un utilisateur au projet). | 7 | | 0.5 | | TODO |
