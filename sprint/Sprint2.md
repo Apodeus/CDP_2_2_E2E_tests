@@ -28,7 +28,7 @@
 |Tc2d | Spécifier les champs de la table US en base de donnée dans le fichier SpecDB.md | 8,11 |  | 0.5 | | TODO
 |Tc2i | Créer un fichier table_US.sql créant une nouvelle table US à la base de donnée CP.  | 8,11 | Tc2d | 0.5 | | TODO |
 |-- | -- Application (Middle) -- |--|--|--|--|--|
-|Tc5d | Spécifier les méthodes fournies par le DAO USDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | | TODO |
+|Tc5d | Spécifier les méthodes fournies par le DAO USDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | Clément Fontenay | DONE |
 |Tc5i | (Design Tc5d) Implémenter la classe USDAO.js et les méthodes spécifier dans le fichier SpecApp.md. | 8, 11 | Tc5d, Tc2d | 0.5 | | TODO |
 |Tc8d | Spécifier l'objet US qui permet d'utiliser le DAO USDAO.js dans le fichier SpecApp.md  | 8,11 |  | 0.5 | | TODO |
 |Tc8i | (Design Tc8d) Implémenter la classe (POJO) US.js en suivant le fichier SpecAdd.md | 8,11 | Tc8d, Tc2d | 0.5 | | TODO |
