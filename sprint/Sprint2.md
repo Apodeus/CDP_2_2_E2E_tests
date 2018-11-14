@@ -34,7 +34,7 @@
 |-- | -- Application (Middle) -- |--|--|--|--|--|
 |Tc5d | Spécifier les méthodes fournies par le DAO USDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | Clément Fontenay | DONE |
 |Tc5i | (Design Tc5d) Implémenter la classe USDAO.js et les méthodes spécifier dans le fichier SpecApp.md. | 8, 11 | Tc5d, Tc2d | 0.5 | | TODO |
-|Tc8d | Spécifier l'objet US qui permet d'utiliser le DAO USDAO.js dans le fichier SpecApp.md  | 8,11 |  | 0.5 | | TODO |
+|Tc8d | Spécifier l'objet US qui permet d'utiliser le DAO USDAO.js dans le fichier SpecApp.md  | 8,11 |  | 0.5 | Clément Fontenay | DONE |
 |Tc8i | (Design Tc8d) Implémenter la classe (POJO) US.js en suivant le fichier SpecAdd.md | 8,11 | Tc8d, Tc2d | 0.5 | | TODO |
 |Tc11d | Spécifier le fonctionnement du servlet ServletProjects.js, qui est le servlet derrière la page Projects.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer une liste html contenant les Projects et également de donner un comportemant au bouton "Créer un nouveau Project" en redirigant vers la page "CreateProject.html".  | 3,4 | | 0.5 | Clément Fontenay | DONE |
 |Tc11i | (Design Tc11d) Implémenter la classe ServletProjects.js en suivant le fichier SpecApp.md.| 3,4 | Tc11d | 0.5 | | TODO |

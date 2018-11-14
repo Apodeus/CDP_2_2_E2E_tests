@@ -54,3 +54,15 @@ Les valeurs renvoyés par les DAO sont renvoyées dans les fonctions callback pa
     - constructeur (name, description, startDate, sprintLength, owner)
     - getteurs
     - setteurs
+- US.js
+  - Liste des champs:
+    - id : number
+    - titre : String
+    - description : String
+    - difficulty : number
+    - priority : number
+    - sprint : number
+  - Liste des méthodes:
+    - constructeur (titre, description, difficulty, priority, sprint)
+    - getteurs
+    - setteurs
