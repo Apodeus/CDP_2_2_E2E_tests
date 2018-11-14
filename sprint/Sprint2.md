@@ -32,13 +32,13 @@
 |Tc2d | Spécifier les champs de la table US en base de donnée dans le fichier SpecDB.md | 8,11 |  | 0.5 | | TODO
 |Tc2i | Créer un fichier table_US.sql créant une nouvelle table US à la base de donnée CP.  | 8,11 | Tc2d | 0.5 | | TODO |
 |-- | -- Application (Middle) -- |--|--|--|--|--|
-|Tc5d | Spécifier les méthodes fournies par le DAO USDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | | TODO |
+|Tc5d | Spécifier les méthodes fournies par le DAO USDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | Clément Fontenay | DONE |
 |Tc5i | (Design Tc5d) Implémenter la classe USDAO.js et les méthodes spécifier dans le fichier SpecApp.md. | 8, 11 | Tc5d, Tc2d | 0.5 | | TODO |
 |Tc8d | Spécifier l'objet US qui permet d'utiliser le DAO USDAO.js dans le fichier SpecApp.md  | 8,11 |  | 0.5 | | TODO |
 |Tc8i | (Design Tc8d) Implémenter la classe (POJO) US.js en suivant le fichier SpecAdd.md | 8,11 | Tc8d, Tc2d | 0.5 | | TODO |
-|Tc11d | Spécifier le fonctionnement du servlet ServletProjects.js, qui est le servlet derrière la page Projects.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer une liste html contenant les Projects et également de donner un comportemant au bouton "Créer un nouveau Project" en redirigant vers la page "CreerProject.html".  | 3,4 | | 0.5 | | TODO |
+|Tc11d | Spécifier le fonctionnement du servlet ServletProjects.js, qui est le servlet derrière la page Projects.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer une liste html contenant les Projects et également de donner un comportemant au bouton "Créer un nouveau Project" en redirigant vers la page "CreateProject.html".  | 3,4 | | 0.5 | Clément Fontenay | DONE |
 |Tc11i | (Design Tc11d) Implémenter la classe ServletProjects.js en suivant le fichier SpecApp.md.| 3,4 | Tc11d | 0.5 | | TODO |
-|Tc12d | Spécifier le fonctionnement du servlet ServletCreateProject.js, qui est le servlet derrière la page CreerProject.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer un formulaire html et de donner un comportement au bouton "Valider et Créer"  | 4 | | 0.5 | Antonin Rebufat |  DONE |
+|Tc12d | Spécifier le fonctionnement du servlet ServletCreateProject.js, qui est le servlet derrière la page CreateProject.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer un formulaire html et de donner un comportement au bouton "Valider et Créer"  | 4 | | 0.5 | Antonin Rebufat |  DONE |
 |Tc12i | (Design Tc12d) Implémenter la classe ServletCreateProject.js en suivant le fichier SpecApp.md | 4 | Tc12d | 0.5 | | TODO  |
 |Tc13d | Spécifier le fonctionnement du servlet ServletProject.js, qui est le servlet derrière la page Project.html, dans le fichier SpecApp.md, Ce servlet doit permettre de générer une vue du Project en html, de donner un comportement au bouton "Modifier Project" et de rediriger l'utilisateur vers la page "ModifierProject.html" | 5 | | 0.5 | | TODO |
 |Tc13i | (Design Tc13d) Implémenter la classe ServletProject.js en suivant le fichier SpecApp.md | 5, 6 | Tc13d | 0.5 | | TODO |
