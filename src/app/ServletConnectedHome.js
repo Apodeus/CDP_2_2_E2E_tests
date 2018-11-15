@@ -31,10 +31,9 @@ userDAO.save(new User("user", "user@gmail.com", "user"), function(x){
 let app = express();
 const pathNameFiles = "/../html/ConnectedHome";
 app.listen(3000);
-
 app.use("/projects", require("./ServletProjects"));
 app.get('/', function(req, res) {
-    if (req.query.MesProjets!= undefined){
+    if (req.query.MesProjets!== undefined){
         res.write("/projects");
         res.end();
     }
@@ -47,7 +46,6 @@ app.get('/', function(req, res) {
             res.end();
           });
     }
-  
 });
 
 function configureButton(document){
@@ -59,6 +57,4 @@ function addScriptToHTML(res){
     let script = fs.readFileSync(__dirname+pathNameFiles+".js", "utf8");
     res.write("<script>"+script+"</script>");
 }
-
-
 module.exports.connectionDB = connectionDB;
