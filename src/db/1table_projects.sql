@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS projects_participants;
 CREATE TABLE projects(
   id INTEGER NOT NULL auto_increment PRIMARY KEY ,
   name VARCHAR(20) NOT NULL,
-  description VARCHAR(280) NOT NULL,
+  description VARCHAR(280),
   start_date DATE NOT NULL,
   sprint_length INTEGER NOT NULL,
   owner INTEGER NOT NULL,

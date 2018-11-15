@@ -29,7 +29,7 @@
 |Tt7i | (Design Tt7d) Créer le(s) test(s) du fichier Test7US9.md concernant la modification d'une US | 9 | | 0.5 | | TODO |
 |Tt8i | (Design Tt8d) Créer le(s) test(s) du fichier Test8US10.md concernant la suppression d'une US | 10 | | 0.5 | | TODO |
 |-- | -- BDD --|--|--|--|--|--|
-|Tc2d | Spécifier les champs de la table US en base de donnée dans le fichier SpecDB.md | 8,11 |  | 0.5 | | TODO
+|Tc2d | Spécifier les champs de la table US en base de donnée dans le fichier SpecDB.md | 8,11 |  | 0.5 | Antonin Rebufat | DONE |
 |Tc2i | Créer un fichier table_US.sql créant une nouvelle table US à la base de donnée CP.  | 8,11 | Tc2d | 0.5 | | TODO |
 |-- | -- Application (Middle) -- |--|--|--|--|--|
 |Tc5d | Spécifier les méthodes fournies par le DAO USDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | Clément Fontenay | DONE |
@@ -46,7 +46,7 @@
 |Tc14i | (Design Tc14d) Implémenter la classe ServletEditProject.js en suivant le fichier SpecApp.md | 5 | Tc14d | 0.5 | | TODO |
 |Tc15d | Spécifier le fonctionnement du servlet ServletBacklog.js, qui est le servlet derrière la page Backlog.html, dans le fichier SpecApp.md. Ce servlet doit permetrre de générer la liste des us en html, de donner un comportement au bouton "Ajouter une US" et de rediriger l'utilisateur sur la page "AddUS.html". Il doit permettre également de donner un comportement aux boutons "modifier" et "supprimer" à côté des US et de rediriger l'utilisateur vers la page "EditUS.html" | 9,10,11 | | 0.5 | | TODO |
 |Tc15i | (Design Tc15d) Implémenter la classe ServletBacklog.js en suivant le fichier SpecApp.md | 11 | Tc15d | 0.5 | | TODO |
-|Tc16d | Spécifier le fonctionnement du servlet ServletAddUS.js, qui est le servlet derrière la page AddUS.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer un formulaire en html, de donner un comportement au bouton "Valider" et de rediriger l'utilisateur vers la page "Backlog.html" | 8 | | 0.5 | Antonin Rebufat | DOING |
+|Tc16d | Spécifier le fonctionnement du servlet ServletAddUS.js, qui est le servlet derrière la page AddUS.html, dans le fichier SpecApp.md. Ce servlet doit permettre de générer un formulaire en html, de donner un comportement au bouton "Valider" et de rediriger l'utilisateur vers la page "Backlog.html" | 8 | | 0.5 | Antonin Rebufat | DONE |
 |Tc16i | (Design Tc16d) Implémenter la classe ServletAddUS.js en suivant le fichier SpecApp.md | 8 | Tc16d | 0.5 | | TODO |
 |Tc17d | Spécifier les méthodes fournies par TabBuilder.js, permettant de construire la barre d'onglet en html, dans le fichier SpecApp.md. Cette classe doit permettre de générer une barre d'onglet en html permettant de rediriger l'utilsateur vers les pages "Project.html", "Backlog.html" | 8, 11 | | 0.5 | Romain Ordonez | DOING |
 |Tc17i | Implémenter la classe TabBuilder.js en suivant le fichier SpecApp.md | 8,11 | Tc17d | 0.5 | | TODO |
