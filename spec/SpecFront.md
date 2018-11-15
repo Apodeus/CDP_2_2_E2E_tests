@@ -11,7 +11,7 @@
   - Formulaire de création d'un projet donné par le servlet ServletCreateProject.js contenant un bouton avec l'id=Validate en bas de la balise div du formulaire (id=Formulaire).
 
 - Backlog.html
-  - Liste des US en base de donné, le fichier contiendra une balise div avec l'id=IssueList.
+  - Liste des US en base de donné, le fichier contiendra une balise div avec l'id=IssueList et un bouton au centre avec l'id=AddUs.
 
 - AddUS.html
   - Formulaire de création d'une US donné par le servlet ServletCreateUS.js contenant un bouton avec l'id=Validate en bas de la balise div du formulaire (id=Formulaire).
