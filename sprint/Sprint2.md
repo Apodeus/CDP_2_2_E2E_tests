@@ -14,7 +14,7 @@
 
 | id | description | US affiliée | Dépendances | Chiffrage en J/H | Affectation | Statut |
 |----|-------------|-------------|-------------|------------------|-------------|--------|
-|Tt2d | Spécifier le(s) scénario(s) de test de l'US 4 dans le fichier Test2US4.md concernant la création de projet| 4 |  | 0.5 | Romain Ordonez | DOING  |
+|Tt2d | Spécifier le(s) scénario(s) de test de l'US 4 dans le fichier Test2US4.md concernant la création de projet| 4 |  | 0.5 | Romain Ordonez | DONE  |
 |Tt3d | Spécifier le(s) scénario(s) de test de l'US 5 dans le fichier Test3US5.md concernant la modification d'un projet| 5 |  |  0.5 | | TODO |
 |Tt4d | Spécifier le(s) scénario(s) de test de l'US 8 dans le fichier Test4US8.md concernant la création d'US | 8 |  | 0.5 | Antonin Rebufat | DOING  |  
 |Tt5d | Spécifier le(s) scénario(s) de test de l'US 11 dans le fichier Test5US11.md concernant le listage des US d'un projet | 11 |  | 0.5 | Clément Fontenay | DONE |
