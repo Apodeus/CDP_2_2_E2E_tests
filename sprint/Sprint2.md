@@ -21,10 +21,10 @@
 |Tt6d | Spécifier le(s) scénario(s) de test de l'US 7 dans le fichier Test6US7.md | 7 | | 0.5 | | TODO |
 |Tt7d | Spécifier le(s) scénario(s) de test de l'US 9 dans le fichier Test7US9.md concernant la modification d'une US | 9 |  | 0.5 | | TODO  |
 |Tt8d | Spécifier le(s) scénario(s) de test de l'US 10 dans le fichier Test8US10.md concernant la suppression d'une US | 10 |  | 0.5 | | TODO  |
-|Tt2i | Créer le(s) test(s) du fichier Test2US4.md concernant l'ajout de projets | 4 | Tt2d | 0.5 | | TODO  |
-|Tt3i | Créer le(s) test(s) du fichier Test3US5.md concernant la modification d'un projet| 5 | Tt3d | 0.5 | |  TODO |
-|Tt4i | Créer le(s) test(s) du fichier Test4US8.md concernant la création d'US | 8 | Tt4d | 0.5 | | TODO  |  
-|Tt5i | Créer le(s) test(s) du fichier Test5US11.md concernant le listage des US d'un projet | 11 | Tt5d | 0.5 | | TODO  |
+|Tt2i | Créer le(s) test(s) du fichier Test2US4.md concernant l'ajout de projets | 4 | Tt2d, Tc11d, Tc12d, Tc25d | 0.5 | | TODO  |
+|Tt3i | Créer le(s) test(s) du fichier Test3US5.md concernant la modification d'un projet| 5 | Tt3d, Tc11d, Tc25d, Tc14d | 0.5 | |  TODO |
+|Tt4i | Créer le(s) test(s) du fichier Test4US8.md concernant la création d'US | 8 | Tt4d, Tc16d, Tc24d, Tc25d | 0.5 | | TODO  |  
+|Tt5i | Créer le(s) test(s) du fichier Test5US11.md concernant le listage des US d'un projet | 11 | Tt5d, Tc23d ,Tc25d | 0.5 | | TODO  |
 |Tt6i | (Design Tt6d) Créer le(s) test(s) du fichier Test6US7.md concernant l'ajout de membre dans un projet. | 7 | | 0.5 | | TODO |
 |Tt7i | (Design Tt7d) Créer le(s) test(s) du fichier Test7US9.md concernant la modification d'une US | 9 | | 0.5 | | TODO |
 |Tt8i | (Design Tt8d) Créer le(s) test(s) du fichier Test8US10.md concernant la suppression d'une US | 10 | | 0.5 | | TODO |
@@ -66,10 +66,10 @@
 |Tc21i|(Design Tc21d) Implémenter le fichier Project.html conformément au fichier SpecFront.md | 5 |Tc21d| 0.5 | | TODO |
 |Tc22d | Spécifier le contenu et les actions de la page EditProject.html permettant de modifier un projet dans le fichier SpecFront.md | 5 | |  0.5  | | TODO |
 |Tc22i | (Design Tc22d)  En se basant sur le fichier SpecFront.md : Créer un fichier EditProject.html qui affichera un formulaire, ce formulaire sera pré-rempli avec les informations inscrites en base correspondant au projet ciblé. Ajouter un nouveau bouton "Enregistrer" qui permet de venir vérifier/valider la saisie de l'utilisateur et ainsi la mise à jour des informations en base de ce projet et renvoi l'utilisateur vers la page Project.html . Ajouter un nouveau bouton "Annuler" qui permet de revenir sur la page Project.html .| 5 | Tc22d | 0.5 | | TODO |
-|Tc23d | Spécifier le contenu et les actions de la page Backlog.html permettant d'afficher le contenu du backlog (US) du projet dans le fichier SpecFront.md | 8 |  | 0.5 | Antonin Rebufat | DONE |
-|Tc23i | (Design Tc23d :) En se basant sur le fichier SpecFront.md : Créer un fichier Backlog.html. Ce fichier listera les informations des US présentes en base de donnée liées à ce projet. Ces informations seront affichées dans des rectangles les un en dessous des autres. | 8 | Tc23d  | 0.5 | | TODO |
-|Tc24d |Spécifier le contenu de la page AddUS.html qui doit être un formulaire permettant l'ajout d'une nouvelle US au backlog du projet dans le fichier SpecFront.md | 11 | Tc23d  | 0.5 | Romain Ordonez | DONE |
-|Tc24i  | (Design Tc24d :) En se basant sur le fichier SpecFront.md : Créer un fichier AddUS.html. Ajouter un formulaire avec les champs définis dans le fichier SpecFront.md. Ajouter un bouton "Valider & Ajouter" qui permet de vérifier/valider la saisie de l'utilisateur et ainsi d'ajouter l'US en base de donnée puis renvoie l'utilisateur vers la page Backlog.html . Ajouter un bouton "Annuler" qui ne prend pas en compte la saisie de l'utilisateur et le renvoie vers la page Backlog.html de son projet. | 11 | Tc24d | 0.5 | | TODO |
+|Tc23d | Spécifier le contenu et les actions de la page Backlog.html permettant d'afficher le contenu du backlog (US) et le bouton pour ajouter une US du projet dans le fichier SpecFront.md | 11 |  | 0.5 | Antonin Rebufat | DONE |
+|Tc23i | (Design Tc23d :) En se basant sur le fichier SpecFront.md : Créer un fichier Backlog.html. Ce fichier listera les informations des US présentes en base de donnée liées à ce projet. Ces informations seront affichées dans des rectangles les un en dessous des autres. | 11 | Tc23d  | 0.5 | | TODO |
+|Tc24d |Spécifier le contenu de la page AddUS.html qui doit être un formulaire permettant l'ajout d'une nouvelle US au backlog du projet dans le fichier SpecFront.md | 8 | Tc23d  | 0.5 | Romain Ordonez | DONE |
+|Tc24i  | (Design Tc24d :) En se basant sur le fichier SpecFront.md : Créer un fichier AddUS.html. Ajouter un formulaire avec les champs définis dans le fichier SpecFront.md. Ajouter un bouton "Valider & Ajouter" qui permet de vérifier/valider la saisie de l'utilisateur et ainsi d'ajouter l'US en base de donnée puis renvoie l'utilisateur vers la page Backlog.html . Ajouter un bouton "Annuler" qui ne prend pas en compte la saisie de l'utilisateur et le renvoie vers la page Backlog.html de son projet. | 8 | Tc24d | 0.5 | | TODO |
 |Tc25d | Spécifier la structure du template TabsBar.html dans le fichier SpecFront.md. Ce template permettra de représenter une barre d'onglet facilitant l'intéraction avec l'application ainsi que sa composation par l'application en fonction de la page actuelle.| All |  | 0.5 | Romain Ordonez | DONE |
 |Tc25i | (Design Tc25d :) En se basant sur le fichier SpecFront.md : Créer un fichier TabsBar.html. Implémenter la structure en fonction de ce qui a été définit dans le fichier SpecFront.md | All | Tc25d  | 0.5 | | TODO |
 |Tc29d | Spécifier le contenu de la page Equip.html, qui est la page qui permet d'être redirigé vers l'ajout de membre au projet ouvert, dans SpecFront.md. | 7 |  | 0.5 | | TODO |
