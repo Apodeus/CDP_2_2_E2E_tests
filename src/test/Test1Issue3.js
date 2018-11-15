@@ -8,32 +8,30 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
     await driver.findElement(By.id('MesProjets')).click().then( () => console.log("click"));
     await driver.sleep(1000);
     let url = await driver.getCurrentUrl();
-    if (home == url){
+    if (home === url){
       return -1;
     }
     await driver.findElement(By.tagName("h2")).then(function(e) {
-      if (e == undefined)
+      if (e === undefined)
         return -1;
     });
     
     await driver.navigate().back();
     await driver.sleep(2000);
     url = await driver.getCurrentUrl();
-    if (home != url){
+    if (home !== url){
       return -1;
     }
     await driver.findElement(By.id('MesProjets')).click().then( () => console.log("click"));
     await driver.sleep(1000);
     url = await driver.getCurrentUrl();
-    if (home == url){
+    if (home === url){
       return -1;
     }
     await driver.findElement(By.tagName("h2")).then(function(e) {
-      if (e == undefined)
+      if (e === undefined)
         return -1;
     });
-    
-
   } 
   finally {
     await driver.quit();
