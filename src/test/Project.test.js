@@ -7,12 +7,12 @@ let romain;
 let project;
 
 beforeEach(()=>{
-  antonin=new User("admin", "admin", "admin");
+  antonin=new User('admin', 'admin', 'admin');
   antonin.id=0;
-  romain=new User("test", "test", "test");
+  romain=new User('test', 'test', 'test');
   romain.id=1;
-  project=new Project("CDP", "projet superbe", "2018-11-8", 2, antonin);
-})
+  project=new Project('CDP', 'projet superbe', '2018-11-8', 2, antonin);
+});
 
 test('project add romain as dev', () => {
   expect(project.participants.length).toBe(1);
