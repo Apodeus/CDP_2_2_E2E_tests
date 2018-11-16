@@ -11,11 +11,15 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
     if (home === url){
       return -1;
     }
-    await driver.findElement(By.tagName("h2")).then(function(e) {
-      if (e === undefined)
+    let res = await driver.findElement(By.tagName("h2")).then(function(e) {
+      if (e === undefined){
         return -1;
+      }
+      return 0;
     });
-    
+    if (res === -1){
+      return -1;
+    }
     await driver.navigate().back();
     await driver.sleep(2000);
     url = await driver.getCurrentUrl();
@@ -28,10 +32,13 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
     if (home === url){
       return -1;
     }
-    await driver.findElement(By.tagName("h2")).then(function(e) {
-      if (e === undefined)
+    res = await driver.findElement(By.tagName("h2")).then(function(e) {
+      if (e === undefined){
         return -1;
+      }
+      return 0;
     });
+    return res;
   } 
   finally {
     await driver.quit();

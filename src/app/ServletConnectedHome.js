@@ -5,7 +5,6 @@ const jsdom = require("jsdom").JSDOM;
 const fs = require('fs');
 let UserDAO = require("./UserDAO");
 let User = require('./User');
-
 let connectionDB = mysql.createConnection({
   host: "database",
   port:3306,
@@ -19,7 +18,6 @@ let connectionDB = mysql.createConnection({
   user: "user",
   password: "root"
 });
-
 /*Temporaire: pour montrer que l'on a bien un début de gestion d'utilisateur*/ 
 let userDAO = new UserDAO(connectionDB);
 let connectedUser;
@@ -27,7 +25,6 @@ userDAO.save(new User("user", "user@gmail.com", "user"), function(x){
     connectedUser = x;
     module.exports.connectedUser = connectedUser;
 }  );
-
 let app = express();
 const pathNameFiles = "/../html/ConnectedHome";
 app.listen(3000);
@@ -51,7 +48,6 @@ app.get('/', function(req, res) {
 function configureButton(document){
     let button = document.getElementById("MesProjets");
     button.innerHTML = "Mes Projets";
-    
 }
 function addScriptToHTML(res){
     let script = fs.readFileSync(__dirname+pathNameFiles+".js", "utf8");
