@@ -21,10 +21,10 @@ let connectionDB = mysql.createConnection({
 /*Temporaire: pour montrer que l'on a bien un début de gestion d'utilisateur*/ 
 let userDAO = new UserDAO(connectionDB);
 let connectedUser;
-userDAO.save(new User("user", "user@gmail.com", "user"), function(x){ 
+userDAO.save(new User("user", "user@gmail.com", "user"), function(x){
     connectedUser = x;
     module.exports.connectedUser = connectedUser;
-}  );
+});
 let app = express();
 const pathNameFiles = "/../html/ConnectedHome";
 app.listen(3000);
@@ -36,7 +36,7 @@ app.get('/', function(req, res) {
     }
     else{
         jsdom.fromFile(path.resolve(__dirname+pathNameFiles+".html"), "").then(dom => {
-            configureButton(dom.window.document); 
+            configureButton(dom.window.document);
             res.writeHead(200, {'Content-Type': 'text/html'});
             res.write(dom.serialize());
             addScriptToHTML(res);
