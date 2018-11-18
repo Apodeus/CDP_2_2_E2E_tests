@@ -16,7 +16,7 @@
 |----|-------------|-------------|-------------|------------------|-------------|--------|
 |Tt2d | Spécifier le(s) scénario(s) de test de l'US 4 dans le fichier Test2US4.md concernant la création de projet| 4 |  | 0.5 | Romain Ordonez | DONE  |
 |Tt3d | Spécifier le(s) scénario(s) de test de l'US 5 dans le fichier Test3US5.md concernant la modification d'un projet| 5 |  |  0.5 | | TODO |
-|Tt4d | Spécifier le(s) scénario(s) de test de l'US 8 dans le fichier Test4US8.md concernant la création d'US | 8 |  | 0.5 | Antonin Rebufat | DOING  |  
+|Tt4d | Spécifier le(s) scénario(s) de test de l'US 8 dans le fichier Test4US8.md concernant la création d'US | 8 |  | 0.5 | Antonin Rebufat | DONE  |  
 |Tt5d | Spécifier le(s) scénario(s) de test de l'US 11 dans le fichier Test5US11.md concernant le listage des US d'un projet | 11 |  | 0.5 | Clément Fontenay | DONE |
 |Tt6d | Spécifier le(s) scénario(s) de test de l'US 7 dans le fichier Test6US7.md | 7 | | 0.5 | | TODO |
 |Tt7d | Spécifier le(s) scénario(s) de test de l'US 9 dans le fichier Test7US9.md concernant la modification d'une US | 9 |  | 0.5 | | TODO  |
