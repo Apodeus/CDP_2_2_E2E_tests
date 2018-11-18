@@ -21,7 +21,7 @@
 |Tt6d | Spécifier le(s) scénario(s) de test de l'US 7 dans le fichier Test6US7.md | 7 | | 0.5 | | TODO |
 |Tt7d | Spécifier le(s) scénario(s) de test de l'US 9 dans le fichier Test7US9.md concernant la modification d'une US | 9 |  | 0.5 | | TODO  |
 |Tt8d | Spécifier le(s) scénario(s) de test de l'US 10 dans le fichier Test8US10.md concernant la suppression d'une US | 10 |  | 0.5 | | TODO  |
-|Tt2i | Créer le(s) test(s) du fichier Test2US4.md concernant l'ajout de projets | 4 | Tt2d, Tc11i, Tc12i, Tc25d | 0.5 | | TODO  |
+|Tt2i | Créer le(s) test(s) du fichier Test2US4.md concernant l'ajout de projets | 4 | Tt2d, Tc11i, Tc12i, Tc25d | 0.5 | Romain Ordonez | TODO  |
 |Tt3i | Créer le(s) test(s) du fichier Test3US5.md concernant la modification d'un projet| 5 | Tt3d, Tc11i, Tc25d, Tc14d | 0.5 | |  TODO |
 |Tt4i | Créer le(s) test(s) du fichier Test4US8.md concernant la création d'US | 8 | Tt4d, Tc16d, Tc24d, Tc25d | 0.5 | | TODO  |  
 |Tt5i | Créer le(s) test(s) du fichier Test5US11.md concernant le listage des US d'un projet | 11 | Tt5d, Tc23d ,Tc25d | 0.5 | | TODO  |
@@ -35,7 +35,7 @@
 |Tc5i | (Design Tc5d) Implémenter la classe USDAO.js et les méthodes spécifier dans le fichier SpecApp.md. | 8, 11 | Tc5d, Tc2d | 0.5 | | TODO |
 |Tc8d | Spécifier l'objet US qui permet d'utiliser le DAO USDAO.js dans le fichier SpecApp.md  | 8,11 |  | 0.5 | Clément Fontenay | DONE |
 |Tc8i | (Design Tc8d) Implémenter la classe (POJO) US.js en suivant le fichier SpecApp.md | 8,11 | Tc8d, Tc2d | 0.5 | | TODO |
-|Tc11.1i | Ajouter le comportement du bouton "Créer un nouveau Projet" (présent sur la page Projects.html) dans ServletProjects.js, qui redirige l'utilisateur vers le servlet ServletAddProject.js et donc la page AddProject.html. | 4 | Tc11i | 0.5 | | TODO |
+|Tc11.1i | Ajouter le comportement du bouton "Créer un nouveau Projet" (présent sur la page Projects.html) dans ServletProjects.js, qui redirige l'utilisateur vers le servlet ServletAddProject.js et donc la page AddProject.html. | 4 | Tc11i | 0.5 | Romain Ordonez | TODO |
 |Tc12i | Implémenter le servlet ServletCreateProject.js, qui est le servlet derrière la page CreateProject.html. Ce servlet doit permettre de générer un formulaire html et de donner un comportement au bouton "Valider et Créer"  | 4 | | 0.5 | Clément FONTENAY |  DOING |
 |Tc13i | Implémenter le servlet ServletProject.js, qui est le servlet derrière la page Project.html. Ce servlet doit permettre de générer une vue du Project en html, de donner un comportement au bouton "Modifier Project" et de rediriger l'utilisateur vers la page "ModifierProject.html" | 5,6 | | 0.5 | | TODO |
 |Tc14i | Implémenter le servlet ServletEditProject.js, qui est le servlet derrière la page EditProject.html. Ce servlet doit permettre de générer un formulaire pré-rempli en html, de donner un comportement au bouton "Enregistrer les modifications" redirigeant l'utilisateur vers la page "Project.html" et également de donner un comportement au bouton "Annuler" redirigant l'utilisateur vers la page "Projects.html" | 5,6 | | 0.5 | | TODO |
