@@ -1,5 +1,5 @@
-const User = require('../app/User');
-const Project = require('../app/Project');
+const User = require('../../app/User');
+const Project = require('../../app/Project');
 
 
 let antonin;

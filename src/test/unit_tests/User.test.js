@@ -1,4 +1,4 @@
-const User = require('../app/User');
+const User = require('../../app/User');
 
 let user1;
 
