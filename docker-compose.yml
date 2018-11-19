@@ -1,57 +1,59 @@
 version: "3"
+
 services:
   app:
     container_name: app
     restart: always
     build: .
     ports:
-      - "3000:3000"
+        - "3000:3000"
     depends_on:
-      database:
-        condition: service_started
+        - database
     links:
-      - "database"
+        - "database"
+        
   database:
     container_name: database
     build: 
-      context: . 
-      dockerfile: DockerfileDB
+        context: . 
+        dockerfile: DockerfileDB
     ports:
-      - "3306:3306"
+        - "3306:3306"
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: cdp
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      MYSQL_RANDOM_ROOT_PASSWORD: root
-      MYSQL_USER: user
-      MYSQL_PASSWORD: root
+        MYSQL_ROOT_PASSWORD: root
+        MYSQL_DATABASE: cdp
+        MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+        MYSQL_RANDOM_ROOT_PASSWORD: root
+        MYSQL_USER: user
+        MYSQL_PASSWORD: root
     volumes:
-      - ./data:/data/db
+        - ./data:/data/db
+        
   adminer:
     container_name: adminer
     image: adminer
     restart: always
     ports:
-      - "8080:8080"
+        - "8080:8080"
 
   driver-selenium:
     image: selenium/node-chrome
     volumes:
-      - ./shm:/dev/smh
+        - ./shm:/dev/smh
     depends_on:
-      - hub
+        - hub
     links:
-      - app
+        - app
     environment:
-      HUB_HOST: hub
+        HUB_HOST: hub
 
   hub:
     image: selenium/hub:3.14.0-gallium
     links:
-      - app
+        - app
     ports:
-      - "4444:4444"
+        - "4444:4444"
     environment:
-            - GRID_TIMEOUT=10000
-            - GRID_BROWSER_TIMEOUT=10000
-            - SE_OPTS=-browserTimeout 10 -timeout 10  
+        - GRID_TIMEOUT=10000
+        - GRID_BROWSER_TIMEOUT=10000
+        - SE_OPTS=-browserTimeout 10 -timeout 10  
