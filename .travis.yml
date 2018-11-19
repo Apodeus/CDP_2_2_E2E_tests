@@ -22,12 +22,13 @@ before_install:
         - ls -la
         - sudo docker-compose up -d
         - docker --version
-        - pip install selenium
+        - npm install puppeteer
+	- npm install jest
+	- npm install jest-sonar-reporter
 
 script :
-        - echo "Waiting selenium server"
+        - echo "Waiting stuff"
         - sleep 20
         - curl localhost:3000
-        - npm install nightwatch
         - echo "Start of E2E Tests"
-        - ./node_modules/nightwatch/bin/nightwatch -t src/test/e2e.js
+        - npm test -- src/test/e2e
