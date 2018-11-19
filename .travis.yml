@@ -27,8 +27,9 @@ before_install:
         - npm install jest-sonar-reporter
 
 script :
-        - echo "Waiting stuff"
+        - echo "Waiting to be sure the application is ready"
         - sleep 20
+        - echo "Ping localhost:3000"
         - curl localhost:3000
         - echo "Start of E2E Tests"
-        - npm test -- src/test/e2e
+        - npm run test-e2e
