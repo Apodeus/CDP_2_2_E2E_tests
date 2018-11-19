@@ -2,6 +2,7 @@
 [![quality gate](https://sonarcloud.io/api/project_badges/measure?project=cdp%3Acdp&metric=alert_status)](https://sonarcloud.io/dashboard?id=cdp%3Acdp)
 [![coverage](https://sonarcloud.io/api/project_badges/measure?project=cdp%3Acdp&metric=coverage)](https://sonarcloud.io/dashboard?id=cdp%3Acdp)
 [![code smells](https://sonarcloud.io/api/project_badges/measure?project=cdp%3Acdp&metric=code_smells)](https://sonarcloud.io/dashboard?id=cdp%3Acdp)
+[![Build Travis Status](https://travis-ci.com/Apodeus/CDP_2_2_E2E_tests.svg?token=96sAwaj1Vfzjk86mqyYj&branch=master)](https://travis-ci.com/Apodeus/CDP_2_2_E2E_tests)
 
 # Conduite de Projet - M2 GL
 # Clément Fontenay, Antonin Rebufat, Romain Ordonez
