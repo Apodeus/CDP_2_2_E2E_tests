@@ -23,8 +23,8 @@ before_install:
         - sudo docker-compose up -d
         - docker --version
         - npm install puppeteer
-	- npm install jest
-	- npm install jest-sonar-reporter
+        - npm install jest
+        - npm install jest-sonar-reporter
 
 script :
         - echo "Waiting stuff"
