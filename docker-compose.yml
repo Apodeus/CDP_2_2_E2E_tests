@@ -33,3 +33,25 @@ services:
     restart: always
     ports:
       - "8080:8080"
+
+  driver-selenium:
+    image: selenium/node-chrome
+    volumes:
+      - ./shm:/dev/smh
+    depends_on:
+      - hub
+    links:
+      - app
+    environment:
+      HUB_HOST: hub
+
+  hub:
+    image: selenium/hub:3.14.0-gallium
+    links:
+      - app
+    ports:
+      - "4444:4444"
+    environment:
+            - GRID_TIMEOUT=10000
+            - GRID_BROWSER_TIMEOUT=10000
+            - SE_OPTS=-browserTimeout 10 -timeout 10  
