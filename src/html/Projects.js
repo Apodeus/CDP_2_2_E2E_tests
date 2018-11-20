@@ -1,6 +1,6 @@
-function clickButtonMesProjets(){
+function clickButtonCreateProject(){
     $.ajax({
-        url:"/?MesProjets=1",
+        url:"/?CreateProject=1",
         type:"GET",
         success: function(data){
             window.location = data;
