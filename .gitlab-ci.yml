@@ -44,6 +44,7 @@ it-tests:
     - echo "NE PAS OUBLIER DE RESPAWN LES JOBS"
     - sleep 20
     - docker ps
+    - docker inspect database
     - npm run it-test
 
 
