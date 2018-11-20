@@ -1,6 +1,6 @@
 stages:
-  - unit_tests
   - integration_tests
+  - unit_tests
   - deploy_analyse
 
 image:
@@ -41,6 +41,7 @@ it-tests:
     - npm install jest-sonar-reporter
   script:
     - docker-compose up -d
+    - echo "NE PAS OUBLIER DE RESPAWN LES JOBS"
     - sleep 20
     - npm run it-test
 
