@@ -3,7 +3,7 @@ const jsdom = require('jsdom');
 const UtilsForm = require('../../app/UtilsForm');
 const pathNameFiles = '/../../html/CreateProject';
 
-test('html form correctly built', async () => {
+test('html form correctly built', async function() {
   await (async function run() {
     jsdom.JSDOM.fromFile(path.resolve(__dirname+pathNameFiles+'.html'), '').then(async (dom) => {
       await (new UtilsForm()).addFormCreateProjectToDocument(dom);
