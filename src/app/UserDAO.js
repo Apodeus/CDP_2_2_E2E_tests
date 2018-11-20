@@ -1,4 +1,5 @@
 const User = require('./User');
+const util = require('util');
 
 module.exports= class UserDAO {
   constructor(connection) {
@@ -14,7 +15,8 @@ module.exports= class UserDAO {
         const user = new User(result[0].pseudo, result[0].email, result[0].password);
         user.id = result[0].id;
         return callback(user);
-      } catch (e) {
+      } catch (err) {
+        throw err;
       }
     })();
   }
