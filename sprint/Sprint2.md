@@ -29,7 +29,7 @@
 |Tt7i | (Design Tt7d) Créer le(s) test(s) du fichier Test7US9.md concernant la modification d'une US | 9 | | 0.5 | | TODO |
 |Tt8i | (Design Tt8d) Créer le(s) test(s) du fichier Test8US10.md concernant la suppression d'une US | 10 | | 0.5 | | TODO |
 |-- | -- BDD --|--|--|--|--|--|
-|Tc2i | Créer un fichier table_US.sql créant une nouvelle table US à la base de donnée CP, cette table doit contenir tous les champs permettant de stocker une User Story (voir SpecDB.md).  | 8,11 | Tc2d | 0.5 | | TODO |
+|Tc2i | Créer un fichier table_US.sql créant une nouvelle table US à la base de donnée CP, cette table doit contenir tous les champs permettant de stocker une User Story (voir SpecDB.md).  | 8,11 | Tc2d | 0.5 | Antonin Rebufat | DOING |
 |-- | -- Application (Middle) -- |--|--|--|--|--|
 |Tc5d | Spécifier les méthodes fournies par le DAO USDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | Clément Fontenay | DONE |
 |Tc5i | (Design Tc5d) Implémenter la classe USDAO.js et les méthodes spécifier dans le fichier SpecApp.md. | 8, 11 | Tc5d, Tc2d | 0.5 | | TODO |
