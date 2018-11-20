@@ -22,13 +22,11 @@ module.exports = class ProjectDAO {
                 projectsList.push( new Project(resultProject[0].name, resultProject[0].description,
                     resultProject[0].start_date, resultProject[0].sprintLength, user));
               } catch (e) {
-                throw e;
               }
             })();
           }
         })(rows);
       } catch (e) {
-        throw e;
       }
     })();
     callback(projectsList);
