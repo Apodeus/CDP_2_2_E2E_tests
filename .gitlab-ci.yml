@@ -29,6 +29,10 @@ it-tests:
     - coverage/
     - reports_sonar/
   before_script:
+    - ls /
+    - ls /etc
+    - ls /etc/init.d/
+    - /etc/init.d/mysql stop
     - apk update
     - apk upgrade
     - apk add python python-dev py-pip build-base
