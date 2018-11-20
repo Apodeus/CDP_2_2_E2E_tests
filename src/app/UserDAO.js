@@ -5,15 +5,19 @@ module.exports= class UserDAO {
     this.connection = connection;
   }
 
-  getUserByName(username, callback) { // throws Exception;
-    this.connection.query('SELECT * FROM users WHERE pseudo = ? ', [username], function(err, result) {
-      if (err) {
-        throw err;
+  async getUserByName(username, callback) { // throws Exception;
+    const connection = this.connection;
+    const query = util.promisify(connection.query).bind(connection);
+    await (async () => {
+      try {
+        const rows = await query('SELECT * FROM users WHERE pseudo = ? ', [username]);
+        const user = new User(result[0].pseudo, result[0].email, result[0].password);
+        user.id = result[0].id;
+        return callback(user);
+      } catch (e) {
+        throw e;
       }
-      const user = new User(result[0].pseudo, result[0].email, result[0].password);
-      user.id = result[0].id;
-      return callback(user);
-    });
+    })();
   }
 
   save(user, callback) {// throws Exception;
