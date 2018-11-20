@@ -1,12 +1,12 @@
 stages:
-  - tests
+  - unit_tests
   - deploy_analyse
 
 image:
   finanzcheck/docker-node-java:latest
 
 unit-test:
-  stage: tests
+  stage: unit_tests
   before_script:
   - npm install jest
   - npm install jest-sonar-reporter
@@ -16,6 +16,30 @@ unit-test:
     paths:
     - coverage/
     - reports_sonar/
+
+it-tests:
+  stage: integration_tests
+  image: docker:latest
+  services:
+    - docker:dind
+  cache:
+    paths:
+    - coverage/
+    - reports_sonar/
+  before_script:
+    - apk update
+    - apk upgrade
+    - apk add python python-dev py-pip build-base
+    - apk add --update nodejs nodejs-npm
+    - pip install docker-compose
+    - npm i npm@latest -g
+    - npm install jest
+    - npm install jest-sonar-reporter
+    - docker-compose up -d
+  script:
+    - npm run it-test
+
+
 
 
 sonar:
