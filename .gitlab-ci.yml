@@ -43,6 +43,7 @@ it-tests:
     - docker-compose up -d
     - echo "NE PAS OUBLIER DE RESPAWN LES JOBS"
     - sleep 20
+    - docker ps
     - npm run it-test
 
 
