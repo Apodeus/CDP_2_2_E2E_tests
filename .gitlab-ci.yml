@@ -35,6 +35,8 @@ it-tests:
     - apk add --update nodejs nodejs-npm
     - pip install docker-compose
     - npm i npm@latest -g
+    - npm install mysql2
+    - npm install util
     - npm install jest
     - npm install jest-sonar-reporter
     - docker-compose up -d
