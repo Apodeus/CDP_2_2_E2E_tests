@@ -19,7 +19,6 @@ unit-test:
     - reports_sonar/
 
 it-tests:
-  stage: integration_tests
   image: docker:latest
   services:
     - docker:dind
