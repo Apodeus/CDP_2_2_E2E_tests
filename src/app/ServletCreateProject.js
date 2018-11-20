@@ -59,6 +59,7 @@ function getTexte(document, texte) {
   return res;
 }
 function checkValidityAnswerForm(body) {
-  return body.name !== undefined && body.debut !== undefined && body.sprint !== undefined;
+  return (body.name !== undefined && body.name !== '') && (body.debut !== undefined && body.debut === ''
+  && body.debut != 'Thu Nov 30 1899 00:00:00 GMT+0000') && (body.sprint !== undefined && body.sprint !== '');
 }
 module.exports = router;

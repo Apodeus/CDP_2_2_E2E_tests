@@ -8,47 +8,30 @@ module.exports = class ProjectDAO {
 
 
   async getAllByUser(user, callback) {
-    const projectsList = [];
+    let projectsList = [];
     const connection = this.connection;
     const query = util.promisify(connection.query).bind(connection);
-
     await (async () => {
       try {
         const rows = await query('SELECT * FROM projects_participants  WHERE user = ? ', [user.id]);
-        console.log(rows);
-        async function iterateResult(result) {
-          await result.forEach(async function(element) {
-            await (async function findProject() {
-              console.log('add project');
-            });
-            console.log('fin fonction iterate');
-          }, this);
-        }
-        await iterateResult(rows);
-        console.log('fin première fonction');
-      } finally {
-        // connection.end();
+        await (async (result) => {
+          for (let i = 0; i < result.length; i++) {
+            await(async () =>{
+              try {
+                const resultProject = await query('SELECT * FROM projects WHERE id = ? ', [result[i].project]);
+                projectsList.push( new Project(resultProject[0].name, resultProject[0].description,
+                    resultProject[0].start_date, resultProject[0].sprintLength, user));
+              } catch (e) {
+                throw e;
+              }
+            })();
+          }
+        })(rows);
+      } catch (e) {
+        throw e;
       }
     })();
-    /*
-    function(err, result) {
-        console.log("AH0");
-        if (err) {
-          throw err;
-        }
-        result.forEach(function(element) {
-          connection.execute('SELECT * FROM projects WHERE id = ? ', [element.project], function(err, result) {
-            if (err) {
-              throw err;
-            }
-            projectsList += new Project(result[0].name, result[0].description, result[0].start_date,
-                result[0].sprintLength, user);
-          });
-        }, (liste) => callback(liste));
-      });
-      console.log("ah1");
-    */
-    console.log('voilou: '+projectsList[0]);
+    callback(projectsList);
   }
   save(project, callback) {
     if (project.id === undefined) {
