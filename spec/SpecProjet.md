@@ -3,7 +3,7 @@
 #### Gestion de la configuration
 
 Voici l'arborescence du projet :
-
+```
 |-spec
 |   |-test
 |   |   |- //un fichier par US décrivant les scénarios de tests.
@@ -28,7 +28,7 @@ Voici l'arborescence du projet :
 |-README.md // Liste des US
 |-INSTALL.md // Documentation d'installation de l'application
 |-... // Autres fichiers de configuration en lien avec l'intégration continue.
-
+```
 
 #### Definition of done 
 
