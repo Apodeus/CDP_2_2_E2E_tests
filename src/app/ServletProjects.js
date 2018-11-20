@@ -16,30 +16,37 @@ router.get('/', function(req, res, next) {
   });
 });
 
-function getProjects(user) {
+async function getProjects(user) {
   const teamMate= Home.connectedUser;
-  let projects=[];
-  new ProjectDAO(Home.connectionDB).getAllByUser(teamMate, function(x) {
-    projects = x;
+  const dao = (new ProjectDAO(Home.connectionDB));
+  await dao.getAllByUser(teamMate, function(x) {
+    console.log("fonction");
+    return x;
   });
-  return projects;
+  console.log("return");
 }
 
-function listProjects(document, userArg) {
+async function listProjects(document, userArg) {
   const doc=document.getElementById('ProjectsList');
   const title=document.createElement('h2');
   title.innerHTML='Liste des projets de '+userArg.pseudo+' : ';
   doc.appendChild(title);
   const list = document.createElement('ul');
   doc.appendChild(list);
-  getProjects(userArg).forEach((project)=>{
+  console.log("nasituenatuie");
+  const projects = await getProjects(userArg);
+  /*
+  projects.forEach((project)=>{
+    console.log("projet: "+project);
     if (project.owner.id===userArg.id) {
+      console.log("test nrauiteatunie");
       const l=document.createElement('li');
       const text=document.createTextNode(project.name+' '+project.description);
       l.appendChild(text);
       list.appendChild(l);
     }
   });
+  doc.appendChild(list);
 
   const title2=document.createElement('h2');
   title2.innerHTML='Liste des projets auquels '+userArg.pseudo+' participe : ';
@@ -56,5 +63,6 @@ function listProjects(document, userArg) {
       }
     }
   });
+  */
 }
 module.exports = router;

@@ -1,6 +1,7 @@
 const mysql = require('mysql2');
 const express = require('express');
 const path = require('path');
+const bodyParser = require('body-parser');
 const jsdom = require('jsdom').JSDOM;
 const fs = require('fs');
 const UserDAO = require('./UserDAO');
@@ -23,12 +24,16 @@ const userDAO = new UserDAO(connectionDB);
 let connectedUser;
 userDAO.save(new User('user', 'user@gmail.com', 'user'), function(x) {
   connectedUser = x;
+  //tempo
+  connectedUser._id = 107;
   module.exports.connectedUser = connectedUser;
 });
-const app = express();
 const pathNameFiles = '/../html/ConnectedHome';
+const app = express();
 app.listen(3000);
+app.use(bodyParser.urlencoded({extended: false}));
 app.use('/projects', require('./ServletProjects'));
+app.use('/createproject', require('./ServletCreateProject'));
 app.get('/', function(req, res) {
   if (req.query.MesProjets!== undefined) {
     res.write('/projects');
