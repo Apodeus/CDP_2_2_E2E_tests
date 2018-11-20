@@ -39,9 +39,9 @@ it-tests:
     - npm install util
     - npm install jest
     - npm install jest-sonar-reporter
-    - docker-compose up -d
   script:
-    - sleep 10
+    - docker-compose up -d
+    - sleep 20
     - npm run it-test
 
 

@@ -6,7 +6,7 @@ const mysql = require('mysql2');
 describe('Test DAO', () => {
 
   const connectionDB = mysql.createConnection({
-    host: 'database',
+    host: 'localhost',
     database: 'cdp',
     pool: {
       max: 50,
