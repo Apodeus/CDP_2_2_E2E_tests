@@ -6,15 +6,26 @@ const ProjectDAO = require('./ProjectDAO');
 const Home = require('./ServletConnectedHome');
 
 const pathNameFiles = '/../html/Projects';
+const valueButtonCreateProject = 'Créer un nouveau Projet';
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   jsdom.fromFile(path.resolve(__dirname+pathNameFiles+'.html'), '').then(async (dom) => {
+    addButtonCreate(dom.window.document);
     await listProjects(dom.window.document, Home.connectedUser);
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(dom.serialize());
     res.end();
   });
 });
+router.post('/', function(req, res) {
+  if (req.body.createproject === valueButtonCreateProject) {
+    res.redirect('/createproject');
+  }
+});
+function addButtonCreate(document) {
+  const button = document.getElementById('CreateProject');
+  button.value = valueButtonCreateProject;
+}
 
 async function getProjects(user) {
   const teamMate= Home.connectedUser;
