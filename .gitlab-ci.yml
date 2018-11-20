@@ -8,6 +8,7 @@ image:
 unit-test:
   stage: unit_tests
   before_script:
+  - npm install jsdom
   - npm install jest
   - npm install jest-sonar-reporter
   script:

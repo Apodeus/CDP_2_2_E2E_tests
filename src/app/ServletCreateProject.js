@@ -5,6 +5,7 @@ const router = express.Router();
 const ProjectDAO = require('./ProjectDAO');
 const Project = require('./Project');
 const Home = require('./ServletConnectedHome');
+const UtilsForm = require('./UtilsForm');
 const pathNameFiles = '/../html/CreateProject';
 
 router.get('/', function(req, res) {
@@ -23,43 +24,16 @@ router.post('/', function(req, res) {
 });
 function sendPage(res) {
   jsdom.JSDOM.fromFile(path.resolve(__dirname+pathNameFiles+'.html'), '').then((dom) => {
-    createForm(dom.window.document);
+    (new UtilsForm()).addFormCreateProjectToDocument(dom.window.document);
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(dom.serialize());
     res.end();
   });
 }
-function createForm(document) {
-  const form = document.getElementById('formulaire');
-  form.action='/createproject';
-  const divButton = document.getElementById('button');
-  const button = document.getElementById('validate');
-  button.innerHTML = 'Créer un projet';
-  const add = function(node) {
-    form.insertBefore(node, divButton);
-  };
-  add(getTexte(document, 'Nom*: '));
-  add(getInput(document, 'name', 'text'));
-  add(getTexte(document, 'Description: '));
-  add(getInput(document, 'description', 'text'));
-  add(getTexte(document, 'Date de début*: '));
-  add(getInput(document, 'debut', 'date'));
-  add(getTexte(document, 'Durée des sprints*: '));
-  add(getInput(document, 'sprint', 'number'));
-}
-function getInput(document, id, type) {
-  const input = document.createElement('input');
-  input.type = type;
-  input.name = id;
-  return input;
-}
-function getTexte(document, texte) {
-  const res = document.createElement('p');
-  res.innerHTML = texte;
-  return res;
-}
+
 function checkValidityAnswerForm(body) {
-  return (body.name !== undefined && body.name !== '') && (body.debut !== undefined && body.debut === ''
-  && body.debut !== 'Thu Nov 30 1899 00:00:00 GMT+0000') && (body.sprint !== undefined && body.sprint !== '');
+  return (body.name !== undefined && body.name !== '') && (body.debut !== undefined && body.debut !== ''
+  && body.debut !== 'Thu Nov 30 1899 00:00:00 GMT+0000') &&
+  (body.sprint !== undefined && body.sprint !== '' && parseInt(body.sprint) > 0);
 }
 module.exports = router;
