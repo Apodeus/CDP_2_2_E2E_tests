@@ -5,12 +5,13 @@ const pathNameFiles = '/../../html/CreateProject';
 
 test('html form correctly built', async function() {
   await (async function run() {
-    jsdom.JSDOM.fromFile(path.resolve(__dirname+pathNameFiles+'.html'), '').then(async (dom) => {
-      await (new UtilsForm()).addFormCreateProjectToDocument(dom);
-      expect(dom.getElementById('name') != undefined);
-      expect(dom.getElementById('description') != undefined);
-      expect(dom.getElementById('debut') != undefined);
-      expect(dom.getElementById('sprint') != undefined);
+    await jsdom.JSDOM.fromFile(path.resolve(__dirname+pathNameFiles+'.html'), '').then(async (dom) => {
+      const document = dom.window.document;
+      await (new UtilsForm()).addFormCreateProjectToDocument(document);
+      expect(document.getElementById('name') != undefined);
+      expect(document.getElementById('description') != undefined);
+      expect(document.getElementById('debut') != undefined);
+      expect(document.getElementById('sprint') != undefined);
     });
   })();
 });
