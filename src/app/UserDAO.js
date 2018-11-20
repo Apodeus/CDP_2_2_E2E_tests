@@ -10,12 +10,11 @@ module.exports= class UserDAO {
     const query = util.promisify(connection.query).bind(connection);
     await (async () => {
       try {
-        const rows = await query('SELECT * FROM users WHERE pseudo = ? ', [username]);
+        const result = await query('SELECT * FROM users WHERE pseudo = ? ', [username]);
         const user = new User(result[0].pseudo, result[0].email, result[0].password);
         user.id = result[0].id;
         return callback(user);
       } catch (e) {
-        throw e;
       }
     })();
   }

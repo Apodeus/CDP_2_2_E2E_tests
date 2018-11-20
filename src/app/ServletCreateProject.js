@@ -60,6 +60,6 @@ function getTexte(document, texte) {
 }
 function checkValidityAnswerForm(body) {
   return (body.name !== undefined && body.name !== '') && (body.debut !== undefined && body.debut === ''
-  && body.debut != 'Thu Nov 30 1899 00:00:00 GMT+0000') && (body.sprint !== undefined && body.sprint !== '');
+  && body.debut !== 'Thu Nov 30 1899 00:00:00 GMT+0000') && (body.sprint !== undefined && body.sprint !== '');
 }
 module.exports = router;
