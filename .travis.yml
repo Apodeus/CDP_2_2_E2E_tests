@@ -43,7 +43,6 @@ jobs:
         - npm install mysql2
         - npm install util
       script: 
-        - npm run test
         - sudo docker-compose up -d
         - echo "Waiting to be sure the application is ready"
         - sleep 20
