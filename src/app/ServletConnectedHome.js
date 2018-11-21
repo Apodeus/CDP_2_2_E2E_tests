@@ -33,7 +33,7 @@ const app = express();
 app.listen(3000);
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/projects', require('./ServletProjects'));
-app.use('/createproject', require('./ServletCreateProject'));
+app.use('/createproject', require('./ServletAddProject'));
 app.get('/', function(req, res) {
   if (req.query.MesProjets!== undefined) {
     res.write('/projects');

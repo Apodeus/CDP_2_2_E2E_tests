@@ -6,7 +6,7 @@ const ProjectDAO = require('./ProjectDAO');
 const Project = require('./Project');
 const Home = require('./ServletConnectedHome');
 const UtilsForm = require('./UtilsForm');
-const pathNameFiles = '/../html/CreateProject';
+const pathNameFiles = '/../html/AddProject';
 
 router.get('/', function(req, res) {
   sendPage(res);
