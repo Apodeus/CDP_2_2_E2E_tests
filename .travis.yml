@@ -25,43 +25,35 @@ node_js:
         - "7"
 
 stages:
-    - unit_test
-    - it_test
+    - tests
     - sonar
     - e2e
   
 jobs:
   include:
-    - stage: unit_test
+    - stage: tests
       before_script:
         - pwd
         - ls -la
+        - sudo /etc/init.d/mysql stop
         - docker --version
         - npm install jest
         - npm install jest-sonar-reporter
         - npm install jsdom
-      script: 
-        - npm run test
-        - cat coverage/lcov.info
-        - cat reports_sonar/test-info.xml
-    - stage: it_test
-      before_script:
-        - cat coverage/lcov.info
-        - cat reports_sonar/test-info.xml
-        - sudo /etc/init.d/mysql stop
         - npm install mysql2
         - npm install util
+      script: 
+        - npm run test
         - sudo docker-compose up -d
         - echo "Waiting to be sure the application is ready"
         - sleep 20
-      script: 
         - npm run it-test
         - cat coverage/lcov.info
         - cat reports_sonar/test-info.xml
     - stage: sonar
       before_script:
         - npm install sonar-scanner@3.1.0
-      script: npm run sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.test=src -Dsonar.coverage.exclusions=src/test/** -Dsonar.test.inclusions=src/test/unit_tests/*.test.js -Dsonar.plsql.version=5.6 -Dsonar.branch.name=$CI_COMMIT_REF_NAME -Dsonar.login=4cd26046108dc8f90fdb2ea79bd015cdc1d98182 -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+      script: npm run sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.test=src -Dsonar.coverage.exclusions=src/test/** -Dsonar.test.inclusions=src/test/unit_tests/*.test.js -Dsonar.plsql.version=5.6 -Dsonar.branch.name=$CI_COMMIT_REF_NAME -Dsonar.login=4cd26046108dc8f90fdb2ea79bd015cdc1d98182 -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info -Dsonar.testExecutionReportPaths=reports_sonar/test-info.xml
     - stage: e2e
       before_script:
         - npm install puppeteer
