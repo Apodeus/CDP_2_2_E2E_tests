@@ -16,7 +16,7 @@ router.post('/', function(req, res) {
     sendPage(res);
   } else {
     const project = new Project(req.body.name, req.body.description,
-        req.body.debut, req.body.sprint, Home.connectedUser);
+        req.body.start, parseInt(req.body.sprint), Home.connectedUser);
     (new ProjectDAO(Home.connectionDB)).save(project, (p)=>{
       res.redirect('/projects');
     });
@@ -32,8 +32,8 @@ function sendPage(res) {
 }
 
 function checkValidityAnswerForm(body) {
-  return (body.name !== undefined && body.name !== '') && (body.debut !== undefined && body.debut !== ''
-  && body.debut !== 'Thu Nov 30 1899 00:00:00 GMT+0000') &&
+  return (body.name !== undefined && body.name !== '') && (body.start !== undefined && body.start !== ''
+  && body.start !== 'Thu Nov 30 1899 00:00:00 GMT+0000') &&
   (body.sprint !== undefined && body.sprint !== '' && parseInt(body.sprint) > 0);
 }
 module.exports = router;

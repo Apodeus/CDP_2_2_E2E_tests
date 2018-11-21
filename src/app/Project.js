@@ -84,8 +84,8 @@ class Project {
   }
 
   toString() {
-    let s = (this._id+' '+this._name+' '+this._description+' '
-    +this._startDate+' '+this._sprintLength+' '+this._owner.pseudo+' ');
+    let s = (String(this._id)+' '+this._name+' '+this._description+' '
+    +this._startDate+' '+String(this._sprintLength)+' '+this._owner.pseudo+' ');
     this._participants.forEach((item)=> {
       s += item.pseudo;
     });
