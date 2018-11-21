@@ -46,6 +46,8 @@ jobs:
         - cat reports_sonar/test-info.xml
     - stage: it_test
       before_script:
+        - cat coverage/lcov.info
+        - cat reports_sonar/test-info.xml
         - sudo /etc/init.d/mysql stop
         - npm install mysql2
         - npm install util
