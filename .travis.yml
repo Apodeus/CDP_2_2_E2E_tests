@@ -12,6 +12,7 @@ cache:
     directories:
         - coverage/
         - reports_sonar/
+        - node_modules/
 
 
 language: 
@@ -27,7 +28,6 @@ before_install:
         - sudo /etc/init.d/mysql stop
         - pwd
         - ls -la
-        - sudo docker-compose up -d
         - docker --version
         - npm install puppeteer
         - npm install jest
@@ -46,9 +46,10 @@ jobs:
     - stage: unit_test
       script: npm run test
     - stage: sonar
-      script: npm run sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.test=src -Dsonar.test.inclusions=src/test/unit_tests/*.test.js -Dsonar.plsql.version=5.6 -Dsonar.branch.name=$CI_COMMIT_REF_NAME -Dsonar.login=4cd26046108dc8f90fdb2ea79bd015cdc1d98182 -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info -Dsonar.testExecutionReportPaths=reports_sonar/test-info.xml
+      script: npm run sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.test=src -Dsonar.exclusions=src/test/* -Dsonar.test.inclusions=src/test/unit_tests/*.test.js -Dsonar.plsql.version=5.6 -Dsonar.branch.name=$CI_COMMIT_REF_NAME -Dsonar.login=4cd26046108dc8f90fdb2ea79bd015cdc1d98182 -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info -Dsonar.testExecutionReportPaths=reports_sonar/test-info.xml
     - stage: e2e
       script:
+        - sudo docker-compose up -d
         - echo "Waiting to be sure the application is ready"
         - sleep 20
         - echo "Ping localhost:3000"
