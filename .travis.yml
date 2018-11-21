@@ -26,6 +26,7 @@ node_js:
 
 stages:
     - unit_test
+    - it_test
     - sonar
     - e2e
   
@@ -40,6 +41,11 @@ jobs:
         - npm install jest-sonar-reporter
         - npm install jsdom
       script: npm run test
+    - stage: it_test
+      before_script:
+        - npm install mysql2
+        - npm install util
+      script: npm run it-test
     - stage: sonar
       before_script:
         - npm install sonar-scanner@3.1.0
