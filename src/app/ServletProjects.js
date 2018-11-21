@@ -36,9 +36,12 @@ async function addHtmlObjectForProject(document, project, parent) {
   const form = utilsForm.getForm(document, 'form'+project.id, '/backlog', 'post');
   const text=utilsForm.getTexte(document, project.toString());
   form.appendChild(text);
+  const hiddenData = utilsForm.getInput(document, 'data', 'hidden');
+  hiddenData.value=project.id;
   const buttonOpen = utilsForm.getInput(document, 'open', 'submit');
   buttonOpen.value = 'Ouvrir';
   buttonOpen.id = project.id;
+  form.appendChild(hiddenData);
   form.appendChild(buttonOpen);
   listLi.appendChild(form);
   parent.appendChild(listLi);
