@@ -29,23 +29,21 @@ it-tests:
     - coverage/
     - reports_sonar/
   before_script:
-    - ls /
-    - ls /etc
-    - ls /etc/init.d/
-    - /etc/init.d/mysql stop
     - apk update
     - apk upgrade
     - apk add python python-dev py-pip build-base
     - apk add --update nodejs nodejs-npm
     - pip install docker-compose
+    - docker-compose up -d
+    - ls /etc/hosts
+    - cat /etc/hosts
     - npm i npm@latest -g
     - npm install mysql2
     - npm install util
     - npm install jest
     - npm install jest-sonar-reporter
   script:
-    - docker-compose up -d
-    - echo "NE PAS OUBLIER DE RESPAWN LES JOBS"
+    - echo "NE PAS OUBLIER DE RESWAP LES JOBS"
     - sleep 60
     - docker ps
     - docker inspect database
