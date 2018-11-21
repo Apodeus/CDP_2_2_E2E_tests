@@ -1,7 +1,7 @@
 const path = require('path');
 const jsdom = require('jsdom');
 const UtilsForm = require('../../app/UtilsForm');
-const pathNameFiles = '/../../html/CreateProject';
+const pathNameFiles = '/../../html/AddProject';
 
 test('html form correctly built', async function() {
   await (async function run() {
