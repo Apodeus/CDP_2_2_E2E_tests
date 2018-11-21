@@ -8,6 +8,12 @@ services:
         - docker
 
 
+cache:
+    directories:
+        - coverage/
+        - reports_sonar/
+
+
 language: 
         - python
         - node_js
@@ -16,6 +22,7 @@ python:
 node_js:
         - "iojs"
         - "7"
+        
 before_install:
         - sudo /etc/init.d/mysql stop
         - pwd
@@ -25,8 +32,23 @@ before_install:
         - npm install puppeteer
         - npm install jest
         - npm install jest-sonar-reporter
+        - npm install jsdom
+        - npm install sonar-scanner@3.1.0
 
-script :
+
+stages:
+    - unit_test
+    - sonar
+    - e2e
+  
+jobs:
+  include:
+    - stage: unit_test
+      script: npm run test
+    - stage: sonar
+      script: npm run sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.test=src -Dsonar.test.inclusions=src/test/unit_tests/*.test.js -Dsonar.plsql.version=5.6 -Dsonar.branch.name=$CI_COMMIT_REF_NAME -Dsonar.login=4cd26046108dc8f90fdb2ea79bd015cdc1d98182 -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info -Dsonar.testExecutionReportPaths=reports_sonar/test-info.xml
+    - stage: e2e
+      script:
         - echo "Waiting to be sure the application is ready"
         - sleep 20
         - echo "Ping localhost:3000"
