@@ -29,7 +29,9 @@
 |Tt7i | (Design Tt7d) Créer le(s) test(s) du fichier Test7US9.md concernant la modification d'une US | 9 | | 0.5 | | TODO |
 |Tt8i | (Design Tt8d) Créer le(s) test(s) du fichier Test8US10.md concernant la suppression d'une US | 10 | | 0.5 | | TODO |
 |-- | -- BDD --|--|--|--|--|--|
-|Tc2i | Créer un fichier table_US.sql créant une nouvelle table US à la base de donnée CP, cette table doit contenir tous les champs permettant de stocker une User Story (voir SpecDB.md).  | 8,11 | Tc2d | 0.5 | Antonin Rebufat | DOING |
+|Tc2i | Créer un fichier table_us.sql créant une nouvelle table US à la base de donnée cdp, cette table doit contenir tous les champs permettant de stocker une User Story (voir SpecDB.md).  | 8,11 | Tc2d | 0.5 | Antonin Rebufat | DONE |
+|Tc35d | Spécifier les champs de la table sprints en base de donnée dans le fichier SpecDB.md | 8,11,16 |  | 0.5 | Antonin Rebufat | DONE |
+|Tc35i | Créer un fichier table_sprints.sql créant une nouvelle table sprints à la base de donnée cdp, cette table doit contenir tous les champs permettant de stocker un sprint (voir SpecDB.md). | 8,11,16 | tc35d | 0.5 | Antonin Rebufat | DONE |
 |-- | -- Application (Middle) -- |--|--|--|--|--|
 |Tc5d | Spécifier les méthodes fournies par le DAO USDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | Clément Fontenay | DONE |
 |Tc5i | (Design Tc5d) Implémenter la classe USDAO.js et les méthodes spécifier dans le fichier SpecApp.md. | 8, 11 | Tc5d, Tc2d | 0.5 | | TODO |
