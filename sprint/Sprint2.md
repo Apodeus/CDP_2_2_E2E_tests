@@ -34,9 +34,9 @@
 |Tc35i | Créer un fichier table_sprints.sql créant une nouvelle table sprints à la base de donnée cdp, cette table doit contenir tous les champs permettant de stocker un sprint (voir SpecDB.md). | 8,11,16 | tc35d | 0.5 | Antonin Rebufat | DONE |
 |-- | -- Application (Middle) -- |--|--|--|--|--|
 |Tc5d | Spécifier les méthodes fournies par le DAO USDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | Clément Fontenay | DONE |
-|Tc5i | (Design Tc5d) Implémenter la classe USDAO.js et les méthodes spécifier dans le fichier SpecApp.md. | 8, 11 | Tc5d, Tc2d | 0.5 | Clément Fontenay | TODO |
+|Tc5i | (Design Tc5d) Implémenter la classe USDAO.js et les méthodes spécifier dans le fichier SpecApp.md. | 8, 11 | Tc5d, Tc2d | 0.5 | Clément Fontenay | DOING |
 |Tc8d | Spécifier l'objet US qui permet d'utiliser le DAO USDAO.js dans le fichier SpecApp.md  | 8,11 |  | 0.5 | Clément Fontenay | DONE |
-|Tc8i | (Design Tc8d) Implémenter la classe (POJO) US.js en suivant le fichier SpecApp.md | 8,11 | Tc8d, Tc2d | 0.5 | Clément Fontenay | DOING |
+|Tc8i | (Design Tc8d) Implémenter la classe (POJO) US.js en suivant le fichier SpecApp.md | 8,11 | Tc8d, Tc2d | 0.5 | Clément Fontenay | DONE |
 |Tc11.1i | Ajouter le comportement du bouton "Créer un nouveau Projet" (présent sur la page Projects.html) dans ServletProjects.js, qui redirige l'utilisateur vers le servlet ServletAddProject.js et donc la page AddProject.html. | 4 | Tc11i | 0.5 | Romain Ordonez | DONE |
 |Tc11.2i | Ajouter les boutons "ouvrir" à côté des noms des projets sur le listing des projets, dans ServletProjects.js. Chaque bouton doit rediriger l'utilsateur vers le servlet ServletBacklog.js et donc la page Backlog.html où il peut voir le backlog du projet qu'il vient d'ouvrir. | 8,7,11,9,10 | Tc11i | 0.5 | Clément Fontenay | DONE |
 |Tc12i | Implémenter le servlet ServletCreateProject.js, qui est le servlet derrière la page CreateProject.html. Ce servlet doit permettre de générer un formulaire html et de donner un comportement au bouton "Valider et Créer"  | 4 | | 0.5 | Clément FONTENAY |  DONE |
