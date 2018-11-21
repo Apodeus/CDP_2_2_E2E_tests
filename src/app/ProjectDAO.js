@@ -8,7 +8,7 @@ module.exports = class ProjectDAO {
 
 
   async getAllByUser(user, callback) {
-    let projectsList = [];
+    const projectsList = [];
     const connection = this.connection;
     const query = util.promisify(connection.query).bind(connection);
     await (async () => {
@@ -19,8 +19,10 @@ module.exports = class ProjectDAO {
             await(async () =>{
               try {
                 const resultProject = await query('SELECT * FROM projects WHERE id = ? ', [result[i].project]);
-                projectsList.push( new Project(resultProject[0].name, resultProject[0].description,
-                    resultProject[0].start_date, resultProject[0].sprintLength, user));
+                const project = new Project(resultProject[0].name, resultProject[0].description,
+                    resultProject[0].start_date, resultProject[0].sprint_length, user);
+                project._id = resultProject[0].id;
+                projectsList.push( project);
               } catch (e) {
               }
             })();

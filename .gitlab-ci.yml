@@ -28,20 +28,8 @@ it-tests:
     paths:
     - coverage/
     - reports_sonar/
-  before_script:
-    - apk update
-    - apk upgrade
-    - apk add python python-dev py-pip build-base
-    - apk add --update nodejs nodejs-npm
-    - pip install docker-compose
-    - npm i npm@latest -g
-    - npm install jest
-    - npm install jest-sonar-reporter
-    - docker-compose up -d
   script:
     - echo "WIP"
-    - docker-compose down
-
 
 
 

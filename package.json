@@ -6,17 +6,18 @@
   "scripts": {
     "test": "jest --coverage -- src/test/unit_tests/*.test.js",
     "test-e2e": "jest -- src/test/e2e/*.test.js",
+    "it-test": "jest --coverage -- src/test/it_tests/*.test.js",
     "sonar-scanner": "node_modules/sonar-scanner/bin/sonar-scanner"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "expressjs/express",
-    "body-parser":"1.18.3",
+    "body-parser": "1.18.3",
     "fs": "<=11.1.0",
     "jest": "^23.6.0",
     "jest-sonar-reporter": "^2.0.0",
-    "util":"0.11.1",
+    "util": "0.11.1",
     "jsdom": "<=13.0.0",
     "mysql2": "<=1.6.1",
     "path": "0.12.7"

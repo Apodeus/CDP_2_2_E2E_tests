@@ -4,17 +4,48 @@ const jsdom = require('jsdom').JSDOM;
 const router = express.Router();
 const ProjectDAO = require('./ProjectDAO');
 const Home = require('./ServletConnectedHome');
+const UtilsForm = require('./UtilsForm');
 
 const pathNameFiles = '/../html/Projects';
+const valueButtonCreateProject = 'Créer un nouveau Projet';
 
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   jsdom.fromFile(path.resolve(__dirname+pathNameFiles+'.html'), '').then(async (dom) => {
+    addButtonCreate(dom.window.document);
     await listProjects(dom.window.document, Home.connectedUser);
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(dom.serialize());
     res.end();
   });
 });
+router.post('/', function(req, res) {
+  if (req.body.createproject === valueButtonCreateProject) {
+    res.redirect('/createproject');
+  }
+});
+function addButtonCreate(document) {
+  const button = document.getElementById('CreateProject');
+  button.value = valueButtonCreateProject;
+}
+/**
+ * Add to parent a new html object for project (project name, buttons delete, open ...)
+ */
+async function addHtmlObjectForProject(document, project, parent) {
+  const utilsForm = new UtilsForm();
+  const listLi=document.createElement('li');
+  const form = utilsForm.getForm(document, 'form'+project.id, '/backlog', 'post');
+  const text=utilsForm.getTexte(document, project.toString());
+  form.appendChild(text);
+  const hiddenData = utilsForm.getInput(document, 'data', 'hidden');
+  hiddenData.value=project.id;
+  const buttonOpen = utilsForm.getInput(document, 'open', 'submit');
+  buttonOpen.value = 'Ouvrir';
+  buttonOpen.id = project.id;
+  form.appendChild(hiddenData);
+  form.appendChild(buttonOpen);
+  listLi.appendChild(form);
+  parent.appendChild(listLi);
+}
 
 async function getProjects(user) {
   const teamMate= Home.connectedUser;
@@ -41,10 +72,7 @@ async function listProjects(document, userArg) {
     const projects = await getProjects(userArg);
     projects.forEach((project)=>{
       if (project.owner.id===userArg.id) {
-        const l=document.createElement('li');
-        const text=document.createTextNode(project.name+' '+project.description);
-        l.appendChild(text);
-        list.appendChild(l);
+        addHtmlObjectForProject(document, project, list);
       }
     });
 
@@ -57,10 +85,7 @@ async function listProjects(document, userArg) {
     projects.forEach((project)=>{
       for (let i=0; i<project.participants.length; i++) {
         if (project.participants[i].id===userArg.id) {
-          const l=document.createElement('li');
-          const text=document.createTextNode(project.name+' '+project.description);
-          l.appendChild(text);
-          list2.appendChild(l);
+          addHtmlObjectForProject(document, project, list2);
         }
       }
     });

@@ -25,7 +25,7 @@ let connectedUser;
 userDAO.save(new User('user', 'user@gmail.com', 'user'), function(x) {
   connectedUser = x;
   //tempo
-  connectedUser._id = 107;
+  //connectedUser._id = 107;
   module.exports.connectedUser = connectedUser;
 });
 const pathNameFiles = '/../html/ConnectedHome';
@@ -33,7 +33,8 @@ const app = express();
 app.listen(3000);
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/projects', require('./ServletProjects'));
-app.use('/createproject', require('./ServletCreateProject'));
+app.use('/createproject', require('./ServletAddProject'));
+app.use('/backlog', require('./ServletBacklog'));
 app.get('/', function(req, res) {
   if (req.query.MesProjets!== undefined) {
     res.write('/projects');
