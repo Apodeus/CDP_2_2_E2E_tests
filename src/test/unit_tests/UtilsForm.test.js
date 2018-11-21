@@ -10,7 +10,7 @@ test('html form correctly built', async function() {
       await (new UtilsForm()).addFormCreateProjectToDocument(document);
       expect(document.getElementById('name') != undefined);
       expect(document.getElementById('description') != undefined);
-      expect(document.getElementById('debut') != undefined);
+      expect(document.getElementById('start') != undefined);
       expect(document.getElementById('sprint') != undefined);
     });
   })();
