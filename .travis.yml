@@ -45,6 +45,9 @@ jobs:
       before_script:
         - npm install mysql2
         - npm install util
+        - sudo docker-compose up -d
+        - echo "Waiting to be sure the application is ready"
+        - sleep 20
       script: npm run it-test
     - stage: sonar
       before_script:
