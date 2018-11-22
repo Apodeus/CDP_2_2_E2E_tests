@@ -6,7 +6,7 @@ const pathNameFiles = '/../html/Backlog';
 const TabBuilder = require('./TabBuilder');
 
 router.get('/', function(req, res) {
-  sendPage(res, res, dom);
+  sendPage(res, res);
   res.end();
 });
 router.post('/', function(req, res) {
