@@ -14,7 +14,7 @@
   - Liste des US en base de donné, le fichier contiendra une balise div avec l'id=IssueList et un bouton au centre avec l'id=AddUs.
 
 - AddUS.html
-  - Formulaire de création d'une US donné par le servlet ServletCreateUS.js contenant un bouton avec l'id=Validate en bas de la balise div du formulaire (id=Formulaire).
+  - Formulaire de création d'une US donné par le servlet ServletCreateUS.js contenant un bouton avec l'id=falidate en bas de la balise div du formulaire (id=formulaire). Le formulaire contiendra aussi en bas un bouton d'annulation (id=cancel), permttant d'annuler l'action.
 
 - TabsBar.html
   - Barre de navigation composé de boutons défini par les servlets. Contient une balise div d'id=TabBar se situant en haut de la page.

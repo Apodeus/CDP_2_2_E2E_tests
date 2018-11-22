@@ -20,7 +20,7 @@ async function clearDatabase(connectionDB){
 describe('Test DAO', () => {
 
   const connectionDB = mysql.createConnection({
-    host: '0.0.0.0',
+    host: 'localhost',
     database: 'cdp',
     pool: {
       max: 50,
