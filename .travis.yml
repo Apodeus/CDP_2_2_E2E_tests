@@ -13,7 +13,6 @@ cache:
   - reports_sonar/
   - node_modules/
 
-
 language:
 - python
 - node_js

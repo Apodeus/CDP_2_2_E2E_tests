@@ -24,8 +24,6 @@ const userDAO = new UserDAO(connectionDB);
 let connectedUser;
 userDAO.save(new User('user', 'user@gmail.com', 'user'), function(x) {
   connectedUser = x;
-  //tempo
-  //connectedUser._id = 107;
   module.exports.connectedUser = connectedUser;
 });
 const pathNameFiles = '/../html/ConnectedHome';
