@@ -51,7 +51,7 @@ jobs:
     - stage: sonar
       before_script:
         - npm install sonar-scanner@3.1.0
-      script: npm run sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.test=src -Dsonar.coverage.exclusions=src/test/** -Dsonar.test.inclusions=src/test/unit_tests/*.test.js,src/test/it_tests/*.test.js -Dsonar.plsql.version=5.6 -Dsonar.branch.name=$CI_COMMIT_REF_NAME -Dsonar.login=4cd26046108dc8f90fdb2ea79bd015cdc1d98182 -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info -Dsonar.testExecutionReportPaths=reports_sonar/test-info.xml
+      script: npm run sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.test=src -Dsonar.exclusions=src/test/** -Dsonar.coverage.exclusions=src/test/** -Dsonar.test.inclusions=src/test/unit_tests/*.test.js,src/test/it_tests/*.test.js -Dsonar.plsql.version=5.6 -Dsonar.branch.name=$CI_COMMIT_REF_NAME -Dsonar.login=4cd26046108dc8f90fdb2ea79bd015cdc1d98182 -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info -Dsonar.testExecutionReportPaths=reports_sonar/test-info.xml
     - stage: e2e
       before_script:
         - npm install puppeteer
