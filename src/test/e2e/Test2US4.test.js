@@ -194,7 +194,11 @@ describe('Test US 4', () => {
         actualURL = await page.url();
         expect(actualURL).toBe('http://localhost:3000/createproject');
 
-        await page.goto(url);
+        await Promise.all([
+            page.waitForNavigation(),
+            page.goto(url),
+        ]);
+
         actualURL = await page.url();
         expect(actualURL).toBe(url);
 
