@@ -15,8 +15,9 @@ module.exports= class UserDAO {
         const user = new User(result[0].pseudo, result[0].email, result[0].password);
         user.id = result[0].id;
         return callback(user);
-      } catch (err) {
-        throw err;
+      } catch (e) {
+        console.err(e);
+        throw e;
       }
     })();
   }

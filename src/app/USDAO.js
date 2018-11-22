@@ -21,8 +21,9 @@ module.exports= class USDAO{
             usList.push( us);
           }
         })(rows);
-      }catch (err) {
-        throw err;
+      }catch (e) {
+        console.err(e);
+        throw e;
       }
     })();
     callback(usList);
