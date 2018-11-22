@@ -1,3 +1,7 @@
+# Conduite de Projet - M2 GL
+### Clément Fontenay, Antonin Rebufat, Romain Ordonez
+
+## Intégration continue
 Qualité du code - Sonar:
 
 [![quality gate](https://sonarcloud.io/api/project_badges/measure?project=cdp%3Acdp&metric=alert_status)](https://sonarcloud.io/dashboard?id=cdp%3Acdp)
@@ -8,8 +12,9 @@ Automatisation des tests unitaires, d'intégrations et E2E -- Analyse Sonar :
 
 [![Build Travis Status](https://travis-ci.com/Apodeus/CDP_2_2_E2E_tests.svg?token=96sAwaj1Vfzjk86mqyYj&branch=master)](https://travis-ci.com/Apodeus/CDP_2_2_E2E_tests)
 
-# Conduite de Projet - M2 GL
-# Clément Fontenay, Antonin Rebufat, Romain Ordonez
+## Burn Down Chart - Fin du sprint 1
+
+![alt](https://cdn.discordapp.com/attachments/301739146521608194/515120533252341772/burnchartdown.png)
 
 ### Légende :
 - \* => Champ obligatoire
