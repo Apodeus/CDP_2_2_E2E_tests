@@ -4,7 +4,7 @@ Qualité du code - Sonar:
 [![coverage](https://sonarcloud.io/api/project_badges/measure?project=cdp%3Acdp&metric=coverage)](https://sonarcloud.io/dashboard?id=cdp%3Acdp)
 [![code smells](https://sonarcloud.io/api/project_badges/measure?project=cdp%3Acdp&metric=code_smells)](https://sonarcloud.io/dashboard?id=cdp%3Acdp)
 
-Tests unitaires, E2E -> Analyse Sonar :
+Automatisation des tests unitaires, d'intégrations et E2E -- Analyse Sonar :
 
 [![Build Travis Status](https://travis-ci.com/Apodeus/CDP_2_2_E2E_tests.svg?token=96sAwaj1Vfzjk86mqyYj&branch=master)](https://travis-ci.com/Apodeus/CDP_2_2_E2E_tests)
 
