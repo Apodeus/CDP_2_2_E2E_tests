@@ -1,17 +1,17 @@
 const US = require('./US');
 const util = require('util');
 
-module.exports= class USDAO{
-  constructor(connection){
+module.exports= class USDAO {
+  constructor(connection) {
     this.connection=connection;
   }
 
-  async getAllUSByProject(project, callback){
+  async getAllUSByProject(project, callback) {
     const usList = [];
     const connection=this.connection;
     const query=util.promisify(connection.query).bind(connection);
     await (async () => {
-      try{
+      try {
         const rows= await query('SELECT * FROM us WHERE project = ?', [project.id]);
         await (async (result) => {
           for (let i = 0; i < result.length; i++) {
@@ -21,7 +21,7 @@ module.exports= class USDAO{
             usList.push( us);
           }
         })(rows);
-      }catch (e) {
+      } catch (e) {
         console.err(e);
         throw e;
       }
@@ -30,42 +30,48 @@ module.exports= class USDAO{
   }
 
 
-  save(us, callback){ // throws Exception;
-    let values=[us.title, us.description, us.difficulty, us.priority, us.project.id];
-    if(us.sprint!==undefined){
+  save(us, callback) { // throws Exception;
+    const values=[us.title, us.description, us.difficulty, us.priority, us.project.id];
+    const connection=this.connection;
+    const query=util.promisify(connection.query).bind(connection);
+    let res;
+    if (us.sprint!==undefined) {
       values.push(us.sprint);
     }
-    if(us.id===undefined){
-      let q='INSERT INTO us SET title = ? , description = ? , difficulty = ? , priority = ? , project = ?';
-      if(us.sprint!==undefined){
-        q+=', sprint = ?';
-      }
-      q+=' ;';
-      this.connection.query(q, values, function(err, result) {
-            if (err) {
-              throw err;
-            }
-            const us1=new US(us.title, us.description, us.difficulty, us.priority, us.project, us.sprint);
-            us1.id=result.insertId;
-            console.log(us1.toString()+ 'was saved !');
-            return callback(us1);
-          });
-    }else{
-      values.push(us.id);
-      let q='UPDATE us SET title = ? , description = ? , difficulty = ? , priority = ? , project = ?';
-      if(us.sprint!==undefined){
-        q+=', sprint = ?';
-      }
-      q+=' WHERE id = ? ';
-      this.connection.query(q, values,
-      function(err, result) {
-        if (err) {
-          throw err;
+    await(async () =>{
+      if (us.id===undefined) {
+        let q='INSERT INTO us SET title = ? , description = ? , difficulty = ? , priority = ? , project = ?';
+        if (us.sprint!==undefined) {
+          q+=', sprint = ?';
         }
-        console.log(us.toString() + ' was updated in DB ! ');
-        return callback(us);
-      });
-    }
-
+        q+=' ;';
+        try {
+          const result = await query(q, values);
+          const us1=new US(us.title, us.description, us.difficulty, us.priority, us.project, us.sprint);
+          us1.id=result.insertId;
+          console.log(us1.toString()+ 'was saved !');
+          res = us1;
+        } catch (e) {
+          console.log(e);
+          throw e;
+        }
+      } else {
+        values.push(us.id);
+        let q='UPDATE us SET title = ? , description = ? , difficulty = ? , priority = ? , project = ?';
+        if (us.sprint!==undefined) {
+          q+=', sprint = ?';
+        }
+        q+=' WHERE id = ? ';
+        try {
+          this.connection.query(q, values);
+          console.log(us.toString() + ' was updated in DB ! ');
+          res = us;
+        } catch (e) {
+          console.log(e);
+          throw e;
+        }
+      }
+    })();
+    callback(res);
   }
-}
+};

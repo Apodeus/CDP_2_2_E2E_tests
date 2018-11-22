@@ -33,37 +33,39 @@ module.exports = class ProjectDAO {
     })();
     callback(projectsList);
   }
-  save(project, callback) {
-    if (project.id === undefined) {
-      const connectionDB = this.connection;
-      this.connection.query('INSERT INTO projects SET name = ?, description = ?, start_date = ?, ' +
-                'sprint_length = ?, owner = ?', [project._name, project._description, project._startDate,
-        project._sprintLength, project._owner._id], function(err, result) {
-        if (err) {
-          throw err;
+  async save(project, callback) {
+    const connection = this.connection;
+    const query = util.promisify(connection.query).bind(connection);
+    let res;
+    await(async () =>{
+      if (project.id === undefined) {
+        try {
+          const result = await query('INSERT INTO projects SET name = ?, description = ?, start_date = ?, ' +
+          'sprint_length = ?, owner = ?', [project._name, project._description, project._startDate,
+            project._sprintLength, project._owner._id]);
+          await query('INSERT INTO projects_participants SET user = ?, project = ? ;',
+              [project._owner._id, result.insertId]);
+          res = new Project(project._name, project._description, project._startDate,
+              project._sprintLength, project._owner);
+          res._id = result.insertId;
+          console.log('project '+ res._name + ' was saved !' );
+        } catch (e) {
+          console.log(e);
+          throw e;
         }
-        connectionDB.query('INSERT INTO projects_participants SET user = ?, project = ? ;',
-            [project._owner._id, result.insertId], function(err2, result2) {
-              if (err2) {
-                throw err2;
-              }
-              const project2 = new Project(project._name, project._description, project._startDate,
-                  project._sprintLength, project._owner);
-              project2._id = result.insertId;
-              console.log('project '+ project2._name + ' was saved !' );
-              return callback(project2);
-            });
-      });
-    } else {
-      this.connection.query('UPDATE projects SET name = ?, description = ?, start_date = ?, sprint_length = ?, ' +
-                'owner = ? WHERE id = ?', [project._name, project._description, project._startDate,
-        project._sprintLength, project._owner._id, project._id], function(err, result) {
-        if (err) {
-          throw err;
+      } else {
+        try {
+          await this.connection.query('UPDATE projects SET name = ?, description = ?, start_date = ?,'
+          + 'sprint_length = ?, ' + 'owner = ? WHERE id = ?', [project._name, project._description, project._startDate,
+            project._sprintLength, project._owner._id, project._id]);
+          console.log('project '+ project._name + ' was edited !' );
+          res = project;
+        } catch (e) {
+          console.log(e);
+          throw e;
         }
-        console.log('project '+ project._name + ' was saved !' );
-        return callback(project);
-      });
-    }
+      }
+    })();
+    callback(res);
   }
 };
