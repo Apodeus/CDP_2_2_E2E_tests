@@ -34,7 +34,7 @@ app.listen(3000);
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/projects', require('./ServletProjects'));
 app.use('/createproject', require('./ServletAddProject'));
-app.use('/backlog', require('./ServletBacklog'));
+
 app.get('/', function(req, res) {
   if (req.query.MesProjets!== undefined) {
     res.write('/projects');
