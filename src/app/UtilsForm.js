@@ -27,8 +27,7 @@ class UtilsForm {
     return input;
   }
   getTexte(document, texte) {
-    const res = document.createTextNode(texte);
-    return res;
+    return document.createTextNode(texte);
   }
   getTexteP(document, texte) {
     const res = document.createElement('p');
