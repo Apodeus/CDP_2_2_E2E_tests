@@ -2,34 +2,66 @@ sudo: required
 addons:
   apt:
     packages:
-      - docker-ce
+    - docker-ce
 
 services:
-        - docker
+- docker
+
+cache:
+  directories:
+  - coverage/
+  - reports_sonar/
+  - node_modules/
 
 
-language: 
-        - python
-        - node_js
+language:
+- python
+- node_js
 python:
-        - "3.3"
+- "3.3"
 node_js:
-        - "iojs"
-        - "7"
-before_install:
-        - sudo /etc/init.d/mysql stop
-        - pwd
-        - ls -la
-        - sudo docker-compose up -d
-        - docker --version
-        - npm install puppeteer
-        - npm install jest
-        - npm install jest-sonar-reporter
+- "iojs"
+- "7"
 
-script :
-        - echo "Waiting to be sure the application is ready"
-        - sleep 20
-        - echo "Ping localhost:3000"
-        - curl localhost:3000
-        - echo "Start of E2E Tests"
-        - npm run test-e2e
+stages:
+- tests
+- sonar
+- e2e
+
+jobs:
+  include:
+  - stage: tests
+    before_script:
+    - pwd
+    - echo $TRAVIS_BRANCH
+    - ls -la
+    - sudo /etc/init.d/mysql stop
+    - docker --version
+    - npm install jest
+    - npm install jest-sonar-reporter
+    - npm install jsdom
+    - npm install mysql2
+    - npm install util
+    script:
+    - sudo docker-compose up -d
+    - echo "Waiting to be sure the application is ready"
+    - sleep 20
+    - npm run it-test
+    - cat coverage/lcov.info
+    - cat reports_sonar/test-info.xml
+  - stage: sonar
+    before_script:
+    - npm install sonar-scanner@3.1.0
+    script: npm run sonar-scanner -- -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=cdp:cdp -Dsonar.organization=apodeus-github -Dsonar.sources=src -Dsonar.test=src -Dsonar.exclusions=src/test/** -Dsonar.coverage.exclusions=src/test/** -Dsonar.test.inclusions=src/test/unit_tests/*.test.js,src/test/it_tests/*.test.js -Dsonar.plsql.version=5.6 -Dsonar.branch.name=$TRAVIS_BRANCH -Dsonar.login=4cd26046108dc8f90fdb2ea79bd015cdc1d98182 -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info -Dsonar.testExecutionReportPaths=reports_sonar/test-info.xml
+  - stage: e2e
+    before_script:
+    - npm install puppeteer
+    - sudo /etc/init.d/mysql stop
+    script:
+    - sudo docker-compose up -d
+    - echo "Waiting to be sure the application is ready"
+    - sleep 20
+    - echo "Ping localhost:3000"
+    - curl localhost:3000
+    - echo "Start of E2E Tests"
+    - npm run test-e2e
