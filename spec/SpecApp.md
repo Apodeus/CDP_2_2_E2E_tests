@@ -39,7 +39,7 @@ Les valeurs renvoyés par les DAO sont renvoyées dans les fonctions callback pa
 
 - USDAO.js :
   - Liste des méthodes :
-    - ```US save(US us, function(resultUser)) throws Exception;```
+    - ```US save(US us, function(resultUS)) throws Exception;```
     - ```List<US> getAllUSByProject(Project project, function(resultAllUS)) throws Exception;```
 
 - User.js

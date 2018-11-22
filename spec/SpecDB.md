@@ -15,9 +15,9 @@
 | INTEGER FOREIGN KEY REFERENCES users(id) NOT NULL | INTEGER FOREIGN KEY REFERENCES projects(id) NOT NULL |
 
 # Table us
-| id | title | description | difficulty | priority | sprint |
+| id | title | description | difficulty | priority | project | sprint |
 |:--:|:--:|:--:|:--:|:--:|:--:|
-| INTEGER NOT NULL auto-increment (primary Key) | VARCHAR(60) NOT NULL | VARCHAR(280) NOT NULL | INTEGER NOT NULL | VARCHAR(10) NOT NULL | INTEGER FOREIGN KEY REFERENCES sprints(id) |
+| INTEGER NOT NULL auto-increment (primary Key) | VARCHAR(60) NOT NULL | VARCHAR(280) NOT NULL | INTEGER NOT NULL | VARCHAR(10) NOT NULL | INTEGER FOREIGN KEY REFERENCES projects(id) NOT NULL | INTEGER FOREIGN KEY REFERENCES sprints(id) |
 
 # Table sprints
 | id | name | project |

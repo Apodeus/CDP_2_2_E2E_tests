@@ -34,7 +34,7 @@
 |Tc35i | Créer un fichier table_sprints.sql créant une nouvelle table sprints à la base de donnée cdp, cette table doit contenir tous les champs permettant de stocker un sprint (voir SpecDB.md). | 8,11,16 | tc35d | 0.5 | Antonin Rebufat | DONE |
 |-- | -- Application (Middle) -- |--|--|--|--|--|
 |Tc5d | Spécifier les méthodes fournies par le DAO USDAO.js dans le fichier SpecApp.md | 8, 11 | | 0.5 | Clément Fontenay | DONE |
-|Tc5i | (Design Tc5d) Implémenter la classe USDAO.js et les méthodes spécifier dans le fichier SpecApp.md. | 8, 11 | Tc5d, Tc2d | 0.5 | Antonin Rebufat | DOING |
+|Tc5i | (Design Tc5d) Implémenter la classe USDAO.js et les méthodes spécifier dans le fichier SpecApp.md. | 8, 11 | Tc5d, Tc2d | 0.5 | Antonin Rebufat | DONE |
 |Tc8d | Spécifier l'objet US qui permet d'utiliser le DAO USDAO.js dans le fichier SpecApp.md  | 8,11 |  | 0.5 | Clément Fontenay | DONE |
 |Tc8i | (Design Tc8d) Implémenter la classe (POJO) US.js en suivant le fichier SpecApp.md | 8,11 | Tc8d, Tc2d | 0.5 | Clément Fontenay | DONE |
 |Tc11.1i | Ajouter le comportement du bouton "Créer un nouveau Projet" (présent sur la page Projects.html) dans ServletProjects.js, qui redirige l'utilisateur vers le servlet ServletAddProject.js et donc la page AddProject.html. | 4 | Tc11i | 0.5 | Romain Ordonez | DONE |

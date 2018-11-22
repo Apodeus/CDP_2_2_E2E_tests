@@ -6,6 +6,8 @@ CREATE TABLE us(
   description VARCHAR(280) NOT NULL,
   difficulty INTEGER NOT NULL,
   priority VARCHAR(10) NOT NULL,
-  sprint INTEGER,
+  project INTEGER NOT NULL,
+  sprint INTEGER DEFAULT NULL,
+  FOREIGN KEY (project) REFERENCES projects(id),
   FOREIGN KEY (sprint) REFERENCES sprints(id)
 ) ENGINE=InnoDB;
