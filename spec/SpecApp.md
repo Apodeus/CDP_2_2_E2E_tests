@@ -82,5 +82,5 @@ Les valeurs renvoyés par les DAO sont renvoyées dans les fonctions callback pa
   - Liste des méthodes :
     - ```void addButton(title, url)```
       - ajoute un bouton à la barre d'onglet, ce bouton est constitué d'un titre et d'une url pour rediriger l'utilisateur.
-    - ```string build()```
-      - permet de générer le code html représentant la barre de tout les boutons générés.
+    - ```void build(document)```
+      - permet d'ajouter au document html la barre d'onglet.
