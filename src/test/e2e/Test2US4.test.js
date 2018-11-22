@@ -2,22 +2,22 @@ const puppeteer = require('puppeteer');
 const mysql = require('mysql2');
 const util = require('util');
 
-async function newQuery(connectionDB, request){
+async function newQuery(connectionDB, request) {
   await connectionDB.execute(request);
 }
 
-async function clearDatabase(connectionDB){
+async function clearDatabase(connectionDB) {
   await Promise.all([
-    newQuery(connectionDB, "SET FOREIGN_KEY_CHECKS = 0"),
-    newQuery(connectionDB, "TRUNCATE TABLE projects_participants"),
-    newQuery(connectionDB, "TRUNCATE TABLE projects"),
-    newQuery(connectionDB, "SET FOREIGN_KEY_CHECKS = 1"),
+    newQuery(connectionDB, 'SET FOREIGN_KEY_CHECKS = 0'),
+    newQuery(connectionDB, 'TRUNCATE TABLE projects_participants'),
+    newQuery(connectionDB, 'TRUNCATE TABLE projects'),
+    newQuery(connectionDB, 'SET FOREIGN_KEY_CHECKS = 1'),
   ]);
- }
+}
 
 describe('Test US 4', () => {
-  var browser, page;
-  var url = 'http://localhost:3000/projects';
+  let browser; let page;
+  const url = 'http://localhost:3000/projects';
   const connectionDB = mysql.createConnection({
     host: 'localhost',
     database: 'cdp',
@@ -33,9 +33,9 @@ describe('Test US 4', () => {
 
   beforeEach(async () => {
     jest.setTimeout(100000);
-    console.log("Clearing database...");
+    console.log('Clearing database...');
     await clearDatabase(connectionDB);
-    console.log("End of clearing...");
+    console.log('End of clearing...');
     browser = await puppeteer.launch({
       args: [
         '--no-sandbox',
@@ -44,18 +44,18 @@ describe('Test US 4', () => {
       timeout: 0,
     });
     page = await browser.newPage();
-  })
+  });
 
   afterEach(() => {
     browser.close();
-  })
+  });
 
   afterAll(async () => {
     connectionDB.close();
-  })
+  });
 
   test('Scenario 1', async () => {
-    console.log("start scenario 1");
+    console.log('start scenario 1');
     await page.goto(url);
     let actualURL = await page.url();
     expect(actualURL).toBe(url);
@@ -73,15 +73,15 @@ describe('Test US 4', () => {
     const date = '12122018';
     const dureeSprint = '2';
 
-    let inputNameHandle = await page.$('[name="name"]');
+    const inputNameHandle = await page.$('[name="name"]');
     await inputNameHandle.click();
     await page.keyboard.type(projectName);
 
-    let inputDescHandle = await page.$('[name="description"]');
+    const inputDescHandle = await page.$('[name="description"]');
     await inputDescHandle.click();
     await page.keyboard.type(description);
 
-    let inputDateHandle = await page.$('[name="start"]');
+    const inputDateHandle = await page.$('[name="start"]');
     await inputDateHandle.click();
     await page.keyboard.press('ArrowLeft');
     await page.keyboard.press('ArrowLeft');
@@ -90,24 +90,24 @@ describe('Test US 4', () => {
     await page.keyboard.type('15');
     await page.keyboard.type('2019');
 
-    let inputSprintHandle = await page.$('[name="sprint"]');
+    const inputSprintHandle = await page.$('[name="sprint"]');
     await inputSprintHandle.click();
     await page.keyboard.type(dureeSprint);
 
-    let buttonValideHandle = await page.$('#validate');
+    const buttonValideHandle = await page.$('#validate');
     await Promise.all([
-        buttonValideHandle.click({ clickCount: 3 }),
-        page.waitForNavigation(),
+      buttonValideHandle.click({clickCount: 3}),
+      page.waitForNavigation(),
     ]);
 
     actualURL = await page.url();
     expect(actualURL).toBe(url);
 
-    let expectedResult = 'ProjetTest Mon projet de test Fri Nov 15 2019 00:00:00 GMT+0000 (Coordinated Universal Time) 2 user user';
-    let form1Handle = await page.$('#form1');
-    let contentForm1 = await page.evaluate(f1 => f1.innerHTML, form1Handle);
+    const expectedResult = 'ProjetTest Mon projet de test Fri Nov 15 2019 00:00:00 GMT+0000 (Coordinated Universal Time) 2 user user';
+    const form1Handle = await page.$('#form1');
+    const contentForm1 = await page.evaluate((f1) => f1.innerHTML, form1Handle);
     expect(contentForm1).toContain(expectedResult);
-  })
+  });
 
   test('Scenario 2', async () => {
     await page.goto(url);
@@ -127,15 +127,15 @@ describe('Test US 4', () => {
     const date = '12122018';
     const dureeSprint = '2';
 
-    let inputNameHandle = await page.$('[name="name"]');
+    const inputNameHandle = await page.$('[name="name"]');
     await inputNameHandle.click();
     await page.keyboard.type(projectName);
 
-    let inputDescHandle = await page.$('[name="description"]');
+    const inputDescHandle = await page.$('[name="description"]');
     await inputDescHandle.click();
     await page.keyboard.type(description);
 
-    let inputDateHandle = await page.$('[name="start"]');
+    const inputDateHandle = await page.$('[name="start"]');
     await inputDateHandle.click();
     await page.keyboard.press('ArrowLeft');
     await page.keyboard.press('ArrowLeft');
@@ -144,25 +144,24 @@ describe('Test US 4', () => {
     await page.keyboard.type('15');
     await page.keyboard.type('2019');
 
-    let inputSprintHandle = await page.$('[name="sprint"]');
+    const inputSprintHandle = await page.$('[name="sprint"]');
     await inputSprintHandle.click();
     await page.keyboard.type(dureeSprint);
 
-    let buttonValideHandle = await page.$('#validate');
+    const buttonValideHandle = await page.$('#validate');
     await Promise.all([
-        buttonValideHandle.click({ clickCount: 3 }),
-        page.waitForNavigation(),
+      buttonValideHandle.click({clickCount: 3}),
+      page.waitForNavigation(),
     ]);
 
     actualURL = await page.url();
     expect(actualURL).toBe(url);
 
-    let expectedResult = 'ProjetTest2  Fri Nov 15 2019 00:00:00 GMT+0000 (Coordinated Universal Time) 2 user user';
-    let form1Handle = await page.$('#form1');
-    let contentForm1 = await page.evaluate(f1 => f1.innerHTML, form1Handle);
+    const expectedResult = 'ProjetTest2  Fri Nov 15 2019 00:00:00 GMT+0000 (Coordinated Universal Time) 2 user user';
+    const form1Handle = await page.$('#form1');
+    const contentForm1 = await page.evaluate((f1) => f1.innerHTML, form1Handle);
     expect(contentForm1).toContain(expectedResult);
-
-  })
+  });
 
   test('Scenario 3', async () => {
     await page.goto(url);
@@ -180,31 +179,29 @@ describe('Test US 4', () => {
     const description = 'Test avec Mauvaise saisie';
     const dureeSprint = '3';
 
-    let inputDescHandle = await page.$('[name="description"]');
+    const inputDescHandle = await page.$('[name="description"]');
     await inputDescHandle.click();
     await page.keyboard.type(description);
 
-    let inputSprintHandle = await page.$('[name="sprint"]');
+    const inputSprintHandle = await page.$('[name="sprint"]');
     await inputSprintHandle.click();
     await page.keyboard.type(dureeSprint);
 
-    let buttonValideHandle = await page.$('#validate');
-    await buttonValideHandle.click({clickCount : 3});
+    const buttonValideHandle = await page.$('#validate');
+    await buttonValideHandle.click({clickCount: 3});
 
     actualURL = await page.url();
     expect(actualURL).toBe('http://localhost:3000/createproject');
-    
+
     await Promise.all([
-        page.waitForNavigation(),
-        page.goto(url),
+      page.waitForNavigation(),
+      page.goto(url),
     ]);
     actualURL = await page.url();
     expect(actualURL).toBe(url);
 
-    let expectedResult = 'Test avec Mauvaise saisie';
-    let form1Handle = await page.$('#form1');
+    const expectedResult = 'Test avec Mauvaise saisie';
+    const form1Handle = await page.$('#form1');
     expect(form1Handle).toBe(null);
-
-  })
-
-})
+  });
+});
