@@ -61,10 +61,10 @@ describe('Test DAO', () => {
   });
 
   test('it_should_edit_one_user', async () => {
-    await dao.getUserByName(name, (user) => {
+    await dao.getUserByName(name, async (user) => {
       const saveID = user.id;
       user.pseudo = 'new name';
-      dao.save(user, (usr) => {
+      await dao.save(user, async (usr) => {
         expect(usr.id).toBe(saveID);
         expect(usr.pseudo).toBe('new name');
         expect(usr.email).toBe(email);
@@ -73,7 +73,7 @@ describe('Test DAO', () => {
     });
     // when saving this user in database
   });
-  afterAll( async () => {   
+  afterAll( async () => {
     connectionDB.close();
   });
 });

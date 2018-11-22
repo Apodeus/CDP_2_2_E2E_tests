@@ -55,7 +55,7 @@ module.exports = class ProjectDAO {
         }
       } else {
         try {
-          await this.connection.query('UPDATE projects SET name = ?, description = ?, start_date = ?,'
+          await query('UPDATE projects SET name = ?, description = ?, start_date = ?,'
           + 'sprint_length = ?, ' + 'owner = ? WHERE id = ?', [project._name, project._description, project._startDate,
             project._sprintLength, project._owner._id, project._id]);
           console.log('project '+ project._name + ' was edited !' );
