@@ -28,30 +28,36 @@ module.exports= class UserDAO {
     const connection = this.connection;
     const query = util.promisify(connection.query).bind(connection);
     let res;
-    await (async () => {
-      if (user.id === undefined) {
-        try {
-          const result = await query('INSERT INTO users SET pseudo = ? , email = ? , password = ? ;',
-              [user.pseudo, user.email, user.password]);
-          res = new User(user.pseudo, user.email, user.password);
-          res.id = result.insertId;
-          console.log(res.toString() + ' Was saved ! ');
-        } catch (e) {
-          console.log(e);
-          throw e;
+    try {
+      await (async () => {
+        if (user.id === undefined) {
+          try {
+            const result = await query('INSERT INTO users SET pseudo = ? , email = ? , password = ? ;',
+                [user.pseudo, user.email, user.password]);
+            res = new User(user.pseudo, user.email, user.password);
+            res.id = result.insertId;
+            console.log(res.toString() + ' Was saved ! ');
+          } catch (e) {
+            console.log(e);
+            throw e;
+          }
+        } else {
+          try {
+            await query('UPDATE users SET pseudo = ? , email = ? , password = ?  WHERE id = ? ',
+                [user.pseudo, user.email, user.password, user.id]);
+            res = user;
+            console.log(user.toString() + ' was edited in DB ! ');
+          } catch (e) {
+            console.log(e);
+            throw e;
+          }
         }
-      } else {
-        try {
-          await query('UPDATE users SET pseudo = ? , email = ? , password = ?  WHERE id = ? ',
-              [user.pseudo, user.email, user.password, user.id]);
-          res = user;
-          console.log(user.toString() + ' was edited in DB ! ');
-        } catch (e) {
-          console.log(e);
-          throw e;
-        }
-      }
-    })();
+      })();
+    } catch (e) {
+      console.log(e);
+      throw e;
+    }
+
     callback(res);
   }
 };

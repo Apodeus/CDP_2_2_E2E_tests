@@ -6,6 +6,7 @@ const jsdom = require('jsdom').JSDOM;
 const fs = require('fs');
 const UserDAO = require('./UserDAO');
 const User = require('./User');
+
 const connectionDB = mysql.createConnection({
   host: 'database',
   port: 3306,
@@ -19,13 +20,8 @@ const connectionDB = mysql.createConnection({
   user: 'user',
   password: 'root',
 });
-/* Temporaire: pour montrer que l'on a bien un début de gestion d'utilisateur*/
+
 const userDAO = new UserDAO(connectionDB);
-let connectedUser;
-userDAO.save(new User('user', 'user@gmail.com', 'user'), function(x) {
-  connectedUser = x;
-  module.exports.connectedUser = connectedUser;
-});
 const pathNameFiles = '/../html/ConnectedHome';
 const app = express();
 app.listen(3000);
@@ -33,7 +29,12 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/projects', require('./ServletProjects'));
 app.use('/createproject', require('./ServletAddProject'));
 app.use('/backlog', require('./ServletBacklog'));
-app.get('/', function(req, res) {
+app.get('/', async function(req, res) {
+/* Temporaire: pour montrer que l'on a bien un début de gestion d'utilisateur*/  
+
+  await userDAO.save(new User('user', 'user@gmail.com', 'user'), function(x) {
+    module.exports.connectedUser = x;
+  });
   if (req.query.MesProjets!== undefined) {
     res.write('/projects');
     res.end();
@@ -60,3 +61,4 @@ function addScriptToHTML(res) {
   res.write('<script>'+script+'</script>');
 }
 module.exports.connectionDB = connectionDB;
+
