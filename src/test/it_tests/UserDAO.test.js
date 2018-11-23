@@ -12,7 +12,7 @@ async function clearDatabase(connectionDB){
         newQuery(connectionDB, "SET FOREIGN_KEY_CHECKS = 0"),
         newQuery(connectionDB, "TRUNCATE TABLE projects_participants"),
         newQuery(connectionDB, "TRUNCATE TABLE projects"),
-        newQuery(connectionDB, "DELETE FROM users WHERE id != 1"),
+        newQuery(connectionDB, "TRUNCATE TABLE users"),
         newQuery(connectionDB, "SET FOREIGN_KEY_CHECKS = 1"),
     ]);
 }
@@ -38,7 +38,7 @@ describe('Test DAO', () => {
         jest.setTimeout(10000);
         await clearDatabase(connectionDB);
         dao = new UserDAO(connectionDB);
-
+        dao.save(new User("user", "user@gmail.com", "user"), (usr) => {});
     });
 
     test('it_should_return_one_user', async () => {
