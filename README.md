@@ -14,7 +14,7 @@ Automatisation des tests unitaires, d'intégrations et E2E -- Analyse Sonar :
 
 ## Burn Down Chart - Fin du sprint 1
 
-![alt](https://cdn.discordapp.com/attachments/301739146521608194/515120533252341772/burnchartdown.png)
+![alt](https://cdn.discordapp.com/attachments/301739146521608194/516926154548969474/BurnDownChart.png)
 
 ### Légende :
 - \* => Champ obligatoire
