@@ -17,9 +17,8 @@ router.post('/', function(req, res) {
   } else {
     const project = new Project(req.body.name, req.body.description,
         req.body.start, parseInt(req.body.sprint), Home.connectedUser);
-    (new ProjectDAO(Home.connectionDB)).save(project, (p)=>{
-      res.redirect('/projects');
-    });
+    (new ProjectDAO(Home.connectionDB)).save(project);
+    res.redirect('/projects');
   }
 });
 function sendPage(res) {

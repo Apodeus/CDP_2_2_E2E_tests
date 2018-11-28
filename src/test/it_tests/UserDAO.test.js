@@ -1,6 +1,5 @@
 const User = require('../../app/User');
 const UserDAO = require('../../app/UserDAO');
-const util = require('util');
 const mysql = require('mysql2');
 
 async function newQuery(connectionDB, request) {
@@ -43,34 +42,30 @@ describe('Test DAO', () => {
   test('it_should_save_one_user', async () => {
     const user = await new User(name, email, password);
     // when saving this user in database
-    await dao.save(user, (usr) => {
-      expect(usr.id).not.toBe(null);
-      expect(usr.pseudo).toBe(name);
-      expect(usr.email).toBe(email);
-      expect(usr.password).toBe(password);
-    });
+    const usr = await dao.save(user);
+    expect(usr.id).not.toBe(null);
+    expect(usr.pseudo).toBe(name);
+    expect(usr.email).toBe(email);
+    expect(usr.password).toBe(password);
   });
 
   test('it_should_return_one_user', async () => {
     // then i should get back with the same information and an id
-    await dao.getUserByName(name, (usr) => {
-      expect(usr.pseudo).toBe(name);
-      expect(usr.email).toBe(email);
-      expect(usr.password).toBe(password);
-    });
+    const usr = await dao.getUserByName(name);
+    expect(usr.pseudo).toBe(name);
+    expect(usr.email).toBe(email);
+    expect(usr.password).toBe(password);
   });
 
   test('it_should_edit_one_user', async () => {
-    await dao.getUserByName(name, async (user) => {
-      const saveID = user.id;
-      user.pseudo = 'new name';
-      await dao.save(user, async (usr) => {
-        expect(usr.id).toBe(saveID);
-        expect(usr.pseudo).toBe('new name');
-        expect(usr.email).toBe(email);
-        expect(usr.password).toBe(password);
-      });
-    });
+    const user = await dao.getUserByName(name);
+    const saveID = user.id;
+    user.pseudo = 'new name';
+    const usr = await dao.save(user);
+    expect(usr.id).toBe(saveID);
+    expect(usr.pseudo).toBe('new name');
+    expect(usr.email).toBe(email);
+    expect(usr.password).toBe(password);
     // when saving this user in database
   });
   afterAll( async () => {

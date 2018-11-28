@@ -30,7 +30,7 @@ class US {
   set priority(priority) {
     this._priority = priority;
   }
-  set project(project){
+  set project(project) {
     this._project=project;
   }
   set sprint(sprint) {
@@ -51,7 +51,7 @@ class US {
   get priority() {
     return this._priority;
   }
-  get project(){
+  get project() {
     return this._project;
   }
   get sprint() {

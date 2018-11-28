@@ -53,9 +53,7 @@ async function getProjects(user) {
   let projects=[];
   const dao = new ProjectDAO(Home.connectionDB);
   try {
-    await dao.getAllByUser(teamMate, function(x) {
-      projects = x;
-    });
+    projects = await dao.getAllByUser(teamMate);
   } catch (e) {
     console.log(e);
   }

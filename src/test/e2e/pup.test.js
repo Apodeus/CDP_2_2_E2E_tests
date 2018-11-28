@@ -1,39 +1,39 @@
 const puppeteer = require('puppeteer');
 
 describe('Test Home page', () => {
-  var browser, page;
-  var url = 'http://localhost:3000';
+  let browser; let page;
+  const url = 'http://localhost:3000';
 
-beforeEach (async () => {
-	browser = await puppeteer.launch({
+  beforeEach(async () => {
+    browser = await puppeteer.launch({
 	    args: [
 	      '--no-sandbox',
 	      '--disable-setuid-sandbox',
 	    ],
 	  });
-	page = await browser.newPage();
-})
-
-afterEach (() => {
-    browser.close()
-})
-
-test('Title == Accueil', async () => {
-    await page.goto(url);
-    const title = await page.title();
-    expect(title).toBe("Accueil");
+    page = await browser.newPage();
   });
 
-test("Title == Projects", async () => {
+  afterEach(() => {
+    browser.close();
+  });
+
+  test('Title == Accueil', async () => {
     await page.goto(url);
-    const res = await Promise.all([
-        page.waitForNavigation(),
-        page.click('#MesProjets'),
+    const title = await page.title();
+    expect(title).toBe('Accueil');
+  });
+
+  test('Title == Projects', async () => {
+    await page.goto(url);
+    await Promise.all([
+      page.waitForNavigation(),
+      page.click('#MesProjets'),
     ]);
     const title = await page.title();
-    expect(title).toBe("Projects");
+    expect(title).toBe('Projects');
   });
-})
+});
 /*
 (async () => {
   const browser = await puppeteer.launch({

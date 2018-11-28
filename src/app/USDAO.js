@@ -6,7 +6,7 @@ module.exports= class USDAO {
     this.connection=connection;
   }
 
-  async getAllUSByProject(project, callback) {
+  async getAllUSByProject(project) {
     const usList = [];
     const connection=this.connection;
     const query=util.promisify(connection.query).bind(connection);
@@ -26,11 +26,11 @@ module.exports= class USDAO {
         throw e;
       }
     })();
-    callback(usList);
+    return usList;
   }
 
 
-  save(us, callback) { // throws Exception;
+  save(us) { // throws Exception;
     const values=[us.title, us.description, us.difficulty, us.priority, us.project.id];
     const connection=this.connection;
     const query=util.promisify(connection.query).bind(connection);
@@ -72,6 +72,6 @@ module.exports= class USDAO {
         }
       }
     })();
-    callback(res);
+    return res;
   }
 };

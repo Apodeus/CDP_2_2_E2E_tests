@@ -6,7 +6,7 @@ module.exports= class UserDAO {
     this.connection = connection;
   }
 
-  async getUserByName(username, callback) { // throws Exception;
+  async getUserByName(username) { // throws Exception;
     const connection = this.connection;
     const query = util.promisify(connection.query).bind(connection);
     let res;
@@ -21,10 +21,10 @@ module.exports= class UserDAO {
         throw e;
       }
     })();
-    callback(res);
+    return res;
   }
 
-  async save(user, callback) {// throws Exception;
+  async save(user) {// throws Exception;
     const connection = this.connection;
     const query = util.promisify(connection.query).bind(connection);
     let res;
@@ -58,6 +58,6 @@ module.exports= class UserDAO {
       throw e;
     }
 
-    callback(res);
+    return res;
   }
 };

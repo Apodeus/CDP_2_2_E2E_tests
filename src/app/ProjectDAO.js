@@ -7,7 +7,7 @@ module.exports = class ProjectDAO {
   }
 
 
-  async getAllByUser(user, callback) {
+  async getAllByUser(user) {
     const projectsList = [];
     const connection = this.connection;
     const query = util.promisify(connection.query).bind(connection);
@@ -31,9 +31,9 @@ module.exports = class ProjectDAO {
       } catch (e) {
       }
     })();
-    callback(projectsList);
+    return projectsList;
   }
-  async save(project, callback) {
+  async save(project) {
     const connection = this.connection;
     const query = util.promisify(connection.query).bind(connection);
     let res;
@@ -66,6 +66,6 @@ module.exports = class ProjectDAO {
         }
       }
     })();
-    callback(res);
+    return res;
   }
 };

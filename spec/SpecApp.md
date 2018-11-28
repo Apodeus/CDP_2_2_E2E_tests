@@ -26,21 +26,21 @@
 
   - Méthode post(...) répond à la requête POST qui traite,valide les informations saisie dans le formulaire.Renvoie l'utilisateur la page des listes des US (Backlog).Cette méthode sera appellée par le bouton "Ajouter User-Story"
 
-Les valeurs renvoyés par les DAO sont renvoyées dans les fonctions callback passée en paramètre des méthodes.
+
 - ProjectDAO.js :
   - Liste des méthodes :
-    - ```List<Project> getAllByUser(User user, function(resultProjects));```
-    - ```Project save(Project Project, function(resultProject)) throws Exception;```
+    - ```List<Project> getAllByUser(User user);```
+    - ```Project save(Project Project) throws Exception;```
 
 - UserDAO.js :
   - Liste des méthodes :
-    - ```User getUserByName(String username, function(resultUser)) throws Exception;```
-    - ```User save(User user, function(resultUser)) throws Exception;```
+    - ```User getUserByName(String username) throws Exception;```
+    - ```User save(User user) throws Exception;```
 
 - USDAO.js :
   - Liste des méthodes :
-    - ```US save(US us, function(resultUS)) throws Exception;```
-    - ```List<US> getAllUSByProject(Project project, function(resultAllUS)) throws Exception;```
+    - ```US save(US us) throws Exception;```
+    - ```List<US> getAllUSByProject(Project project) throws Exception;```
 
 - User.js
   - Liste des champs :
