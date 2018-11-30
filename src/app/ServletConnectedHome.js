@@ -30,11 +30,9 @@ app.use('/projects', require('./ServletProjects'));
 app.use('/createproject', require('./ServletAddProject'));
 app.use('/backlog', require('./ServletBacklog'));
 app.get('/', async function(req, res) {
-/* Temporaire: pour montrer que l'on a bien un début de gestion d'utilisateur*/  
+/* Temporaire: pour montrer que l'on a bien un début de gestion d'utilisateur*/
 
-  await userDAO.save(new User('user', 'user@gmail.com', 'user'), function(x) {
-    module.exports.connectedUser = x;
-  });
+  module.exports.connectedUser = await userDAO.save(new User('user', 'user@gmail.com', 'user'));
   if (req.query.MesProjets!== undefined) {
     res.write('/projects');
     res.end();
