@@ -46,8 +46,8 @@ describe('Test Project DAO', () => {
   const projectDate = (new Date());
   const projectSprintLength = 1;
   test('it_should_save_one_project_for_user', async ()=>{
-    const userTest = new User('user', 'user@mail.com', 'user');
-    await userDAO.save(userTest);
+    let userTest = await new User('user', 'user@mail.com', 'user');
+    userTest = await userDAO.save(userTest);
     const projectToSave = new Project(projectName, projectDescription, projectDate, projectSprintLength, userTest);
     await projectDAO.save(projectToSave);
     const projects = await projectDAO.getAllByUser(userTest);
