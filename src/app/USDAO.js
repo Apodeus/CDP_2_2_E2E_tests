@@ -16,9 +16,9 @@ module.exports= class USDAO {
         await (async (result) => {
           let sprint;
           for (let i = 0; i < result.length; i++) {
-            if(result[i].sprint===null){
+            if (result[i].sprint===null) {
               sprint=undefined;
-            }else{
+            } else {
               sprint=result[i].sprint;
             }
             const us = new US(result[i].title, result[i].description,
@@ -28,7 +28,7 @@ module.exports= class USDAO {
           }
         })(rows);
       } catch (e) {
-        console.err(e);
+        console.log(e);
         throw e;
       }
     })();
