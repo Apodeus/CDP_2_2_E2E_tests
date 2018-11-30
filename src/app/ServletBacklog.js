@@ -11,6 +11,8 @@ const UtilsForm = require('./UtilsForm');
 
 
 let projectOpened = undefined;
+const valueButtonCreateUS = 'Ajouter une nouvelle issue';
+
 router.get('/', async function(req, res) {
   await sendPage(res, res);
   res.end();
@@ -28,8 +30,10 @@ async function sendPage(res, req) {
       projectOpened = (await (new ProjectDAO(Home.connectionDB))
           .getAllByUser(Home.connectedUser)).findIndex((p) => p.id === indexProject);
       await addUSListToHtml(dom.window.document);
+      await addButtonCreate(dom.window.document);
       res.write(dom.serialize());
     }
+    module.exports = projectOpened;
   });
 }
 async function addUSListToHtml(document) {
@@ -41,5 +45,9 @@ async function addUSListToHtml(document) {
       listeHTML.appendChild(utilsForm.getTexte(document, us.toString()));
     });
   });
+}
+function addButtonCreate(document) {
+  const button = document.getElementById('AddUs');
+  button.value = valueButtonCreateUS;
 }
 module.exports = router;
