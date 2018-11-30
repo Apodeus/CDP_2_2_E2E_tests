@@ -66,28 +66,27 @@ async function listProjects(document, userArg) {
   title.innerHTML='Liste des projets de '+userArg.pseudo+' : ';
   doc.appendChild(title);
   const list = document.createElement('ul');
-  doc.appendChild(list);
+  await doc.appendChild(list);
   await (async () => {
     const projects = await getProjects(userArg);
-    projects.forEach((project)=>{
-      if (project.owner.id===userArg.id) {
-        addHtmlObjectForProject(document, project, list);
+    for (let p = 0; p < projects.length; p++) {
+      if (projects[p].owner.id===userArg.id) {
+        await addHtmlObjectForProject(document, projects[p], list);
       }
-    });
-
+    };
 
     const title2=document.createElement('h2');
     title2.innerHTML='Liste des projets auquels '+userArg.pseudo+' participe : ';
     doc.appendChild(title2);
     const list2 = document.createElement('ul');
     doc.appendChild(list2);
-    projects.forEach((project)=>{
-      for (let i=0; i<project.participants.length; i++) {
-        if (project.participants[i].id===userArg.id) {
-          addHtmlObjectForProject(document, project, list2);
+    for (let p = 0; p < projects.length; p++) {
+      for (let i=0; i<projects[p].participants.length; i++) {
+        if (projects[p].participants[i].id===userArg.id) {
+          await addHtmlObjectForProject(document, projects[p], list2);
         }
       }
-    });
+    }
   })();
 }
 module.exports = router;
