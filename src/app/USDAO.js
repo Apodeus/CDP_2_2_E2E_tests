@@ -69,7 +69,7 @@ module.exports= class USDAO {
         }
         q+=' WHERE id = ? ';
         try {
-          this.connection.query(q, values);
+          await query(q, values);
           console.log(us.toString() + ' was updated in DB ! ');
           res = us;
         } catch (e) {

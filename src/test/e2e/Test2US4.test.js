@@ -56,6 +56,7 @@ describe('Test US 4', () => {
 
   test('Scenario 1', async () => {
     console.log('start scenario 1');
+    await page.goto('http://localhost:3000/');
     await page.goto(url);
     let actualURL = await page.url();
     expect(actualURL).toBe(url);
