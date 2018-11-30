@@ -14,9 +14,15 @@ module.exports= class USDAO {
       try {
         const rows= await query('SELECT * FROM us WHERE project = ?', [project.id]);
         await (async (result) => {
+          let sprint;
           for (let i = 0; i < result.length; i++) {
+            if(result[i].sprint===null){
+              sprint=undefined;
+            }else{
+              sprint=result[i].sprint;
+            }
             const us = new US(result[i].title, result[i].description,
-                result[i].difficulty, result[i].priority, project, result[i].sprint);
+                result[i].difficulty, result[i].priority, project, sprint);
             us.id = result[i].id;
             usList.push( us);
           }
@@ -30,7 +36,7 @@ module.exports= class USDAO {
   }
 
 
-  save(us) { // throws Exception;
+  async save(us) { // throws Exception;
     const values=[us.title, us.description, us.difficulty, us.priority, us.project.id];
     const connection=this.connection;
     const query=util.promisify(connection.query).bind(connection);
