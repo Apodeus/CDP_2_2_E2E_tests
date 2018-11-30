@@ -26,6 +26,13 @@
 
   - Méthode post(...) répond à la requête POST qui traite,valide les informations saisie dans le formulaire.Renvoie l'utilisateur la page des listes des US (Backlog).Cette méthode sera appellée par le bouton "Ajouter User-Story"
 
+- ServletBacklog.js
+  - Méthode get("/") répondant à une requête GET, renvoyant une page html basée sur Backlog.html en rajoutant plusieurs éléments:
+  La page html renvoyé doit être composée de la barre d'onglet (construite avec TabBuilder.js), donner un texte au bouton pour ajouter une US et doit remplir la balise div de Backlog.html avec la liste des US. Une US dans la liste doit regroupé toutes ses informations et également 2 boutons (modifier et supprimer).
+  Tous les boutons devront être ajoutés avec la balise form et la balise input.
+  - Méthode post("/")
+  Donc le servlet doit également ajouter un comportement aux boutons "ajouter us", "modifier" et "supprimer", pour cela le servlet doit utiliser la méthode POST pour ainsi rediriger l'utilisateur vers le servlet "ServletAddUS.js", "ServletEditUS.js" et simplement supprimer une US dans la base et rafraichir la page.
+
 
 - ProjectDAO.js :
   - Liste des méthodes :
