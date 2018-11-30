@@ -32,7 +32,7 @@
   Tous les boutons devront être ajoutés avec la balise form et la balise input.
   - Méthode post("/")
   Donc le servlet doit également ajouter un comportement aux boutons "ajouter us", "modifier" et "supprimer", pour cela le servlet doit utiliser la méthode POST pour ainsi rediriger l'utilisateur vers le servlet "ServletAddUS.js", "ServletEditUS.js" et simplement supprimer une US dans la base et rafraichir la page.
-
+  - Le servlet doit également exporter la variable du projet ouvert, pour ainsi permettre au ServletAddUS de savoir dans quel projet ajouter l'us.
 
 - ProjectDAO.js :
   - Liste des méthodes :
