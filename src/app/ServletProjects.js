@@ -12,11 +12,11 @@ const valueButtonCreateProject = 'Créer un nouveau Projet';
 
 router.get('/', function(req, res) {
   jsdom.fromFile(path.resolve(__dirname+pathNameFiles+'.html'), '').then(async (dom) => {
-    addButtonCreate(dom.window.document);
+    await addButtonCreate(dom.window.document);
     await listProjects(dom.window.document, Home.connectedUser);
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write(dom.serialize());
-    res.end();
+    await res.writeHead(200, {'Content-Type': 'text/html'});
+    await res.write(dom.serialize());
+    await res.end();
   });
 });
 router.post('/', function(req, res) {
@@ -75,11 +75,11 @@ async function listProjects(document, userArg) {
       }
     };
 
-    const title2=document.createElement('h2');
+    const title2= await document.createElement('h2');
     title2.innerHTML='Liste des projets auquels '+userArg.pseudo+' participe : ';
-    doc.appendChild(title2);
-    const list2 = document.createElement('ul');
-    doc.appendChild(list2);
+    await doc.appendChild(title2);
+    const list2 = await document.createElement('ul');
+    await doc.appendChild(list2);
     for (let p = 0; p < projects.length; p++) {
       for (let i=0; i<projects[p].participants.length; i++) {
         if (projects[p].participants[i].id===userArg.id) {
