@@ -22,10 +22,10 @@ router.post('/', function(req, res) {
   }
 });
 function sendPage(res) {
-  jsdom.JSDOM.fromFile(path.resolve(__dirname+pathNameFiles+'.html'), '').then((dom) => {
-    (new UtilsForm()).addFormCreateProjectToDocument(dom.window.document);
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write(dom.serialize());
+  jsdom.JSDOM.fromFile(path.resolve(__dirname+pathNameFiles+'.html'), '').then(async (dom) => {
+    await (new UtilsForm()).addFormCreateProjectToDocument(dom.window.document);
+    await res.writeHead(200, {'Content-Type': 'text/html'});
+    await res.write(dom.serialize());
     res.end();
   });
 }

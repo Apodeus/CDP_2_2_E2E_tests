@@ -33,19 +33,19 @@ function addButtonCreate(document) {
  */
 async function addHtmlObjectForProject(document, project, parent) {
   const utilsForm = new UtilsForm();
-  const listLi=document.createElement('li');
-  const form = utilsForm.getForm(document, 'form'+project.id, '/backlog', 'post');
-  const text=utilsForm.getTexte(document, project.toString());
-  form.appendChild(text);
-  const hiddenData = utilsForm.getInput(document, 'data', 'hidden');
+  const listLi= await document.createElement('li');
+  const form = await utilsForm.getForm(document, 'form'+project.id, '/backlog', 'post');
+  const text= await utilsForm.getTexte(document, project.toString());
+  await form.appendChild(text);
+  const hiddenData = await utilsForm.getInput(document, 'data', 'hidden');
   hiddenData.value=project.id;
-  const buttonOpen = utilsForm.getInput(document, 'open', 'submit');
+  const buttonOpen = await utilsForm.getInput(document, 'open', 'submit');
   buttonOpen.value = 'Ouvrir';
   buttonOpen.id = project.id;
-  form.appendChild(hiddenData);
-  form.appendChild(buttonOpen);
-  listLi.appendChild(form);
-  parent.appendChild(listLi);
+  await form.appendChild(hiddenData);
+  await form.appendChild(buttonOpen);
+  await listLi.appendChild(form);
+  await parent.appendChild(listLi);
 }
 
 async function getProjects(user) {
@@ -61,11 +61,11 @@ async function getProjects(user) {
 }
 
 async function listProjects(document, userArg) {
-  const doc=document.getElementById('ProjectsList');
-  const title=document.createElement('h2');
+  const doc= await document.getElementById('ProjectsList');
+  const title= await document.createElement('h2');
   title.innerHTML='Liste des projets de '+userArg.pseudo+' : ';
-  doc.appendChild(title);
-  const list = document.createElement('ul');
+  await doc.appendChild(title);
+  const list = await document.createElement('ul');
   await doc.appendChild(list);
   await (async () => {
     const projects = await getProjects(userArg);

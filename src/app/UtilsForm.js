@@ -1,39 +1,39 @@
 class UtilsForm {
   constructor() {}
-  addFormCreateProjectToDocument(document) {
-    const form = document.getElementById('formulaire');
+  async addFormCreateProjectToDocument(document) {
+    const form = await document.getElementById('formulaire');
     form.action='/createproject';
-    const divButton = document.getElementById('button');
-    const button = document.getElementById('validate');
+    const divButton = await document.getElementById('button');
+    const button = await document.getElementById('validate');
     button.innerHTML = 'Créer un projet';
-    const add = function(node) {
-      form.insertBefore(node, divButton);
+    const add = async function(node) {
+      await form.insertBefore(node, divButton);
     };
-    add(this.getTexteP(document, 'Nom*: '));
-    add(this.getInput(document, 'name', 'text'));
-    add(this.getTexteP(document, 'Description: '));
-    add(this.getInput(document, 'description', 'text'));
-    add(this.getTexteP(document, 'Date de début*: '));
-    add(this.getInput(document, 'start', 'date'));
-    add(this.getTexteP(document, 'Durée des sprints*: '));
-    add(this.getInput(document, 'sprint', 'number'));
+    add(await this.getTexteP(document, 'Nom*: '));
+    add(await this.getInput(document, 'name', 'text'));
+    add(await this.getTexteP(document, 'Description: '));
+    add(await this.getInput(document, 'description', 'text'));
+    add(await this.getTexteP(document, 'Date de début*: '));
+    add(await this.getInput(document, 'start', 'date'));
+    add(await this.getTexteP(document, 'Durée des sprints*: '));
+    add(await this.getInput(document, 'sprint', 'number'));
   }
-  getInput(document, name, type) {
-    const input = document.createElement('input');
+  async getInput(document, name, type) {
+    const input = await document.createElement('input');
     input.type = type;
     input.name = name;
     return input;
   }
-  getTexte(document, texte) {
+  async getTexte(document, texte) {
     return document.createTextNode(texte);
   }
-  getTexteP(document, texte) {
-    const res = document.createElement('p');
+  async getTexteP(document, texte) {
+    const res = await document.createElement('p');
     res.innerHTML = texte;
     return res;
   }
-  getForm(document, id, action, method) {
-    const form = document.createElement('form');
+  async getForm(document, id, action, method) {
+    const form = await document.createElement('form');
     form.id = id;
     form.action = action;
     form.method = method;
