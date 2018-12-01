@@ -1,6 +1,5 @@
 const puppeteer = require('puppeteer');
 const mysql = require('mysql2');
-const util = require('util');
 
 async function newQuery(connectionDB, request) {
   await connectionDB.execute(request);
@@ -71,7 +70,6 @@ describe('Test US 4', () => {
 
     const projectName = 'ProjetTest';
     const description = 'Mon projet de test';
-    const date = '12122018';
     const dureeSprint = '2';
 
     const inputNameHandle = await page.$('[name="name"]');
@@ -125,7 +123,6 @@ describe('Test US 4', () => {
 
     const projectName = 'ProjetTest2';
     const description = '';
-    const date = '12122018';
     const dureeSprint = '2';
 
     const inputNameHandle = await page.$('[name="name"]');
@@ -201,7 +198,6 @@ describe('Test US 4', () => {
     actualURL = await page.url();
     expect(actualURL).toBe(url);
 
-    const expectedResult = 'Test avec Mauvaise saisie';
     const form1Handle = await page.$('#form1');
     expect(form1Handle).toBe(null);
   });
