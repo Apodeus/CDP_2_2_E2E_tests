@@ -80,4 +80,17 @@ module.exports= class USDAO {
     })();
     return res;
   }
+
+  async delete(us){ //throws Exceptions
+    const connection=this.connection;
+    const query=util.promisify(connection.query).bind(connection);
+    await(async () => {
+      try {
+        await query('DELETE FROM us WHERE id = ? LIMIT 1', [us.id]);
+      } catch (e) {
+        console.log(e);
+        throw e;
+      }
+    })();
+  }
 };

@@ -50,9 +50,9 @@ describe('Test USDAO', () => {
   beforeEach(async () => {
     jest.setTimeout(10000);
     dao = new UserDAO(connectionDB);
+    await clearDatabase(connectionDB);
     projectDao=new ProjectDAO(connectionDB);
     usDao = new USDAO(connectionDB);
-    clearDatabase(connectionDB);
     usr=await dao.save(new User('user', 'user@mail.com', 'user'));
     project=await projectDao.save(new Project ("test", "project test", '2018-12-24', 2, usr));
   });
@@ -80,6 +80,17 @@ describe('Test USDAO', () => {
     expect(us.priority).toBe(priority);
     expect(us.project.id).toBe(project.id);
     expect(us.sprint).toBe(sprint);
+  });
+
+  test('it_should_delete_one', async () => {
+    let us1=await usDao.save(new US(title, description, difficulty, priority, project, sprint));
+    let us2=await usDao.save(new US(title+"2", description+"2", difficulty, priority, project, sprint));
+    let us=await usDao.getAllUSByProject(project);
+    expect(us.length).toBe(2);
+    await usDao.delete(us1);
+    us=await usDao.getAllUSByProject(project);
+    expect(us.length).toBe(1);
+    console.log(us[0].toString());
   });
 
 
