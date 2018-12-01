@@ -95,6 +95,7 @@ describe('Test US 4', () => {
 
     const buttonValideHandle = await page.$('#validate');
     await Promise.all([
+      page.waitForNavigation(),
       buttonValideHandle.click({clickCount: 3}),
       page.waitForNavigation(),
     ]);
@@ -169,6 +170,7 @@ describe('Test US 4', () => {
     await Promise.all([
       page.waitForNavigation(),
       page.click('#CreateProject'),
+      page.waitForNavigation(),
     ]);
 
     actualURL = await page.url();
@@ -194,6 +196,7 @@ describe('Test US 4', () => {
     await Promise.all([
       page.waitForNavigation(),
       page.goto(url),
+      page.waitForNavigation(),
     ]);
     actualURL = await page.url();
     expect(actualURL).toBe(url);
