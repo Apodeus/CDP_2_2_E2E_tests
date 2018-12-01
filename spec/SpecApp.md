@@ -48,6 +48,7 @@
   - Liste des méthodes :
     - ```US save(US us) throws Exception;```
     - ```List<US> getAllUSByProject(Project project) throws Exception;```
+    - ```void delete(us) throws Exception; ```
 
 - User.js
   - Liste des champs :
