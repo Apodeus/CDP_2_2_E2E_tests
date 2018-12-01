@@ -11,13 +11,13 @@ const pathNameFiles = '/../html/AddProject';
 router.get('/', function(req, res) {
   sendPage(res);
 });
-router.post('/', function(req, res) {
+router.post('/', async function(req, res) {
   if (!checkValidityAnswerForm(req.body)) {
     sendPage(res);
   } else {
     const project = new Project(req.body.name, req.body.description,
         req.body.start, parseInt(req.body.sprint), Home.connectedUser);
-    (new ProjectDAO(Home.connectionDB)).save(project);
+    await (new ProjectDAO(Home.connectionDB)).save(project);
     res.redirect('/projects');
   }
 });

@@ -22,7 +22,7 @@ module.exports = class ProjectDAO {
                 const project = new Project(resultProject[0].name, resultProject[0].description,
                     resultProject[0].start_date, resultProject[0].sprint_length, user);
                 project._id = resultProject[0].id;
-                projectsList.push( project);
+                await projectsList.push( project);
               } catch (e) {
               }
             })();

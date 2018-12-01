@@ -10,12 +10,12 @@ const UtilsForm = require('./UtilsForm');
 const pathNameFiles = '/../html/Projects';
 const valueButtonCreateProject = 'Créer un nouveau Projet';
 
-router.get('/', function(req, res) {
-  jsdom.fromFile(path.resolve(__dirname+pathNameFiles+'.html'), '').then(async (dom) => {
+router.get('/', async function(req, res) {
+  await jsdom.fromFile(path.resolve(__dirname+pathNameFiles+'.html'), '').then(async (dom) => {
     await addButtonCreate(dom.window.document);
     await listProjects(dom.window.document, Home.connectedUser);
     await res.writeHead(200, {'Content-Type': 'text/html'});
-    await res.write(dom.serialize());
+    await res.write(await dom.serialize());
     await res.end();
   });
 });
@@ -48,18 +48,6 @@ async function addHtmlObjectForProject(document, project, parent) {
   await parent.appendChild(listLi);
 }
 
-async function getProjects(user) {
-  const teamMate= Home.connectedUser;
-  let projects=[];
-  const dao = new ProjectDAO(Home.connectionDB);
-  try {
-    projects = await dao.getAllByUser(teamMate);
-  } catch (e) {
-    console.log(e);
-  }
-  return projects;
-}
-
 async function listProjects(document, userArg) {
   const doc= await document.getElementById('ProjectsList');
   const title= await document.createElement('h2');
@@ -68,13 +56,12 @@ async function listProjects(document, userArg) {
   const list = await document.createElement('ul');
   await doc.appendChild(list);
   await (async () => {
-    const projects = await getProjects(userArg);
+    const projects = await ((new ProjectDAO(Home.connectionDB)).getAllByUser(userArg));
     for (let p = 0; p < projects.length; p++) {
       if (projects[p].owner.id===userArg.id) {
         await addHtmlObjectForProject(document, projects[p], list);
       }
     };
-
     const title2= await document.createElement('h2');
     title2.innerHTML='Liste des projets auquels '+userArg.pseudo+' participe : ';
     await doc.appendChild(title2);
