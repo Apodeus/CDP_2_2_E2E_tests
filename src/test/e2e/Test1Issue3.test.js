@@ -1,8 +1,8 @@
 const puppeteer = require('puppeteer');
 
 describe('Test US 3', () => {
-  var browser, page;
-  var url = 'http://localhost:3000';
+  let browser; var page;
+  let url = 'http://localhost:3000';
 
   beforeEach(async () => {
     browser = await puppeteer.launch({
@@ -12,11 +12,11 @@ describe('Test US 3', () => {
       ],
     });
     page = await browser.newPage();
-  })
+  });
 
   afterEach(() => {
     browser.close();
-  })
+  });
 
   test('Scenario 1', async () => {
     await page.goto(url);
@@ -27,15 +27,14 @@ describe('Test US 3', () => {
     let actualUrl = await page.url();
     expect(actualUrl).toBe('http://localhost:3000/projects');
 
-    let h2HandleArray = await page.$$('h2');
-    let firstH2Content = await page.evaluate(h2 => h2.textContent, h2HandleArray[0]);
-    let secondH2Content = await page.evaluate(h2 => h2.textContent, h2HandleArray[1]);
+    const h2HandleArray = await page.$$('h2');
+    const firstH2Content = await page.evaluate((h2) => h2.textContent, h2HandleArray[0]);
+    const secondH2Content = await page.evaluate((h2) => h2.textContent, h2HandleArray[1]);
     expect(firstH2Content).toBe('Liste des projets de user : ');
     expect(secondH2Content).toBe('Liste des projets auquels user participe : ');
 
     await page.goBack();
     actualUrl = await page.url();
     expect(actualUrl).toBe('http://localhost:3000/');
-  })
-
-})
+  });
+});
