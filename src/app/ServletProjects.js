@@ -41,7 +41,7 @@ async function addHtmlObjectForProject(document, project, parent) {
   hiddenData.value=project.id;
   const buttonOpen = await utilsForm.getInput(document, 'open', 'submit');
   buttonOpen.value = 'Ouvrir';
-  buttonOpen.id = project.id;
+  buttonOpen.id = 'open'+project.id;
   await form.appendChild(hiddenData);
   await form.appendChild(buttonOpen);
   await listLi.appendChild(form);
