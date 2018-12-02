@@ -27,23 +27,26 @@ async function sendPage(res, req) {
     if (projectOpened !== undefined || req.body.open !== undefined) {
       await (new TabBuilder()).build(dom.window.document);
       const indexProject = projectOpened === undefined ? parseInt(req.body.data):projectOpened.id;
-      projectOpened = (await (new ProjectDAO(Home.connectionDB))
-          .getAllByUser(Home.connectedUser)).findIndex((p) => p.id === indexProject);
+      projects = (await (new ProjectDAO(Home.connectionDB))
+          .getAllByUser(Home.connectedUser));
+      projectIndex=projects.findIndex((p) => p.id === indexProject);
+      projectOpened=projects[projectIndex];
+      console.log(projectOpened.toString());
+      module.exports.projectOpened = projectOpened;
       await addUSListToHtml(dom.window.document);
       await addButtonCreate(dom.window.document);
       res.write(dom.serialize());
     }
-    module.exports = projectOpened;
   });
 }
 async function addUSListToHtml(document) {
   const utilsForm = new UtilsForm();
   const listUS = await (new USDAO(Home.connectionDB)).getAllUSByProject(projectOpened);
   const listeHTML = document.getElementById('IssueList');
-  await (async () => {
-    listUS.forEach((us) =>{
-      listeHTML.appendChild(utilsForm.getTexte(document, us.toString()));
-    });
+  console.log(listeHTML);
+  await listUS.forEach((us) =>{
+    console.log(us.toString()+"a afficher");
+    listeHTML.innerHTML+="<li>"+us.toString()+"</li>";
   });
 }
 function addButtonCreate(document) {

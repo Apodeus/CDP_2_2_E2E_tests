@@ -28,6 +28,7 @@ app.listen(3000);
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/projects', require('./ServletProjects'));
 app.use('/createproject', require('./ServletAddProject'));
+app.use('/addus', require('./ServletAddUS'));
 app.use('/backlog', require('./ServletBacklog'));
 app.get('/', async function(req, res) {
 /* Temporaire: pour montrer que l'on a bien un début de gestion d'utilisateur*/
@@ -59,4 +60,3 @@ function addScriptToHTML(res) {
   res.write('<script>'+script+'</script>');
 }
 module.exports.connectionDB = connectionDB;
-

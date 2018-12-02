@@ -18,12 +18,48 @@ class UtilsForm {
     add(await this.getTexteP(document, 'Durée des sprints*: '));
     add(await this.getInput(document, 'sprint', 'number'));
   }
+
+  async addFormCreateUSToDocument(document, sprints) {
+    const form = await document.getElementById('formulaire');
+    form.action='/addus';
+    const divButton = await document.getElementById('button');
+    const button = await document.getElementById('validate');
+    button.innerHTML = 'Créer l\'US';
+    sprints.push("NOT DEFINED");
+    const add = async function(node) {
+      await form.insertBefore(node, divButton);
+    };
+    add(await this.getTexteP(document, 'Titre*: '));
+    add(await this.getInput(document, 'title', 'text'));
+    add(await this.getTexteP(document, 'Description*: '));
+    add(await this.getInput(document, 'description', 'text'));
+    add(await this.getTexteP(document, 'Difficulté*: '));
+    add(await this.getInput(document, 'difficulty', 'number'));
+    add(await this.getTexteP(document, 'Priorité*: '));
+    add(await this.getSelect(document, 'priority', ["FAIBLE","MOYENNE","HAUTE"]));
+    add(await this.getTexteP(document, 'Sprint: '));
+    add(await this.getSelect(document, 'sprint', sprints));
+  }
+
   async getInput(document, name, type) {
     const input = await document.createElement('input');
     input.type = type;
     input.name = name;
     return input;
   }
+
+  async getSelect(document, name, list){
+    const select = await document.createElement('select');
+    select.name=name;
+    for(var i=0; i<list.length; i++){
+      const option = await document.createElement('option');
+      option.value=list[i];
+      option.innerHTML=list[i];
+      select.add(option);
+    }
+    return select;
+  }
+
   async getTexte(document, texte) {
     return document.createTextNode(texte);
   }
