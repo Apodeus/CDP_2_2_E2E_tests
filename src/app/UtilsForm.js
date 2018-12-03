@@ -21,11 +21,8 @@ class UtilsForm {
 
   async addFormCreateUSToDocument(document, sprints) {
     const form = await document.getElementById('formulaire');
-    form.action='/addus';
     const divButton = await document.getElementById('button');
-    const button = await document.getElementById('validate');
-    button.innerHTML = 'Créer l\'US';
-    sprints.push("NOT DEFINED");
+    sprints.push('NOT DEFINED');
     const add = async function(node) {
       await form.insertBefore(node, divButton);
     };
@@ -36,7 +33,7 @@ class UtilsForm {
     add(await this.getTexteP(document, 'Difficulté*: '));
     add(await this.getInput(document, 'difficulty', 'number'));
     add(await this.getTexteP(document, 'Priorité*: '));
-    add(await this.getSelect(document, 'priority', ["FAIBLE","MOYENNE","HAUTE"]));
+    add(await this.getSelect(document, 'priority', ['FAIBLE', 'MOYENNE', 'HAUTE']));
     add(await this.getTexteP(document, 'Sprint: '));
     add(await this.getSelect(document, 'sprint', sprints));
   }
@@ -48,10 +45,10 @@ class UtilsForm {
     return input;
   }
 
-  async getSelect(document, name, list){
+  async getSelect(document, name, list) {
     const select = await document.createElement('select');
     select.name=name;
-    for(var i=0; i<list.length; i++){
+    for (let i=0; i<list.length; i++) {
       const option = await document.createElement('option');
       option.value=list[i];
       option.innerHTML=list[i];
