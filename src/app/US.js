@@ -58,8 +58,8 @@ class US {
     return this._sprint;
   }
   toString() {
-    return (this._id === undefined ? 'undefined' : this._id) + ' '+this._title+' '+this.description+' '+
-    String(this._difficulty) + ' '+ String(this._priority)+ ' '+String(this._project.id)+' '+String(this.sprint);
+    return (this._id === undefined ? 'undefined' : this._id) + ' | '+this._title+' | '+this.description+' | '+
+    String(this._difficulty) + ' | '+ String(this._priority)+ ' | '+String(this._project.id)+' | '+String(this.sprint);
   }
 }
 module.exports = US;

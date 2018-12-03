@@ -16,8 +16,8 @@ router.post('/', async function(req, res) {
   if (!checkValidityAnswerForm(req.body)) {
     sendPage(res);
   } else {
-    let sprint=undefined;
-    if(req.body.sprint!=="NOT DEFINED"){
+    let sprint=null;
+    if (req.body.sprint!=='NOT DEFINED') {
       // quand on aura les sprints il faudra rajouter la recherche du nom du sprint
       // dans la liste des sprints du projet
       sprint=req.body.sprint;
@@ -40,8 +40,8 @@ function sendPage(res) {
 }
 
 function checkValidityAnswerForm(body) {
-  console.log(body.title+" "+body.description+" "+body.difficulty+" "+body.priority+" "+body.sprint);
-  return (body.title !== undefined && body.title !== '') && (body.description !== undefined && body.description !== '') &&
+  return (body.title !== undefined && body.title !== '')
+  && (body.description !== undefined && body.description !== '') &&
   (body.difficulty !== undefined && body.difficulty !== '' && parseInt(body.difficulty) > 0);
 }
 module.exports = router;

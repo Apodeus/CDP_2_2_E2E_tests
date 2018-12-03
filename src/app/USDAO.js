@@ -47,9 +47,7 @@ module.exports= class USDAO {
     await(async () =>{
       if (us.id===undefined) {
         let q='INSERT INTO us SET title = ? , description = ? , difficulty = ? , priority = ? , project = ?';
-        if (us.sprint!==undefined) {
-          q+=', sprint = ?';
-        }
+        q+=us.sprint!==undefined ? ', sprint = ?' : '';
         q+=' ;';
         try {
           const result = await query(q, values);
@@ -81,7 +79,7 @@ module.exports= class USDAO {
     return res;
   }
 
-  async delete(us){ //throws Exceptions
+  async delete(us) { // throws Exceptions
     const connection=this.connection;
     const query=util.promisify(connection.query).bind(connection);
     await(async () => {

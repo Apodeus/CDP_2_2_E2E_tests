@@ -7,24 +7,23 @@ const User = require('../../app/User');
 const util = require('util');
 const mysql = require('mysql2');
 
-async function newQuery(connectionDB, request){
+async function newQuery(connectionDB, request) {
   await connectionDB.execute(request);
 }
 
-async function clearDatabase(connectionDB){
+async function clearDatabase(connectionDB) {
   await Promise.all([
-    newQuery(connectionDB, "SET FOREIGN_KEY_CHECKS = 0"),
-    newQuery(connectionDB, "TRUNCATE TABLE us"),
-    newQuery(connectionDB, "TRUNCATE TABLE sprints"),
-    newQuery(connectionDB, "TRUNCATE TABLE projects_participants"),
-    newQuery(connectionDB, "TRUNCATE TABLE projects"),
+    newQuery(connectionDB, 'SET FOREIGN_KEY_CHECKS = 0'),
+    newQuery(connectionDB, 'TRUNCATE TABLE us'),
+    newQuery(connectionDB, 'TRUNCATE TABLE sprints'),
+    newQuery(connectionDB, 'TRUNCATE TABLE projects_participants'),
+    newQuery(connectionDB, 'TRUNCATE TABLE projects'),
     newQuery(connectionDB, 'TRUNCATE TABLE users'),
-    newQuery(connectionDB, "SET FOREIGN_KEY_CHECKS = 1"),
+    newQuery(connectionDB, 'SET FOREIGN_KEY_CHECKS = 1'),
   ]);
- }
+}
 
 describe('Test USDAO', () => {
-
   const connectionDB = mysql.createConnection({
     host: 'localhost',
     database: 'cdp',
@@ -40,10 +39,10 @@ describe('Test USDAO', () => {
 
   let usDao;
   let projectDao;
-  const title="test US";
-  const description="test of us dao";
+  const title='test US';
+  const description='test of us dao';
   const difficulty=1;
-  const priority="HIGH";
+  const priority='HIGH';
   const sprint=undefined;
   let usr;
   let project;
@@ -54,12 +53,12 @@ describe('Test USDAO', () => {
     projectDao=new ProjectDAO(connectionDB);
     usDao = new USDAO(connectionDB);
     usr=await dao.save(new User('user', 'user@mail.com', 'user'));
-    project=await projectDao.save(new Project ("test", "project test", '2018-12-24', 2, usr));
+    project=await projectDao.save(new Project('test', 'project test', '2018-12-24', 2, usr));
   });
 
   test('it_should_return_one_us', async () => {
     await usDao.save(new US(title, description, difficulty, priority, project, sprint));
-    let us=await usDao.getAllUSByProject(project);
+    const us=await usDao.getAllUSByProject(project);
     console.log(us.id);
     expect(us[0].id).toBe(1);
     expect(us[0].title).toBe(title);
@@ -71,7 +70,7 @@ describe('Test USDAO', () => {
   });
 
   test('it_should_save_one_user', async () => {
-    let us=await usDao.save(new US(title, description, difficulty, priority, project, sprint));
+    const us=await usDao.save(new US(title, description, difficulty, priority, project, sprint));
     console.log(us.id);
     expect(us.id).toBe(1);
     expect(us.title).toBe(title);
@@ -83,8 +82,8 @@ describe('Test USDAO', () => {
   });
 
   test('it_should_delete_one', async () => {
-    let us1=await usDao.save(new US(title, description, difficulty, priority, project, sprint));
-    let us2=await usDao.save(new US(title+"2", description+"2", difficulty, priority, project, sprint));
+    const us1=await usDao.save(new US(title, description, difficulty, priority, project, sprint));
+    const us2=await usDao.save(new US(title+'2', description+'2', difficulty, priority, project, sprint));
     let us=await usDao.getAllUSByProject(project);
     expect(us.length).toBe(2);
     await usDao.delete(us1);
@@ -97,5 +96,4 @@ describe('Test USDAO', () => {
   afterAll( () => {
     connectionDB.close();
   });
-
 });
