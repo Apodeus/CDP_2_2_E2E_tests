@@ -32,7 +32,7 @@
 |Tc15.1i| Implémenter le listing des US dans la classe ServletBacklog.js en suivant SpecApp.md | 11 | Tc15d, Tc5d, Tc8d | 0.5 | Clément FONTENAY | DONE |
 |Tc15.2i| Ajouter un comportement au bouton "Ajouter une US" dans ServletBacklog.js qui redirige vers le servlet ServletAddUS en suivant SpecApp.md | 8 | Tc15d, Tc15.1i, Tc5d, Tc8d | 0.5 | Clément FONTENAY| DONE |
 |Tc15.3i| Ajouter les boutons "modifier" dans ServletBacklog.js qui redirigent l'utilisateur vers le servlet ServletEditUS.js | 9 | Tc15d, Tc15.1i, Tc5d, Tc8d | 0.5 | | TODO |
-|Tc15.4i| Ajouter les boutons "supprimer" dans ServletBacklog.js, qui supprime une US et rafraichit la page du Backlog | 10 | Tc15d, Tc5d, Tc8d | 0.5 | Clément Fontenay | DOING |
+|Tc15.4i| Ajouter les boutons "supprimer" dans ServletBacklog.js, qui supprime une US et rafraichit la page du Backlog | 10 | Tc15d, Tc5d, Tc8d | 0.5 | Clément Fontenay | DONE |
 |Tc16i | Implémenter le servlet ServletAddUS.js, qui est le servlet derrière la page AddUS.html. Ce servlet doit permettre de générer un formulaire en html, de donner un comportement au bouton "Valider" et de rediriger l'utilisateur vers la page "Backlog.html" | 8 | Tc5d, Tc8d| 0.5 | Antonin Rebufat | DONE |
 |Tc32i | Implémenter servlet ServletEditUS.js, qui est le servlet derrière la page EditUS.html. Ce servlet doit permettre de pré-remplir le formulaire présent sur EditUS.html, de donner un comportement au bouton "Enregistrer les modifications" pour sauvegarder les modifications sur l'US à l'aide de USDAO.js et renvoyer l'utilisateur sur la page du Backlog | 9 | Tc24d, Tc5d, Tc8d | 0.5 |  | TODO|
 |Tc26i | Ajouter l'onglet "Equip" dans la barre d'onglet, qui permet de rediriger vers ServletEquip.js | 7 | Tc17i | 0.5 | | TODO |
