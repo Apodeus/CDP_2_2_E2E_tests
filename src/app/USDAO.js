@@ -64,7 +64,7 @@ module.exports= class USDAO {
         values.push(us.id);
         let q='UPDATE us SET title = ? , description = ? , difficulty = ? , priority = ? , project = ?';
         if (us.sprint!==undefined) {
-          q+=', sprint = ?';
+          q+=toAddToRequestForUS;
         }
         q+=' WHERE id = ? ';
         try {
