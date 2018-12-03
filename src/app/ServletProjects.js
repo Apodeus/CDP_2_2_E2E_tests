@@ -47,7 +47,6 @@ async function addHtmlObjectForProject(document, project, parent) {
   await listLi.appendChild(form);
   await parent.appendChild(listLi);
 }
-
 async function listProjects(document, userArg) {
   const doc= await document.getElementById('ProjectsList');
   const title= await document.createElement('h2');
@@ -61,7 +60,7 @@ async function listProjects(document, userArg) {
       if (projects[p].owner.id===userArg.id) {
         await addHtmlObjectForProject(document, projects[p], list);
       }
-    };
+    }
     const title2= await document.createElement('h2');
     title2.innerHTML='Liste des projets auquels '+userArg.pseudo+' participe : ';
     await doc.appendChild(title2);

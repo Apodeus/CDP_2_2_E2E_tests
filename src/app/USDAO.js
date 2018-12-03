@@ -41,14 +41,15 @@ module.exports= class USDAO {
     const connection=this.connection;
     const query=util.promisify(connection.query).bind(connection);
     let res;
+    let toAddToRequestForUS = ' ;';
     if (us.sprint!==undefined) {
       values.push(us.sprint);
+      toAddToRequestForUS = ', sprint = ? ;';
     }
     await(async () =>{
       if (us.id===undefined) {
         let q='INSERT INTO us SET title = ? , description = ? , difficulty = ? , priority = ? , project = ?';
-        q+=us.sprint!==undefined ? ', sprint = ?' : '';
-        q+=' ;';
+        q+= toAddToRequestForUS;
         try {
           const result = await query(q, values);
           const us1=new US(us.title, us.description, us.difficulty, us.priority, us.project, us.sprint);
