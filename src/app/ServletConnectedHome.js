@@ -30,33 +30,27 @@ app.use('/projects', require('./ServletProjects'));
 app.use('/createproject', require('./ServletAddProject'));
 app.use('/addus', require('./ServletAddUS'));
 app.use('/backlog', require('./ServletBacklog'));
+
+
 app.get('/', async function(req, res) {
 /* Temporaire: pour montrer que l'on a bien un début de gestion d'utilisateur*/
-
   module.exports.connectedUser = await userDAO.save(new User('user', 'user@gmail.com', 'user'));
-  if (req.query.MesProjets!== undefined) {
-    res.write('/projects');
+  jsdom.fromFile(path.resolve(__dirname+pathNameFiles+'.html'), '').then((dom) => {
+    configureButton(dom.window.document);
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(dom.serialize());
     res.end();
-  } else {
-    jsdom.fromFile(path.resolve(__dirname+pathNameFiles+'.html'), '').then((dom) => {
-      configureButton(dom.window.document);
-      res.writeHead(200, {'Content-Type': 'text/html'});
-      res.write(dom.serialize());
-      addScriptToHTML(res);
-      res.end();
-    });
-  }
+  });
 });
 app.get('/TabsBar.css', function(req, res) {
   res.sendFile(path.resolve(__dirname+'/../html/TabsBar.css'));
 });
 
 function configureButton(document) {
+  const form = document.getElementById('form');
+  form.action='/projects';
+  form.method='post';
   const button = document.getElementById('MesProjets');
-  button.innerHTML = 'Mes Projets';
-}
-function addScriptToHTML(res) {
-  const script = fs.readFileSync(__dirname+pathNameFiles+'.js', 'utf8');
-  res.write('<script>'+script+'</script>');
+  button.value = 'Mes Projets';
 }
 module.exports.connectionDB = connectionDB;

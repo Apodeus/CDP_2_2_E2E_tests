@@ -22,6 +22,8 @@ router.get('/', async function(req, res) {
 router.post('/', function(req, res) {
   if (req.body.createproject === valueButtonCreateProject) {
     res.redirect('/createproject');
+  } else {
+    res.redirect('/projects');
   }
 });
 function addButtonCreate(document) {
