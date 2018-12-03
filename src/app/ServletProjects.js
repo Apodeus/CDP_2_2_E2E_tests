@@ -19,11 +19,11 @@ router.get('/', async function(req, res) {
     await res.end();
   });
 });
-router.post('/', function(req, res) {
+router.post('/', async function(req, res) {
   if (req.body.createproject === valueButtonCreateProject) {
-    res.redirect('/createproject');
+    await res.redirect('/createproject');
   } else {
-    res.redirect('/projects');
+    await res.redirect('/projects');
   }
 });
 function addButtonCreate(document) {
@@ -57,7 +57,7 @@ async function listProjects(document, userArg) {
   const list = await document.createElement('ul');
   await doc.appendChild(list);
   await (async () => {
-    const projects = await ((new ProjectDAO(Home.connectionDB)).getAllByUser(userArg));
+    const projects = await (new ProjectDAO(Home.connectionDB)).getAllByUser(userArg);
     for (let p = 0; p < projects.length; p++) {
       if (projects[p].owner.id===userArg.id) {
         await addHtmlObjectForProject(document, projects[p], list);
