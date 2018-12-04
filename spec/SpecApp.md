@@ -13,7 +13,7 @@
 - ServletProject.js
   - Méthode get("/") répondant à une requête GET renvoyant une page html combiné avec un un script js (Projects.js).
   La page html renvoyé doit être composée de la liste des projets, pour ça le servlet rempli la balise div qui a l'id "ProjectsList".
-  Le script js permet de donner un comportement au bouton "créer un projet" de la page html existante Projects.html"; le bouton doit fair eune redirection vers le servlet ServletAddProject.
+  Le script js permet de donner un comportement au bouton "créer un projet" de la page html existante Projects.html"; le bouton doit faire une redirection vers le servlet ServletAddProject.
 
 - ServletAddUS.js
   - Méthode get("/") répond à une requête GET renvoyant la page bien formée avec le formulaire possédant les champs :
@@ -24,14 +24,14 @@
     - priorité*
     - planification
 
-  - Méthode post(...) répond à la requête POST qui traite,valide les informations saisie dans le formulaire.Renvoie l'utilisateur la page des listes des US (Backlog).Cette méthode sera appellée par le bouton "Ajouter User-Story"
+  - Méthode post(...) répond à la requête POST qui traite,valide les informations saisie dans le formulaire.Renvoie l'utilisateur la page des listes des US (Backlog).Cette méthode sera appellée par le bouton "Créer l'US"
 
 - ServletBacklog.js
   - Méthode get("/") répondant à une requête GET, renvoyant une page html basée sur Backlog.html en rajoutant plusieurs éléments:
   La page html renvoyé doit être composée de la barre d'onglet (construite avec TabBuilder.js), donner un texte au bouton pour ajouter une US et doit remplir la balise div de Backlog.html avec la liste des US. Une US dans la liste doit regroupé toutes ses informations et également 2 boutons (modifier et supprimer).
   Tous les boutons devront être ajoutés avec la balise form et la balise input.
   - Méthode post("/")
-  Donc le servlet doit également ajouter un comportement aux boutons "ajouter us", "modifier" et "supprimer", pour cela le servlet doit utiliser la méthode POST pour ainsi rediriger l'utilisateur vers le servlet "ServletAddUS.js", "ServletEditUS.js" et simplement supprimer une US dans la base et rafraichir la page.
+  Donc le servlet doit également ajouter un comportement aux boutons "Ajouter une nouvelle US", "Modifier" et "Supprimer", pour cela le servlet doit utiliser la méthode POST pour ainsi rediriger l'utilisateur vers le servlet "ServletAddUS.js", "ServletEditUS.js" et simplement supprimer une US dans la base et rafraichir la page.
   - Le servlet doit également exporter la variable du projet ouvert, pour ainsi permettre au ServletAddUS de savoir dans quel projet ajouter l'us.
 
 - ProjectDAO.js :

@@ -11,7 +11,7 @@ const UtilsForm = require('./UtilsForm');
 const US = require('./US');
 
 
-const valueButtonCreateUS = 'Ajouter une nouvelle issue';
+const valueButtonCreateUS = 'Ajouter une nouvelle US';
 const valueButtonDelete='Supprimer';
 
 router.get('/', async function(req, res) {
