@@ -18,7 +18,7 @@
 |Tt7d | Spécifier le(s) scénario(s) de test de l'US 9 dans le fichier Test7US9.md concernant la modification d'une US | 9 |  | 0.5 | | TODO  |
 |Tt8d | Spécifier le(s) scénario(s) de test de l'US 10 dans le fichier Test8US10.md concernant la suppression d'une US | 10 |  | 0.5 | Romain Ordonez | DONE  |
 |Tt3i | Créer le(s) test(s) du fichier Test3US5.md concernant la modification d'un projet| 5 | Tt3d, Tc11i, Tc25d, Tc14d | 0.5 | |  TODO |
-|Tt4i | Créer le(s) test(s) du fichier Test4US8.md concernant la création d'US | 8 | Tt4d, Tc16d, Tc24d, Tc25d | 0.5 | Romain Ordonez | DOING  |  
+|Tt4i | Créer le(s) test(s) du fichier Test4US8.md concernant la création d'US | 8 | Tt4d, Tc16d, Tc24d, Tc25d | 0.5 | Romain Ordonez | DONE  |  
 |Tt5i | Créer le(s) test(s) du fichier Test5US11.md concernant le listage des US d'un projet | 11 | Tt5d, Tc23d ,Tc25d | 0.5 | Clément Fontenay | DONE  |
 |Tt6i | (Design Tt6d) Créer le(s) test(s) du fichier Test6US7.md concernant l'ajout de membre dans un projet. | 7 | | 0.5 | | TODO |
 |Tt7i | (Design Tt7d) Créer le(s) test(s) du fichier Test7US9.md concernant la modification d'une US | 9 | | 0.5 | | TODO |
