@@ -113,6 +113,7 @@ describe('Test US 10', () => {
 
   test('Scenario 1', async () => {
     console.log('start scenario 1');
+    let actualURL = await page.url();
     expect(actualURL).toBe(url);
 
     const form1Handle = await page.$$('form');
