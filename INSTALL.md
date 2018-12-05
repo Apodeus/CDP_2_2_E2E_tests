@@ -1,6 +1,10 @@
-Install:
+## Install:
+```
 docker-compose up
+```
 
-Run:
-Application: localhost:3000
-Database with adminer: localhost:8080 
+## Run:
+- Application: 
+```localhost:3000```
+- Database with adminer: 
+```localhost:8080```
