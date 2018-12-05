@@ -35,9 +35,10 @@ describe('Test US 11', () => {
     await clearDatabase(connectionDB);
     console.log('End of clearing...');
     browser = await puppeteer.launch({
-      headless: false,
-      slowMo: 100,
-      args: ['--start-fullscreen'],
+      args: [
+        '--no-sandbox',
+        '--disable-setuid-sandbox',
+      ],
       timeout: 0,
     });
     page = await browser.newPage();
