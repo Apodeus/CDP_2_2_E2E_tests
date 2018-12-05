@@ -1,31 +1,5 @@
 const puppeteer = require('puppeteer');
 const mysql = require('mysql2');
-const ProjectDAO = require('../../app/ProjectDAO');
-const UserDAO = require('../../app/UserDAO');
-const Project = require('../../app/Project');
-const User = require('../../app/User');
-
-async function newQuery(connectionDB, request) {
-  await connectionDB.execute(request);
-}
-
-async function clearUserStoriesDB(connectionDB) {
-  await Promise.all([
-    newQuery(connectionDB, 'SET FOREIGN_KEY_CHECKS = 0'),
-    newQuery(connectionDB, 'TRUNCATE TABLE us'),
-    newQuery(connectionDB, 'SET FOREIGN_KEY_CHECKS = 1'),
-  ]);
-}
-
-async function clearProjectsDB(connectionDB) {
-  await Promise.all([
-    newQuery(connectionDB, 'SET FOREIGN_KEY_CHECKS = 0'),
-    newQuery(connectionDB, 'TRUNCATE TABLE projects_participants'),
-    newQuery(connectionDB, 'TRUNCATE TABLE projects'),
-    newQuery(connectionDB, 'SET FOREIGN_KEY_CHECKS = 1'),
-  ]);
-}
-
 
 describe('Test US 8', () => {
   let browser;
@@ -43,26 +17,6 @@ describe('Test US 8', () => {
     user: 'user',
     password: 'root',
   });
-/*
-  beforeAll(async () => {
-    await clearProjectsDB(connectionDB);
-    const projectDAO = new ProjectDAO(connectionDB);
-    const userDAO = new UserDAO(connectionDB);
-    browser = await puppeteer.launch({
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-      ],
-      timeout: 0,
-    });
-    page = await browser.newPage();
-    const user = new User("user", "useruser@gmail.com@gmail.com", "user");
-    let savedUser = await userDAO.save(user);
-    const project = new Project("toto", "descr", "2019-11-23", "2", savedUser);
-    await projectDAO.save(project);
-
-  });
-*/
   beforeEach(async () => {
     jest.setTimeout(100000);
     browser = await puppeteer.launch({
@@ -144,7 +98,7 @@ describe('Test US 8', () => {
     actualURL = await page.url();
     expect(actualURL).toBe('http://localhost:3000/addus');
 
-    //Saisie formulaire
+    // Saisie formulaire
     const titre = 'usTest';
     const description = 'description de test';
     const difficulte = '5';
@@ -172,7 +126,7 @@ describe('Test US 8', () => {
     expect(actualURL).toBe('http://localhost:3000/backlog');
 
     const form1Handle = await page.$$('form');
-    //console.log(form1Handle[0]);
+    // console.log(form1Handle[0]);
 
     const contentForm1 = await page.evaluate((f1) => f1.innerHTML, form1Handle[1]);
     expect(contentForm1).toContain(titre);
@@ -233,7 +187,7 @@ describe('Test US 8', () => {
     expect(actualURL).toBe('http://localhost:3000/addus');
 
 
-    //Saisie formulaire
+    // Saisie formulaire
     const titre = 'usTest';
     const description = '';
     const difficulte = '5';
@@ -260,32 +214,7 @@ describe('Test US 8', () => {
     actualURL = await page.url();
     expect(actualURL).toBe('http://localhost:3000/addus');
   });
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //

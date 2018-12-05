@@ -1,11 +1,21 @@
 const puppeteer = require('puppeteer');
 const mysql = require('mysql2');
 
+async function newQuery(connectionDB, request) {
+  await connectionDB.execute(request);
+}
 
-describe('Test US 10', () => {
-  let browser;
-  let page;
-  const url = 'http://localhost:3000/backlog';
+async function clearDatabase(connectionDB) {
+  await Promise.all([
+    newQuery(connectionDB, 'SET FOREIGN_KEY_CHECKS = 0'),
+    newQuery(connectionDB, 'TRUNCATE TABLE projects_participants'),
+    newQuery(connectionDB, 'TRUNCATE TABLE projects'),
+    newQuery(connectionDB, 'SET FOREIGN_KEY_CHECKS = 1'),
+  ]);
+}
+
+describe('Test US 11', () => {
+  let browser; let page;
   const connectionDB = mysql.createConnection({
     host: 'localhost',
     database: 'cdp',
@@ -18,24 +28,30 @@ describe('Test US 10', () => {
     user: 'user',
     password: 'root',
   });
+  const url = 'http://localhost:3000';
   beforeEach(async () => {
     jest.setTimeout(100000);
+    console.log('Clearing database...');
+    await clearDatabase(connectionDB);
+    console.log('End of clearing...');
     browser = await puppeteer.launch({
-      args: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-      ],
+      headless: false,
+      slowMo: 100,
+      args: ['--start-fullscreen'],
       timeout: 0,
     });
     page = await browser.newPage();
-
-    await page.goto('http://localhost:3000');
-    await page.goto('http://localhost:3000/projects');
+    // we will create one project (creation had been tested in Test2US4.test.js)
+    await page.goto(url);
+    await page.goto(url + '/projects');
 
     await Promise.all([
       page.waitForNavigation(),
       page.click('#CreateProject'),
     ]);
+
+    actualURL = await page.url();
+    expect(actualURL).toBe(url+'/createproject');
 
     const projectName = 'ProjetTest';
     const description = 'Mon projet de test';
@@ -64,67 +80,29 @@ describe('Test US 10', () => {
 
     const buttonValideHandle = await page.$('#validate');
     await Promise.all([
-      page.waitForNavigation(),
       buttonValideHandle.click({clickCount: 3}),
       page.waitForNavigation(),
     ]);
-
-    await Promise.all([
-      page.waitForNavigation(),
-      page.click('[name="open"]'),
-    ]);
-
-    await Promise.all([
-      page.waitForNavigation(),
-      page.click('#AddUs'),
-    ]);
-
-    const titre = 'usTest';
-    const descriptionUs = 'description de test';
-    const difficulte = '5';
-
-    const inputTitleHandle = await page.$('[name="title"]');
-    await inputTitleHandle.click();
-    await page.keyboard.type(titre);
-
-    const inputDescrHandle = await page.$('[name="description"]');
-    await inputDescrHandle.click();
-    await page.keyboard.type(descriptionUs);
-
-    const inputDiffHandle = await page.$('[name="difficulty"]');
-    await inputDiffHandle.click();
-    await page.keyboard.type(difficulte);
-
-    await page.select('[name="priority"]', 'HAUTE');
-
-    await Promise.all([
-      page.waitForNavigation(),
-      page.click('#validate'),
-    ]);
+    await page.url(); // we are now on /projects
   });
-
   afterEach(() => {
     browser.close();
   });
-
-  afterAll(async () => {
-    connectionDB.close();
+  afterAll(async ()=>{
+    await connectionDB.close();
   });
 
-  test('Scenario 1', async () => {
-    console.log('start scenario 1');
-    expect(actualURL).toBe(url);
-
-    const form1Handle = await page.$$('form');
-    const initialLenght= form1Handle.length;
-
+  test('Scenario 1: Open project and see 0 US on Backlog', async () =>{
+    expect(await page.url()).toBe(url+'/projects');
     await Promise.all([
+      page.click('#open1'),
       page.waitForNavigation(),
-      page.click('[name="delete"]'),
     ]);
-
-    const form2Handle = await page.$$('form');
-    const finalLenght= form2Handle.length;
-    expect(finalLenght).toBe(initialLenght-1);
+    await expect(await page.url()).toBe(url+'/backlog');
+    const listUS = await page.$('#IssueList');
+    await expect(listUS).toBeDefined();
+    await page.goBack();
+    actualUrl = await page.url();
+    await expect(actualUrl).toBe(url+'/projects');
   });
 });
