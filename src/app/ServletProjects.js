@@ -26,8 +26,8 @@ router.post('/', async function(req, res) {
     await res.redirect('/projects');
   }
 });
-function addButtonCreate(document) {
-  const button = document.getElementById('CreateProject');
+async function addButtonCreate(document) {
+  const button = await document.getElementById('CreateProject');
   button.value = valueButtonCreateProject;
 }
 /**
