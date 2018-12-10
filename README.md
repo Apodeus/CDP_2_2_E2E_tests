@@ -12,9 +12,9 @@ Automatisation des tests unitaires, d'intégrations et E2E -- Analyse Sonar :
 
 [![Build Travis Status](https://travis-ci.com/Apodeus/CDP_2_2_E2E_tests.svg?token=96sAwaj1Vfzjk86mqyYj&branch=master)](https://travis-ci.com/Apodeus/CDP_2_2_E2E_tests)
 
-## Burn Down Chart - Fin du sprint 1
+## Burn Down Chart - Fin du sprint 3
 
-![alt](https://cdn.discordapp.com/attachments/301739146521608194/516926154548969474/BurnDownChart.png)
+![alt](https://cdn.discordapp.com/attachments/301739146521608194/521566554584907779/ChartGo.png)
 
 ### Légende :
 - \* => Champ obligatoire
